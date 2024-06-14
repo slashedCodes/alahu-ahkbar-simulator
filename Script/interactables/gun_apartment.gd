@@ -7,5 +7,3 @@ func interact(player):
 	
 	GameManager.remove_objectives()
 	GameManager.add_objective("exit apartment")
-	
-	get_parent().queue_free()

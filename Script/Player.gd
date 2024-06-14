@@ -1,6 +1,4 @@
 extends CharacterBody3D
-
-
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
@@ -8,7 +6,24 @@ const JUMP_VELOCITY = 4.5
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var neck := $Neck
 @onready var camera := $Neck/Camera3D
+@onready var gun_cam := $Neck/Camera3D
 @onready var pause_screen := $"Neck/Camera3D/Pause Screen"
+
+@onready var raycast = $Neck/Camera3D/RayCast3D
+@onready var hand = $Neck/Camera3D/Hand
+@onready var animation_player = $AnimationPlayer
+
+func fire():
+	if hand.get_child(0) and hand.get_child(0).is_in_group("gun"):
+		if Input.is_action_pressed("fire"):
+			if not animation_player.is_playing():
+				if raycast.is_colliding():
+					var target = raycast.get_collider()
+					if target.is_in_group("killable"):
+						target.die(camera.global_basis.z)
+			animation_player.play("hand_fire")
+		else:
+			animation_player.stop()
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton:
@@ -23,6 +38,9 @@ func _unhandled_input(event):
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-30), deg_to_rad(60))
 
 func _physics_process(delta):
+	gun_cam.global_transform = camera.global_transform
+	fire()
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta

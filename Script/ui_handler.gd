@@ -2,6 +2,7 @@ extends Camera3D
 
 @onready var objectives := $objectives
 @onready var interaction := $interaction
+@onready var inventory = $inventory
 @onready var root := get_tree().current_scene
 
 func get_ray():
@@ -30,5 +31,10 @@ func _process(delta):
 		# Interaction code
 		if intersected["collider"].has_meta("interactable") and intersected["collider"].get_meta("interactable") and intersected["collider"].has_method("interact") and Input.is_action_just_pressed("interact"):
 			intersected["collider"].interact(get_node(".")) # pass player into the function
+		
+		# Add to inventory
+		if intersected["collider"].has_node("Item") and intersected["collider"].get_meta("interactable") and intersected["collider"].get_meta("interactable") and Input.is_action_just_pressed("interact"):
+			inventory.add_item(intersected["collider"].get_node("Item"))
+			intersected["collider"].get_node(intersected["collider"].get_meta("model")).queue_free()
 	else:
 		interaction.text = ""

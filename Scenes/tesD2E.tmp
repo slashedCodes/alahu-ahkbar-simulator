@@ -1,0 +1,58 @@
+[gd_scene load_steps=11 format=3 uid="uid://cx4ck6j7nqbqt"]
+
+[ext_resource type="Texture2D" uid="uid://b3onqw84qur2i" path="res://Important pictures that are not textures for shit/how-can-i-achieve-ps1-style-textures-instead-of-just-v0-r96z3mbjr6sb1.webp" id="1_jxcpg"]
+[ext_resource type="PackedScene" uid="uid://g4e2cyrofo76" path="res://Scenes/transition_screen.tscn" id="2_3v3tt"]
+[ext_resource type="PackedScene" uid="uid://ijfntxr822tg" path="res://Scenes/Player.tscn" id="3_aqw6d"]
+[ext_resource type="PackedScene" uid="uid://cfed8felowioj" path="res://Scenes/Weapons/gun_pickup.tscn" id="4_j4s7g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_brp6v"]
+albedo_texture = ExtResource("1_jxcpg")
+metallic = 1.0
+uv1_scale = Vector3(38.955, 38.955, 38.955)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_2grm8"]
+material = SubResource("StandardMaterial3D_brp6v")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ktrch"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jd8nw"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_imt7k"]
+sky_material = SubResource("ProceduralSkyMaterial_jd8nw")
+
+[sub_resource type="Environment" id="Environment_pjey7"]
+background_mode = 2
+sky = SubResource("Sky_imt7k")
+tonemap_mode = 2
+
+[node name="Test scene" type="Node3D"]
+
+[node name="grass" type="StaticBody3D" parent="."]
+
+[node name="grass" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(750.962, 0, 0, 0, 1, 0, 0, 0, 766.103, 0, -0.501142, 0)
+mesh = SubResource("BoxMesh_2grm8")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="grass"]
+transform = Transform3D(750.962, 0, 0, 0, 1, 0, 0, 0, 766.103, 0, -0.501142, 0)
+shape = SubResource("ConcavePolygonShape3D_ktrch")
+
+[node name="TransitionScreen" parent="." instance=ExtResource("2_3v3tt")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_pjey7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("3_aqw6d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.67596, 1.03682, 10.4237)
+
+[node name="GunPickup" parent="." instance=ExtResource("4_j4s7g")]
+transform = Transform3D(0.918777, -0.394776, 0, 0.394776, 0.918777, 0, 0, 0, 1, 8.80578, 1.30502, 7.86308)
