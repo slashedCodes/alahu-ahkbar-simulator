@@ -8,6 +8,7 @@ extends Node
 func add_objective(text):
 	var label = Label.new()
 	label.text = text
+	label.autowrap_mode = TextServer.AUTOWRAP_WORD
 	var container = objectives.get_node("container")
 	container.add_child(label)
 
