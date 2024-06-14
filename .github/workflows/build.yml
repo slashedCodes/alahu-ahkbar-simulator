@@ -18,7 +18,7 @@ jobs:
         id: build
         uses: manleydev/build-godot-action@master
         with:
-          name: alahu ahkbar simulator
+          name: "Alahu Ahkbar Simulator 2001.exe"
           preset: windows
           debugMode: "false"
       - name: Upload Artifact
