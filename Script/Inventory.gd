@@ -42,8 +42,7 @@ func select_item(index):
 		for child in hand.get_children():
 			child.queue_free()
 		
-		hand.add_child(mesh.duplicate())
-		mesh = hand.get_child(0) # update mesh var to the model in the hand
+		mesh = mesh.duplicate()
 		
 		if item.has_meta("id"):
 			mesh.set_meta("id", item.get_meta("id"))
@@ -55,6 +54,8 @@ func select_item(index):
 			mesh.rotation_degrees = item.get_meta("rotation")
 		else:
 			mesh.rotation_degrees = Vector3.ZERO
+		
+		hand.add_child(mesh)
 	else:
 		hand_index = null
 		for child in hand.get_children():

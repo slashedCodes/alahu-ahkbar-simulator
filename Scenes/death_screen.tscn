@@ -1,12 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://cjrl3cgbr8py5"]
 
 [ext_resource type="Script" path="res://Script/death_screen.gd" id="1_7bj6v"]
-
-[sub_resource type="SystemFont" id="SystemFont_bl24w"]
-font_names = PackedStringArray("Comic Sans MS")
+[ext_resource type="FontFile" uid="uid://blkhiygeixt5i" path="res://comic sans.ttf" id="2_uq003"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0r3ax"]
-font = SubResource("SystemFont_bl24w")
+font = ExtResource("2_uq003")
 font_size = 32
 
 [node name="Death Screen" type="Panel"]
@@ -24,6 +22,8 @@ offset_left = 124.0
 offset_top = 192.0
 offset_right = 304.0
 offset_bottom = 240.0
+theme_override_fonts/font = ExtResource("2_uq003")
+theme_override_font_sizes/font_size = 23
 text = "respawn"
 
 [node name="title" type="Label" parent="."]

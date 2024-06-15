@@ -5318,6 +5318,9 @@ script = ExtResource("91_4mo4m")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.69306, -5.48458, -6.41157)
 shape = SubResource("BoxShape3D_behmt")
 
+[node name="menu_camera" type="Camera3D" parent="."]
+transform = Transform3D(0.789727, -0.382147, 0.479891, 0, 0.782271, 0.622938, -0.613459, -0.491951, 0.617781, 4.19339, 4.44467, 3.11315)
+
 [connection signal="pressed" from="questions/1/kill_yourself" to="questions/1" method="_on_kill_yourself_pressed"]
 [connection signal="pressed" from="questions/1/rob_gas_station" to="questions/1" method="_on_rob_gas_station_pressed"]
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

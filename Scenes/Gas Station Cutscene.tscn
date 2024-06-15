@@ -1,8 +1,9 @@
-[gd_scene load_steps=291 format=3 uid="uid://hmthtat3l4bj"]
+[gd_scene load_steps=289 format=3 uid="uid://hmthtat3l4bj"]
 
 [ext_resource type="PackedScene" uid="uid://g4e2cyrofo76" path="res://Scenes/transition_screen.tscn" id="1_c2lff"]
 [ext_resource type="Script" path="res://Script/cutscene_1.gd" id="2_8ayc8"]
 [ext_resource type="Texture2D" uid="uid://b3onqw84qur2i" path="res://Important pictures that are not textures for shit/how-can-i-achieve-ps1-style-textures-instead-of-just-v0-r96z3mbjr6sb1.webp" id="3_4ua3u"]
+[ext_resource type="FontFile" uid="uid://blkhiygeixt5i" path="res://comic sans.ttf" id="3_scfax"]
 [ext_resource type="PackedScene" uid="uid://ifvbjpc2mfrp" path="res://Models/p/psx_building.glb" id="4_lklba"]
 [ext_resource type="PackedScene" uid="uid://dklmb38tqqeek" path="res://Models/p/psx_apartment.glb" id="5_f75i2"]
 [ext_resource type="Texture2D" uid="uid://cnsmubi012rlt" path="res://Models/p/road_basic_maker_0.jpg" id="6_bay8v"]
@@ -71,29 +72,20 @@ background_mode = 2
 sky = SubResource("Sky_oaupb")
 tonemap_mode = 2
 
-[sub_resource type="SystemFont" id="SystemFont_argt4"]
-font_names = PackedStringArray("Comic Sans MS")
-
 [sub_resource type="LabelSettings" id="LabelSettings_1ofax"]
-font = SubResource("SystemFont_argt4")
+font = ExtResource("3_scfax")
 font_size = 30
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="SystemFont" id="SystemFont_uf6gl"]
-font_names = PackedStringArray("Comic Sans MS")
-
 [sub_resource type="LabelSettings" id="LabelSettings_ituts"]
-font = SubResource("SystemFont_uf6gl")
+font = ExtResource("3_scfax")
 font_size = 19
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="SystemFont" id="SystemFont_85kxg"]
-font_names = PackedStringArray("Comic Sans MS")
-
 [sub_resource type="LabelSettings" id="LabelSettings_qie3t"]
-font = SubResource("SystemFont_85kxg")
+font = ExtResource("3_scfax")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_brp6v"]
 albedo_texture = ExtResource("3_4ua3u")
@@ -3388,10 +3380,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="Camera3D"]
-offset_left = -26.0
-offset_top = 92.0
-offset_right = 311.0
-offset_bottom = 168.0
+offset_left = -27.0
+offset_top = 84.0
+offset_right = 310.0
+offset_bottom = 160.0
 text = "2001 version"
 label_settings = SubResource("LabelSettings_ituts")
 horizontal_alignment = 1
@@ -6499,7 +6491,7 @@ transform = Transform3D(0.01, 0, 0, 0, 0, -0.01, 0, 0.01, 0, 0, 0, 0)
 [node name="RootNode" type="Node3D" parent="car/Sketchfab_model/Car_fbx"]
 
 [node name="L_Tire_front" type="Node3D" parent="car/Sketchfab_model/Car_fbx/RootNode"]
-transform = Transform3D(-8.30395e-05, -0.000352363, 100, -97.5454, 22.0207, -3.40857e-06, -22.0207, -97.5454, -0.000361999, 82.4675, -41.9749, 90.4181)
+transform = Transform3D(-8.30396e-05, -0.000352363, 100, -97.5454, 22.0207, -3.40857e-06, -22.0207, -97.5454, -0.000361999, 82.4675, -41.9749, 90.4181)
 
 [node name="L_Tire_front_Black_Car_Mat_0" type="MeshInstance3D" parent="car/Sketchfab_model/Car_fbx/RootNode/L_Tire_front"]
 mesh = SubResource("ArrayMesh_rvo6k")
@@ -6551,7 +6543,7 @@ mesh = SubResource("ArrayMesh_iymbb")
 skeleton = NodePath("")
 
 [node name="R_Tire_Front" type="Node3D" parent="car/Sketchfab_model/Car_fbx/RootNode"]
-transform = Transform3D(-8.30395e-05, -0.000352363, 100, -97.5454, 22.0207, -3.40857e-06, -22.0207, -97.5454, -0.000361999, 82.4675, -41.9749, 90.4181)
+transform = Transform3D(-8.30396e-05, -0.000352363, 100, -97.5454, 22.0207, -3.40857e-06, -22.0207, -97.5454, -0.000361999, 82.4675, -41.9749, 90.4181)
 
 [node name="R_Tire_Front_Black_Car_Mat_0" type="MeshInstance3D" parent="car/Sketchfab_model/Car_fbx/RootNode/R_Tire_Front"]
 mesh = SubResource("ArrayMesh_i5xoy")
