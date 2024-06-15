@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c3ps5hyehuyve"
 path.s3tc="res://.godot/imported/osama-bin-laden-photograph-2282391838.jpg-236094f39e087ca1aad72116701f91c7.s3tc.ctex"
+path.etc2="res://.godot/imported/osama-bin-laden-photograph-2282391838.jpg-236094f39e087ca1aad72116701f91c7.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/p/osama-bin-laden-photograph-2282391838.jpg"
-dest_files=["res://.godot/imported/osama-bin-laden-photograph-2282391838.jpg-236094f39e087ca1aad72116701f91c7.s3tc.ctex"]
+dest_files=["res://.godot/imported/osama-bin-laden-photograph-2282391838.jpg-236094f39e087ca1aad72116701f91c7.s3tc.ctex", "res://.godot/imported/osama-bin-laden-photograph-2282391838.jpg-236094f39e087ca1aad72116701f91c7.etc2.ctex"]
 
 [params]
 

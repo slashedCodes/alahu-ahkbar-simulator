@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckduhosjv5ogl"]
+
+[ext_resource type="Script" path="res://Scripts/Save Change Menu.gd" id="1_vswub"]
+
+[node name="Save Change Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vswub")
+
+[node name="Room" type="Button" parent="."]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 89.0
+offset_right = 318.0
+offset_bottom = 134.0
+text = "Room"
+
+[node name="Gas Station Cutscene" type="Button" parent="."]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 153.0
+offset_right = 310.0
+offset_bottom = 198.0
+text = "Gas Station Cutscene"
+
+[node name="Gas Station" type="Button" parent="."]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 212.0
+offset_right = 319.0
+offset_bottom = 257.0
+text = "Gas Station"
+
+[connection signal="pressed" from="Room" to="." method="_on_room_pressed"]
+[connection signal="pressed" from="Gas Station Cutscene" to="." method="_on_gas_station_cutscene_pressed"]
+[connection signal="pressed" from="Gas Station" to="." method="_on_gas_station_pressed"]

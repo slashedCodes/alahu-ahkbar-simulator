@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b6lj7k1ow37pj"]
 
-[ext_resource type="FontFile" uid="uid://blkhiygeixt5i" path="res://comic sans.ttf" id="1_7vkau"]
-[ext_resource type="Script" path="res://Script/main_menu_ui.gd" id="1_lmj0c"]
+[ext_resource type="FontFile" uid="uid://blkhiygeixt5i" path="res://Other/comic sans.ttf" id="1_7vkau"]
+[ext_resource type="Script" path="res://Scripts/main_menu_ui.gd" id="1_lmj0c"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ba1cb"]
 font = ExtResource("1_7vkau")
@@ -12,6 +12,7 @@ font = ExtResource("1_7vkau")
 font_size = 20
 
 [node name="Main Menu UI" type="Panel"]
+process_mode = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -29,12 +30,22 @@ theme_override_fonts/font = ExtResource("1_7vkau")
 theme_override_font_sizes/font_size = 33
 text = "play"
 
+[node name="new game" type="Button" parent="."]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 212.0
+offset_right = 324.0
+offset_bottom = 296.0
+theme_override_fonts/font = ExtResource("1_7vkau")
+theme_override_font_sizes/font_size = 33
+text = "new game"
+
 [node name="quit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 123.0
-offset_top = 225.0
-offset_right = 326.0
-offset_bottom = 309.0
+offset_left = 122.0
+offset_top = 305.0
+offset_right = 325.0
+offset_bottom = 389.0
 theme_override_fonts/font = ExtResource("1_7vkau")
 theme_override_font_sizes/font_size = 33
 text = "quit"
@@ -62,4 +73,5 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="new game" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cjrl3cgbr8py5"]
 
-[ext_resource type="Script" path="res://Script/death_screen.gd" id="1_7bj6v"]
-[ext_resource type="FontFile" uid="uid://blkhiygeixt5i" path="res://comic sans.ttf" id="2_uq003"]
+[ext_resource type="Script" path="res://Scripts/death_screen.gd" id="1_7bj6v"]
+[ext_resource type="FontFile" uid="uid://blkhiygeixt5i" path="res://Other/comic sans.ttf" id="2_uq003"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0r3ax"]
 font = ExtResource("2_uq003")

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bico3fxif8smk"
 path.s3tc="res://.godot/imported/electronics_kitchen_1.jpg-514fe368d63a3604652ed86644c21d38.s3tc.ctex"
+path.etc2="res://.godot/imported/electronics_kitchen_1.jpg-514fe368d63a3604652ed86644c21d38.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Models/p/electronics_kitchen_1.jpg"
-dest_files=["res://.godot/imported/electronics_kitchen_1.jpg-514fe368d63a3604652ed86644c21d38.s3tc.ctex"]
+dest_files=["res://.godot/imported/electronics_kitchen_1.jpg-514fe368d63a3604652ed86644c21d38.s3tc.ctex", "res://.godot/imported/electronics_kitchen_1.jpg-514fe368d63a3604652ed86644c21d38.etc2.ctex"]
 
 [params]
 

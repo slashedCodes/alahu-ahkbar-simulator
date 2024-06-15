@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dna47y2vehlgd"
 path.s3tc="res://.godot/imported/ps1_gt1-style_model_-_1996_horai_bx300_0.png-4f4e4d478d238ac4c6e4f154a331bab5.s3tc.ctex"
+path.etc2="res://.godot/imported/ps1_gt1-style_model_-_1996_horai_bx300_0.png-4f4e4d478d238ac4c6e4f154a331bab5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Models/ps1_gt1-style_model_-_1996_horai_bx300_0.png"
-dest_files=["res://.godot/imported/ps1_gt1-style_model_-_1996_horai_bx300_0.png-4f4e4d478d238ac4c6e4f154a331bab5.s3tc.ctex"]
+dest_files=["res://.godot/imported/ps1_gt1-style_model_-_1996_horai_bx300_0.png-4f4e4d478d238ac4c6e4f154a331bab5.s3tc.ctex", "res://.godot/imported/ps1_gt1-style_model_-_1996_horai_bx300_0.png-4f4e4d478d238ac4c6e4f154a331bab5.etc2.ctex"]
 
 [params]
 

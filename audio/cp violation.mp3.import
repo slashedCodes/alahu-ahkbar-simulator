@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://deckpfpeqta4m"
-path="res://.godot/imported/cp violation.mp3-8c1891db9014988ac1750ebf0d205587.mp3str"
+path="res://.godot/imported/cp violation.mp3-f95ac39eddd7240bdd0e958ace60f5f4.mp3str"
 
 [deps]
 
-source_file="res://audio/cp violation.mp3"
-dest_files=["res://.godot/imported/cp violation.mp3-8c1891db9014988ac1750ebf0d205587.mp3str"]
+source_file="res://Audio/cp violation.mp3"
+dest_files=["res://.godot/imported/cp violation.mp3-f95ac39eddd7240bdd0e958ace60f5f4.mp3str"]
 
 [params]
 

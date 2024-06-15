@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://g4e2cyrofo76"]
 
-[ext_resource type="Script" path="res://Script/transition_screen.gd" id="1_ktgnu"]
+[ext_resource type="Script" path="res://Scripts/transition_screen.gd" id="1_ktgnu"]
 
 [sub_resource type="Animation" id="Animation_203op"]
 length = 0.001
@@ -56,6 +56,7 @@ _data = {
 }
 
 [node name="TransitionScreen" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_ktgnu")
 
 [node name="ColorRect" type="ColorRect" parent="."]

@@ -17,7 +17,9 @@ func _ready():
 	if root and root.has_node("questions"):
 		for question in root.get_node("questions").get_children():
 			await get_tree().create_timer(question.get_meta("delay")).timeout # wait the delay the question has set
-			question.visible = true 
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+			question.visible = true
+			get_tree().paused = true
 
 func _process(delta):
 	var intersected = get_ray()

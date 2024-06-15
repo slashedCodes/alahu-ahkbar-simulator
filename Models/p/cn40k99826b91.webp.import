@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://daxtodepkp442"
 path.s3tc="res://.godot/imported/cn40k99826b91.webp-cdb2510d8b854eb02dd4744bd40ab4ed.s3tc.ctex"
+path.etc2="res://.godot/imported/cn40k99826b91.webp-cdb2510d8b854eb02dd4744bd40ab4ed.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/p/cn40k99826b91.webp"
-dest_files=["res://.godot/imported/cn40k99826b91.webp-cdb2510d8b854eb02dd4744bd40ab4ed.s3tc.ctex"]
+dest_files=["res://.godot/imported/cn40k99826b91.webp-cdb2510d8b854eb02dd4744bd40ab4ed.s3tc.ctex", "res://.godot/imported/cn40k99826b91.webp-cdb2510d8b854eb02dd4744bd40ab4ed.etc2.ctex"]
 
 [params]
 

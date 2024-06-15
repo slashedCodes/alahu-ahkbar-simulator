@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ch4qd8x3no4uj"
 path.s3tc="res://.godot/imported/ps1_-_cossack_lock_pistol_0.png-8bf71b6ad563e35cbb05a24de9957047.s3tc.ctex"
+path.etc2="res://.godot/imported/ps1_-_cossack_lock_pistol_0.png-8bf71b6ad563e35cbb05a24de9957047.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Models/p/ps1_-_cossack_lock_pistol_0.png"
-dest_files=["res://.godot/imported/ps1_-_cossack_lock_pistol_0.png-8bf71b6ad563e35cbb05a24de9957047.s3tc.ctex"]
+dest_files=["res://.godot/imported/ps1_-_cossack_lock_pistol_0.png-8bf71b6ad563e35cbb05a24de9957047.s3tc.ctex", "res://.godot/imported/ps1_-_cossack_lock_pistol_0.png-8bf71b6ad563e35cbb05a24de9957047.etc2.ctex"]
 
 [params]
 

@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        platform: [windows]
+        platform: [linux, windows, android]
     steps:
       - uses: actions/checkout@v2
         with:
@@ -18,11 +18,11 @@ jobs:
         id: build
         uses: manleydev/build-godot-action@master
         with:
-          name: "Ahkabar.exe"
-          preset: windows
+          name: 
+          preset: ${{ matrix.platform }}
           debugMode: "false"
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: Client - windows
+          name: Client - ${{ matrix.platform }}
           path: ${{ github.workspace }}/${{ steps.build.outputs.build }}

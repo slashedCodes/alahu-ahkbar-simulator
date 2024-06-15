@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://g4e2cyrofo76" path="res://Scenes/transition_screen.tscn" id="1_xcnbs"]
 [ext_resource type="PackedScene" uid="uid://d2bu7ovj0ct1o" path="res://Models/p/low_poly_prisoner_bed_psx.glb" id="3_u3lln"]
-[ext_resource type="AudioStream" uid="uid://cadiqs1nlr3v2" path="res://audio/kill yourself music.mp3" id="4_g0la7"]
+[ext_resource type="AudioStream" uid="uid://cadiqs1nlr3v2" path="res://Audio/kill yourself music.mp3" id="4_g0la7"]
 [ext_resource type="PackedScene" uid="uid://dup2kf0becoxe" path="res://Models/p/waste_bin.glb" id="4_x103x"]
 [ext_resource type="PackedScene" uid="uid://df40mc87rh8qh" path="res://Models/p/psx_fire_extinguisher.glb" id="5_w4vgr"]
 [ext_resource type="PackedScene" uid="uid://blxtp7usdbvjk" path="res://Models/p/ps1_wood_table.glb" id="6_q5utv"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://vaa8okkoujbx" path="res://Models/p/electronics_kitchen_3.jpg" id="10_vhj4m"]
 [ext_resource type="Texture2D" uid="uid://becukdwars5pm" path="res://Models/p/painting_0.jpg" id="11_b2ml5"]
 [ext_resource type="Texture2D" uid="uid://dawr3cnktdmpp" path="res://Models/p/painting_1.png" id="12_f7kqr"]
-[ext_resource type="Script" path="res://Script/interactables/openable_door.gd" id="12_uf87h"]
+[ext_resource type="Script" path="res://Scripts/interactables/openable_door.gd" id="12_uf87h"]
 [ext_resource type="Texture2D" uid="uid://c3ps5hyehuyve" path="res://Models/p/osama-bin-laden-photograph-2282391838.jpg" id="13_la3m0"]
 [ext_resource type="Texture2D" uid="uid://l25rpq27ebgq" path="res://Models/p/chairs_16.png" id="14_relv6"]
 [ext_resource type="Texture2D" uid="uid://kglwp1i6oyxl" path="res://Models/p/ps1_style_tv_0.png" id="15_mte75"]
@@ -25,12 +25,12 @@
 [ext_resource type="Texture2D" uid="uid://bvpqja3dr83gg" path="res://Models/p/door___old___metal_-_14mb_1.png" id="18_mhd47"]
 [ext_resource type="Texture2D" uid="uid://y080pxjw4kfk" path="res://Models/p/door___old___metal_-_14mb_2.png" id="19_qjr5s"]
 [ext_resource type="Texture2D" uid="uid://ci6su4pw1d5ko" path="res://Models/p/5677713404.png" id="20_bmour"]
-[ext_resource type="Script" path="res://Script/interactables/door_apartment.gd" id="22_ex2vv"]
+[ext_resource type="Script" path="res://Scripts/interactables/door_apartment.gd" id="22_ex2vv"]
 [ext_resource type="PackedScene" uid="uid://ifvbjpc2mfrp" path="res://Models/p/psx_building.glb" id="24_wh3jb"]
 [ext_resource type="PackedScene" uid="uid://dklmb38tqqeek" path="res://Models/p/psx_apartment.glb" id="25_bc2o4"]
 [ext_resource type="Texture2D" uid="uid://cnsmubi012rlt" path="res://Models/p/road_basic_maker_0.jpg" id="26_v86bt"]
 [ext_resource type="Texture2D" uid="uid://bvqpxgy5qgoft" path="res://Models/p/road_basic_maker_1.png" id="27_mmflr"]
-[ext_resource type="Shader" uid="uid://cscvr3086tglu" path="res://weapon_shader.tres" id="28_ea1m8"]
+[ext_resource type="Shader" uid="uid://cscvr3086tglu" path="res://Other/weapon_shader.tres" id="28_ea1m8"]
 [ext_resource type="Texture2D" uid="uid://crgebm5tk1hgc" path="res://Models/p/road_basic_maker_2.jpg" id="28_hip37"]
 [ext_resource type="Texture2D" uid="uid://vm088lgxjwvr" path="res://Models/p/road_basic_maker_3.png" id="29_qd1es"]
 [ext_resource type="Texture2D" uid="uid://cmpdbs3vthxxs" path="res://Models/p/buildings_0.png" id="30_b1mq6"]
@@ -85,12 +85,12 @@
 [ext_resource type="Texture2D" uid="uid://buy4ong8svj35" path="res://Models/p/buildings_53.png" id="79_jkglg"]
 [ext_resource type="Texture2D" uid="uid://6b1jqf7ss3rc" path="res://Models/p/buildings_54.png" id="80_5asxi"]
 [ext_resource type="Texture2D" uid="uid://c87njm0d2ee5l" path="res://Models/p/buildings_55.png" id="81_jr6o3"]
-[ext_resource type="Script" path="res://Script/Questions/apartment_question1.gd" id="84_i5nd3"]
-[ext_resource type="Texture2D" uid="uid://b3onqw84qur2i" path="res://Important pictures that are not textures for shit/how-can-i-achieve-ps1-style-textures-instead-of-just-v0-r96z3mbjr6sb1.webp" id="88_d5s02"]
+[ext_resource type="Script" path="res://Scripts/Questions/apartment_question1.gd" id="84_i5nd3"]
+[ext_resource type="Texture2D" uid="uid://b3onqw84qur2i" path="res://Textures/Grass.webp" id="88_d5s02"]
 [ext_resource type="PackedScene" uid="uid://ijfntxr822tg" path="res://Scenes/Player.tscn" id="89_e5ahh"]
 [ext_resource type="Texture2D" uid="uid://ckcw6ifgku3tw" path="res://Models/ps1__psx_style_-_desert_eagle_-_lowpoly_0.png" id="89_r7ryb"]
-[ext_resource type="Script" path="res://Script/interactables/gun_apartment.gd" id="90_xuisl"]
-[ext_resource type="Script" path="res://Script/interactables/die.gd" id="91_4mo4m"]
+[ext_resource type="Script" path="res://Scripts/interactables/gun_apartment.gd" id="90_xuisl"]
+[ext_resource type="Script" path="res://Scripts/interactables/die.gd" id="91_4mo4m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cb5tl"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -5273,6 +5273,7 @@ skeleton = NodePath("../..")
 [node name="questions" type="Node3D" parent="."]
 
 [node name="1" type="Panel" parent="questions"]
+process_mode = 2
 visible = false
 offset_left = 125.0
 offset_top = 108.0

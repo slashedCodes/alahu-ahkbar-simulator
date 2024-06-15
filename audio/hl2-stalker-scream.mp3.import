@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dyynx0ai1upko"
-path="res://.godot/imported/hl2-stalker-scream.mp3-3a27e95b698876b67376ca058ff29e89.mp3str"
+path="res://.godot/imported/hl2-stalker-scream.mp3-c41cec93095dafbf9c9a9b442a0879ec.mp3str"
 
 [deps]
 
-source_file="res://audio/hl2-stalker-scream.mp3"
-dest_files=["res://.godot/imported/hl2-stalker-scream.mp3-3a27e95b698876b67376ca058ff29e89.mp3str"]
+source_file="res://Audio/hl2-stalker-scream.mp3"
+dest_files=["res://.godot/imported/hl2-stalker-scream.mp3-c41cec93095dafbf9c9a9b442a0879ec.mp3str"]
 
 [params]
 

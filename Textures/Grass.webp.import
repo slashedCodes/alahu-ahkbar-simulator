@@ -3,16 +3,17 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3onqw84qur2i"
-path.s3tc="res://.godot/imported/how-can-i-achieve-ps1-style-textures-instead-of-just-v0-r96z3mbjr6sb1.webp-6554d3058ef2dd363b0bc5a38b7db536.s3tc.ctex"
+path.s3tc="res://.godot/imported/Grass.webp-f5c2a78ebeda1fa428b39892d251b0a9.s3tc.ctex"
+path.etc2="res://.godot/imported/Grass.webp-f5c2a78ebeda1fa428b39892d251b0a9.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
-source_file="res://Important pictures that are not textures for shit/how-can-i-achieve-ps1-style-textures-instead-of-just-v0-r96z3mbjr6sb1.webp"
-dest_files=["res://.godot/imported/how-can-i-achieve-ps1-style-textures-instead-of-just-v0-r96z3mbjr6sb1.webp-6554d3058ef2dd363b0bc5a38b7db536.s3tc.ctex"]
+source_file="res://Textures/Grass.webp"
+dest_files=["res://.godot/imported/Grass.webp-f5c2a78ebeda1fa428b39892d251b0a9.s3tc.ctex", "res://.godot/imported/Grass.webp-f5c2a78ebeda1fa428b39892d251b0a9.etc2.ctex"]
 
 [params]
 

@@ -1,9 +1,9 @@
 [gd_scene load_steps=58 format=3 uid="uid://dmqsm134ou56f"]
 
 [ext_resource type="Texture2D" uid="uid://ddhuf8ffc0bu8" path="res://Models/people/character__male_01_0.png" id="1_os4sb"]
-[ext_resource type="Script" path="res://Script/killable.gd" id="1_rohsv"]
+[ext_resource type="Script" path="res://Scripts/killable.gd" id="1_rohsv"]
 [ext_resource type="Texture2D" uid="uid://bmu8mcmexy3rg" path="res://Models/people/skeleton_character_psx_0.png" id="2_ccylw"]
-[ext_resource type="AudioStream" uid="uid://dyynx0ai1upko" path="res://audio/hl2-stalker-scream.mp3" id="4_br8te"]
+[ext_resource type="AudioStream" uid="uid://dyynx0ai1upko" path="res://Audio/hl2-stalker-scream.mp3" id="4_br8te"]
 
 [sub_resource type="Animation" id="Animation_vylpo"]
 resource_name = "mixamo_com"

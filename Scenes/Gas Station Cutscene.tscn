@@ -1,9 +1,9 @@
 [gd_scene load_steps=289 format=3 uid="uid://hmthtat3l4bj"]
 
 [ext_resource type="PackedScene" uid="uid://g4e2cyrofo76" path="res://Scenes/transition_screen.tscn" id="1_c2lff"]
-[ext_resource type="Script" path="res://Script/cutscene_1.gd" id="2_8ayc8"]
-[ext_resource type="Texture2D" uid="uid://b3onqw84qur2i" path="res://Important pictures that are not textures for shit/how-can-i-achieve-ps1-style-textures-instead-of-just-v0-r96z3mbjr6sb1.webp" id="3_4ua3u"]
-[ext_resource type="FontFile" uid="uid://blkhiygeixt5i" path="res://comic sans.ttf" id="3_scfax"]
+[ext_resource type="Script" path="res://Scripts/cutscene_1.gd" id="2_8ayc8"]
+[ext_resource type="Texture2D" uid="uid://b3onqw84qur2i" path="res://Textures/Grass.webp" id="3_4ua3u"]
+[ext_resource type="FontFile" uid="uid://blkhiygeixt5i" path="res://Other/comic sans.ttf" id="3_scfax"]
 [ext_resource type="PackedScene" uid="uid://ifvbjpc2mfrp" path="res://Models/p/psx_building.glb" id="4_lklba"]
 [ext_resource type="PackedScene" uid="uid://dklmb38tqqeek" path="res://Models/p/psx_apartment.glb" id="5_f75i2"]
 [ext_resource type="Texture2D" uid="uid://cnsmubi012rlt" path="res://Models/p/road_basic_maker_0.jpg" id="6_bay8v"]
@@ -58,7 +58,7 @@
 [ext_resource type="Texture2D" uid="uid://c87njm0d2ee5l" path="res://Models/p/buildings_55.png" id="55_60irq"]
 [ext_resource type="Texture2D" uid="uid://c1hiish2pyev1" path="res://Models/retro_car_with_interior_-_psx_asset_free_0.png" id="56_vd1ct"]
 [ext_resource type="Texture2D" uid="uid://chuxuyn4ueas7" path="res://Models/retro_car_with_interior_-_psx_asset_free_1.png" id="57_kvpar"]
-[ext_resource type="AudioStream" uid="uid://deckpfpeqta4m" path="res://audio/cp violation.mp3" id="58_3esyn"]
+[ext_resource type="AudioStream" uid="uid://deckpfpeqta4m" path="res://Audio/cp violation.mp3" id="58_3esyn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2oywq"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -86,6 +86,7 @@ outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_qie3t"]
 font = ExtResource("3_scfax")
+font_color = Color(1, 1, 1, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_brp6v"]
 albedo_texture = ExtResource("3_4ua3u")
@@ -3088,6 +3089,7 @@ shadow_mesh = SubResource("ArrayMesh_aab2b")
 
 [sub_resource type="Animation" id="Animation_er60j"]
 length = 0.001
+step = 1.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -3208,10 +3210,23 @@ tracks/9/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 1)]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Camera3D/Label3:label_settings:font_color")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_12uxo"]
 resource_name = "cutscene"
 length = 20.0
+step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -3345,6 +3360,18 @@ tracks/10/keys = {
 "args": [],
 "method": &"switch"
 }]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Camera3D/Label3:label_settings:font_color")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vtrut"]

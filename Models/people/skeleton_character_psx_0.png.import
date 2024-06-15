@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bmu8mcmexy3rg"
 path.s3tc="res://.godot/imported/skeleton_character_psx_0.png-a8ac6568697e017b856c93db335e435e.s3tc.ctex"
+path.etc2="res://.godot/imported/skeleton_character_psx_0.png-a8ac6568697e017b856c93db335e435e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Models/people/skeleton_character_psx_0.png"
-dest_files=["res://.godot/imported/skeleton_character_psx_0.png-a8ac6568697e017b856c93db335e435e.s3tc.ctex"]
+dest_files=["res://.godot/imported/skeleton_character_psx_0.png-a8ac6568697e017b856c93db335e435e.s3tc.ctex", "res://.godot/imported/skeleton_character_psx_0.png-a8ac6568697e017b856c93db335e435e.etc2.ctex"]
 
 [params]
 

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://vm088lgxjwvr"
 path.s3tc="res://.godot/imported/road_basic_maker_3.png-cd9a099502fa62c97c0f8217ae150c7a.s3tc.ctex"
+path.etc2="res://.godot/imported/road_basic_maker_3.png-cd9a099502fa62c97c0f8217ae150c7a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Models/p/road_basic_maker_3.png"
-dest_files=["res://.godot/imported/road_basic_maker_3.png-cd9a099502fa62c97c0f8217ae150c7a.s3tc.ctex"]
+dest_files=["res://.godot/imported/road_basic_maker_3.png-cd9a099502fa62c97c0f8217ae150c7a.s3tc.ctex", "res://.godot/imported/road_basic_maker_3.png-cd9a099502fa62c97c0f8217ae150c7a.etc2.ctex"]
 
 [params]
 

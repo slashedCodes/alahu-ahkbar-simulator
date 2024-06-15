@@ -22,3 +22,11 @@ func pause():
 	
 func _on_exit_pressed():
 	get_tree().quit()
+
+func _on_exit_to_menu_pressed():
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+
+func _on_reset_pressed():
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	visible = false
+	get_tree().reload_current_scene()

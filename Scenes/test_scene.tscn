@@ -1,12 +1,12 @@
 [gd_scene load_steps=23 format=3 uid="uid://cx4ck6j7nqbqt"]
 
-[ext_resource type="Texture2D" uid="uid://b3onqw84qur2i" path="res://Important pictures that are not textures for shit/how-can-i-achieve-ps1-style-textures-instead-of-just-v0-r96z3mbjr6sb1.webp" id="1_jxcpg"]
+[ext_resource type="Texture2D" uid="uid://b3onqw84qur2i" path="res://Textures/Grass.webp" id="1_jxcpg"]
 [ext_resource type="PackedScene" uid="uid://g4e2cyrofo76" path="res://Scenes/transition_screen.tscn" id="2_3v3tt"]
 [ext_resource type="PackedScene" uid="uid://ijfntxr822tg" path="res://Scenes/Player.tscn" id="3_aqw6d"]
 [ext_resource type="PackedScene" uid="uid://cfed8felowioj" path="res://Scenes/Weapons/gun_pickup.tscn" id="4_j4s7g"]
 [ext_resource type="PackedScene" uid="uid://dmqsm134ou56f" path="res://Scenes/guy.tscn" id="5_3jd3u"]
 [ext_resource type="Texture2D" uid="uid://diayw4gjwma5u" path="res://Models/p/gas_station_props_21.jpg" id="6_c34yc"]
-[ext_resource type="Shader" uid="uid://cscvr3086tglu" path="res://weapon_shader.tres" id="7_ohe0k"]
+[ext_resource type="Shader" uid="uid://cscvr3086tglu" path="res://Other/weapon_shader.tres" id="7_ohe0k"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_brp6v"]
 albedo_texture = ExtResource("1_jxcpg")
