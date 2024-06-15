@@ -1,5 +1,6 @@
-extends StaticBody3D
+extends Area3D
 
-func _on_area_3d_body_entered(body):
+func _on_body_entered(body):
+	print(body)
 	if body.has_method("die"):
 		body.die()

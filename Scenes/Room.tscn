@@ -5311,19 +5311,13 @@ stream = ExtResource("4_g0la7")
 [node name="Player" parent="." instance=ExtResource("89_e5ahh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.99288, 1.27207, 1.62422)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="Area3D" type="Area3D" parent="."]
 script = ExtResource("91_4mo4m")
 
-[node name="Area3D" type="Area3D" parent="StaticBody3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.69306, -5.48458, -6.41157)
-shape = SubResource("BoxShape3D_behmt")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.69306, -5.48458, -6.41157)
 shape = SubResource("BoxShape3D_behmt")
 
 [connection signal="pressed" from="questions/1/kill_yourself" to="questions/1" method="_on_kill_yourself_pressed"]
 [connection signal="pressed" from="questions/1/rob_gas_station" to="questions/1" method="_on_rob_gas_station_pressed"]
-[connection signal="body_entered" from="StaticBody3D/Area3D" to="StaticBody3D" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

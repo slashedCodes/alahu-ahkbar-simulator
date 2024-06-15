@@ -30,6 +30,7 @@ func fire():
 
 func die():
 	$"Neck/Camera3D/Death Screen".visible = true
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	get_tree().paused = true
 
 func _unhandled_input(event):
