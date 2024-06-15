@@ -10,3 +10,5 @@ func die(direction):
 	chest.apply_central_impulse(direction)
 	stream_player.playing = false
 	stream_player.playing = true
+	$CollisionShape3D.queue_free()
+	remove_from_group("killable")

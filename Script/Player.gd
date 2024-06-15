@@ -12,11 +12,14 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var raycast = $Neck/Camera3D/RayCast3D
 @onready var hand = $Neck/Camera3D/Hand
 @onready var animation_player = $AnimationPlayer
+@onready var gun_audio_player = $"Gun Shoot"
 
 func fire():
-	if hand.get_child(0) and hand.get_child(0).is_in_group("gun"):
+	if hand.get_child_count() > 0 and hand.get_child(0).is_in_group("gun"):
 		if Input.is_action_pressed("fire"):
 			if not animation_player.is_playing():
+				gun_audio_player.playing = false
+				gun_audio_player.playing = true
 				if raycast.is_colliding():
 					var target = raycast.get_collider()
 					if target.is_in_group("killable"):
@@ -24,6 +27,10 @@ func fire():
 			animation_player.play("hand_fire")
 		else:
 			animation_player.stop()
+
+func die():
+	$"Neck/Camera3D/Death Screen".visible = true
+	get_tree().paused = true
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton:

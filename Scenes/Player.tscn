@@ -4,18 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://daeb5rdsh3vv1" path="res://Important pictures that are not textures for shit/Hit-Marker-PNG-Pic.png" id="2_kfhr7"]
 [ext_resource type="Script" path="res://Script/ui_handler.gd" id="2_y30i7"]
 [ext_resource type="PackedScene" uid="uid://di1fvicjwhp2a" path="res://Scenes/pause_screen.tscn" id="4_iu3md"]
+[ext_resource type="PackedScene" uid="uid://cjrl3cgbr8py5" path="res://Scenes/death_screen.tscn" id="5_715m5"]
 [ext_resource type="Script" path="res://Script/Inventory.gd" id="5_ydcyx"]
+[ext_resource type="AudioStream" uid="uid://cubpi6ub8e5ci" path="res://audio/hitHurt.wav" id="6_yifrq"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_bn3cl"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mf8yx"]
 radius = 0.224981
-
-[sub_resource type="World3D" id="World3D_17l0r"]
-
-[sub_resource type="Environment" id="Environment_kt006"]
-ambient_light_source = 2
-ambient_light_color = Color(1, 1, 1, 1)
 
 [sub_resource type="Animation" id="Animation_xl8ia"]
 length = 0.001
@@ -70,7 +66,6 @@ shape = SubResource("CapsuleShape3D_mf8yx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.549726, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Neck"]
-cull_mask = 1048573
 fov = 90.0
 script = ExtResource("2_y30i7")
 
@@ -104,6 +99,9 @@ vertical = true
 
 [node name="Pause Screen" parent="Neck/Camera3D" instance=ExtResource("4_iu3md")]
 
+[node name="Death Screen" parent="Neck/Camera3D" instance=ExtResource("5_715m5")]
+visible = false
+
 [node name="interaction" type="Label" parent="Neck/Camera3D"]
 offset_left = 130.0
 offset_top = 204.0
@@ -129,27 +127,11 @@ target_position = Vector3(0, 0, -200)
 [node name="Hand" type="Node3D" parent="Neck/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.085, -1.08, -1.736)
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Neck/Camera3D"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="SubViewport" type="SubViewport" parent="Neck/Camera3D/SubViewportContainer"]
-own_world_3d = true
-world_3d = SubResource("World3D_17l0r")
-transparent_bg = true
-handle_input_locally = false
-size = Vector2i(450, 400)
-render_target_update_mode = 4
-
-[node name="Gun Camera" type="Camera3D" parent="Neck/Camera3D/SubViewportContainer/SubViewport"]
-cull_mask = 1047554
-environment = SubResource("Environment_kt006")
-fov = 90.0
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_77tm5")
 }
+
+[node name="Gun Shoot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_yifrq")
+volume_db = -20.47

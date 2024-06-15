@@ -8,7 +8,25 @@ func add_item(item):
 	self.add_child(instance)
 	instance.visible = true
 
+func remove_id(id):
+	for item in get_children():
+		if item.has_meta("id") and item.get_meta("id") == id:
+			item.queue_free()
+			
+			if hand.get_child(0) and hand.get_child(0).has_meta("id") and hand.get_child(0).get_meta("id") == id:
+				hand.get_child(0).queue_free()
+			
+			return
+
+func remove_index(index):
+	get_child(index).queue_free()
+
+func remove_item(item):
+	item.queue_free()
+
 func select_item(index):
+	# fix switching from one item to another
+	
 	if get_child(index):
 		if hand_index == index:
 			for child in hand.get_children():
@@ -26,6 +44,13 @@ func select_item(index):
 		
 		hand.add_child(mesh.duplicate())
 		mesh = hand.get_child(0) # update mesh var to the model in the hand
+		
+		if item.has_meta("id"):
+			mesh.set_meta("id", item.get_meta("id"))
+		
+		if item.has_meta("scale"):
+			mesh.scale = item.get_meta("scale")
+		
 		if item.has_meta("rotation"):
 			mesh.rotation_degrees = item.get_meta("rotation")
 		else:
