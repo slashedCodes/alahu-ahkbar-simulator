@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ijfntxr822tg"]
+[gd_scene load_steps=25 format=3 uid="uid://ijfntxr822tg"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_0ltis"]
 [ext_resource type="Texture2D" uid="uid://daeb5rdsh3vv1" path="res://Textures/MLG Hitmarker.png" id="2_kfhr7"]
@@ -7,11 +7,25 @@
 [ext_resource type="PackedScene" uid="uid://cjrl3cgbr8py5" path="res://Scenes/death_screen.tscn" id="5_715m5"]
 [ext_resource type="Script" path="res://Scripts/Inventory.gd" id="5_ydcyx"]
 [ext_resource type="AudioStream" uid="uid://cubpi6ub8e5ci" path="res://Audio/hitHurt.wav" id="6_yifrq"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="7_lk51w"]
+[ext_resource type="Texture2D" uid="uid://c8nnolsvu03xd" path="res://Textures/jump.png" id="8_lrmv2"]
+[ext_resource type="Texture2D" uid="uid://c6dr4q5nynwsw" path="res://Textures/jump_pressed.png" id="9_mbp8o"]
+[ext_resource type="Texture2D" uid="uid://cv0nrktsk3kg5" path="res://Textures/interact.png" id="10_fftaw"]
+[ext_resource type="Texture2D" uid="uid://buuturedse4an" path="res://Textures/interact_pressed.png" id="11_eww3l"]
+[ext_resource type="Texture2D" uid="uid://0vptu14vw3v7" path="res://Textures/shoot.png" id="12_22f54"]
+[ext_resource type="Texture2D" uid="uid://e4rky774uvx6" path="res://Textures/shoot_pressed.png" id="13_av688"]
+[ext_resource type="Texture2D" uid="uid://dxbm3w7olh4b1" path="res://Textures/hotbar_left.png" id="14_ffblr"]
+[ext_resource type="Texture2D" uid="uid://608gixrk2dff" path="res://Textures/hotbar_left_pressed.png" id="15_7m3kj"]
+[ext_resource type="Texture2D" uid="uid://bjlo76dp21gg" path="res://Textures/hotbar_right.png" id="16_f88an"]
+[ext_resource type="Texture2D" uid="uid://64o3i145scr5" path="res://Textures/hotbar_right_pressed.png" id="17_fija3"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_bn3cl"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mf8yx"]
 radius = 0.224981
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j4t3y"]
+radius = 256.0
 
 [sub_resource type="Animation" id="Animation_xl8ia"]
 length = 0.001
@@ -80,6 +94,7 @@ offset_left = 260.0
 offset_top = 2.0
 offset_right = 451.0
 offset_bottom = 108.0
+mouse_filter = 2
 
 [node name="text" type="Label" parent="Neck/Camera3D/objectives"]
 layout_mode = 0
@@ -112,10 +127,11 @@ autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="inventory" type="HBoxContainer" parent="Neck/Camera3D"]
-offset_left = 7.0
-offset_top = 352.0
-offset_right = 223.0
-offset_bottom = 392.0
+offset_left = 230.0
+offset_top = 354.0
+offset_right = 446.0
+offset_bottom = 394.0
+alignment = 2
 script = ExtResource("5_ydcyx")
 
 [node name="AudioListener3D" type="AudioListener3D" parent="Neck/Camera3D"]
@@ -126,6 +142,57 @@ target_position = Vector3(0, 0, -200)
 
 [node name="Hand" type="Node3D" parent="Neck/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.085, -1.08, -1.736)
+
+[node name="mobile controls" type="CanvasLayer" parent="Neck/Camera3D"]
+visible = false
+
+[node name="Move" parent="Neck/Camera3D/mobile controls" instance=ExtResource("7_lk51w")]
+anchors_preset = -1
+offset_top = -129.0
+offset_right = 297.0
+offset_bottom = 153.0
+scale = Vector2(0.45, 0.45)
+metadata/_edit_use_anchors_ = true
+
+[node name="jump" type="TouchScreenButton" parent="Neck/Camera3D/mobile controls"]
+position = Vector2(370, 284)
+scale = Vector2(0.0976562, 0.0976562)
+texture_normal = ExtResource("8_lrmv2")
+texture_pressed = ExtResource("9_mbp8o")
+shape = SubResource("CircleShape2D_j4t3y")
+action = "jump"
+
+[node name="interact" type="TouchScreenButton" parent="Neck/Camera3D/mobile controls"]
+position = Vector2(309, 287)
+scale = Vector2(0.0976562, 0.0976562)
+texture_normal = ExtResource("10_fftaw")
+texture_pressed = ExtResource("11_eww3l")
+shape = SubResource("CircleShape2D_j4t3y")
+action = "interact"
+
+[node name="shoot" type="TouchScreenButton" parent="Neck/Camera3D/mobile controls"]
+position = Vector2(244, 221)
+scale = Vector2(0.0976562, 0.0976562)
+texture_normal = ExtResource("12_22f54")
+texture_pressed = ExtResource("13_av688")
+shape = SubResource("CircleShape2D_j4t3y")
+action = "fire"
+
+[node name="hotbar left" type="TouchScreenButton" parent="Neck/Camera3D/mobile controls"]
+position = Vector2(307, 223)
+scale = Vector2(0.0976562, 0.0976562)
+texture_normal = ExtResource("14_ffblr")
+texture_pressed = ExtResource("15_7m3kj")
+shape = SubResource("CircleShape2D_j4t3y")
+action = "hotbar_left"
+
+[node name="hotbar right" type="TouchScreenButton" parent="Neck/Camera3D/mobile controls"]
+position = Vector2(371, 221)
+scale = Vector2(0.0976562, 0.0976562)
+texture_normal = ExtResource("16_f88an")
+texture_pressed = ExtResource("17_fija3")
+shape = SubResource("CircleShape2D_j4t3y")
+action = "hotbar_right"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -19,7 +19,6 @@ func get_last_scene():
 		save_scene("res://Scenes/Room.tscn")
 		return "res://Scenes/Room.tscn" # New game scene
 
-
 func refresh_vars():
 	root = get_tree().current_scene
 	if root and root.has_node("Player"):
@@ -54,3 +53,9 @@ func goto_scene(path):
 
 func _deferred_goto_scene(path):
 	get_tree().change_scene_to_file(path)
+
+func is_running_on_mobile():
+	if OS.get_name() == "Android" or OS.get_name() == "iOS":
+		return true
+	else:
+		return false

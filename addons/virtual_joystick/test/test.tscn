@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq2sqb1u1l5ve"]
+
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_4k4lh"]
+
+[node name="Test" type="Node2D"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Virtual joystick left" parent="UI" instance=ExtResource("1_4k4lh")]
+offset_top = -126.0
+offset_right = 297.0
+offset_bottom = 156.0
+scale = Vector2(0.45, 0.45)
+metadata/_edit_use_anchors_ = true
+
+[node name="Virtual joystick right" parent="UI" instance=ExtResource("1_4k4lh")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -137.0
+offset_top = -138.0
+offset_right = 163.0
+offset_bottom = 162.0
+grow_horizontal = 0
+scale = Vector2(0.45, 0.45)
+joystick_mode = 1
+use_input_actions = false
+metadata/_edit_use_anchors_ = true

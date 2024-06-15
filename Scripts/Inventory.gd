@@ -1,10 +1,19 @@
 extends Control
 
 @onready var hand = get_parent().get_node("Hand")
-var hand_index = null
+var hand_index = 0
+var hand_selected = false
+var item_count = 0
 
 func add_item(item):
+	item_count = item_count + 1
 	var instance = item.duplicate()
+	var style = StyleBoxFlat.new()
+	
+	# set style
+	style.bg_color = Color("#313131")
+	instance.add_theme_stylebox_override('panel', style)
+	
 	self.add_child(instance)
 	instance.visible = true
 
@@ -14,35 +23,48 @@ func remove_id(id):
 			item.queue_free()
 			
 			if hand.get_child(0) and hand.get_child(0).has_meta("id") and hand.get_child(0).get_meta("id") == id:
+				item_count = item_count - 1
 				hand.get_child(0).queue_free()
 			
 			return
 
 func remove_index(index):
 	get_child(index).queue_free()
+	item_count = item_count - 1
 
 func remove_item(item):
 	item.queue_free()
+	item_count = item_count - 1
 
 func select_item(index):
-	# fix switching from one item to another
-	
 	if get_child(index):
-		if hand_index == index:
+		if hand_selected and hand_index == index:
 			for child in hand.get_children():
 				child.queue_free()
 			
-			hand_index = null
+			for item_panel in get_children():
+				unhighlight_panel(item_panel)
+			
+			hand_selected = false
 			return
 		
-		hand_index = index
-		var item = get_child(index)
-		var mesh = item.get_child(0).get_child(0).get_child(0)
-
+		hand_index = index # set the selected index to the current one
+		var item = get_child(index) # get the index
+		
+		# unhighlight everything
+		for item_panel in get_children():
+			unhighlight_panel(item_panel)
+		
+		# highlight the current item
+		highlight_panel(item)
+		
+		var mesh = item.get_child(0).get_child(0).get_child(0) # get the mesh
+		
+		# Clear everything in the hand
 		for child in hand.get_children():
 			child.queue_free()
 		
-		mesh = mesh.duplicate()
+		mesh = mesh.duplicate() # duplicate the mesh
 		
 		if item.has_meta("id"):
 			mesh.set_meta("id", item.get_meta("id"))
@@ -56,12 +78,31 @@ func select_item(index):
 			mesh.rotation_degrees = Vector3.ZERO
 		
 		hand.add_child(mesh)
+		hand_selected = true
 	else:
-		hand_index = null
+		hand_selected = false
+		
+		for item_panel in get_children():
+			unhighlight_panel(item_panel)
+		
 		for child in hand.get_children():
 			child.queue_free()
+		return
+
+func highlight_panel(panel):
+	var style = panel.get_theme_stylebox('panel')
+	style.bg_color = Color("#525252")
+
+func unhighlight_panel(panel):
+	var style = panel.get_theme_stylebox('panel')
+	style.bg_color = Color("#313131")
 
 func _input(event):
+	if event.is_action_pressed("hotbar_left"):
+		select_item((hand_index - 1) % item_count)
+	elif event.is_action_pressed("hotbar_right"):
+		select_item((hand_index + 1) % item_count)
+	
 	if event.is_action_pressed("slot1"):
 		select_item(0)
 	elif event.is_action_pressed("slot2"):

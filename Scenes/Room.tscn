@@ -1,4 +1,4 @@
-[gd_scene load_steps=424 format=3 uid="uid://derh614ppxnaf"]
+[gd_scene load_steps=423 format=3 uid="uid://derh614ppxnaf"]
 
 [ext_resource type="PackedScene" uid="uid://g4e2cyrofo76" path="res://Scenes/transition_screen.tscn" id="1_xcnbs"]
 [ext_resource type="PackedScene" uid="uid://d2bu7ovj0ct1o" path="res://Models/p/low_poly_prisoner_bed_psx.glb" id="3_u3lln"]
@@ -1203,13 +1203,6 @@ shadow_mesh = SubResource("ArrayMesh_8xc2i")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5651w"]
 size = Vector3(0.246582, 0.0574341, 0.450134)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2t617"]
-bg_color = Color(0.190762, 0.190762, 0.190762, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
 
 [sub_resource type="Environment" id="Environment_rdlf4"]
 background_energy_multiplier = 0.0
@@ -4655,7 +4648,6 @@ visible = false
 custom_minimum_size = Vector2(40, 40)
 offset_right = 40.0
 offset_bottom = 40.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_2t617")
 metadata/name = "Pistol"
 metadata/rotation = Vector3(0, 180, 0)
 
@@ -5273,7 +5265,7 @@ skeleton = NodePath("../..")
 [node name="questions" type="Node3D" parent="."]
 
 [node name="1" type="Panel" parent="questions"]
-process_mode = 2
+process_mode = 3
 visible = false
 offset_left = 125.0
 offset_top = 108.0
