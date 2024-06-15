@@ -1,6 +1,6 @@
 extends StaticBody3D
 
-@onready var cashier = $"../guy"
+@onready var cashier = $"../../guy"
 
 func interact(player_cam):
 	var hand = player_cam.get_node("Hand")
