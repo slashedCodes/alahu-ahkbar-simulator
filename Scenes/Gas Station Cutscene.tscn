@@ -1,11 +1,14 @@
-[gd_scene load_steps=289 format=3 uid="uid://hmthtat3l4bj"]
+[gd_scene load_steps=292 format=3 uid="uid://hmthtat3l4bj"]
 
 [ext_resource type="PackedScene" uid="uid://g4e2cyrofo76" path="res://Scenes/transition_screen.tscn" id="1_c2lff"]
 [ext_resource type="Script" path="res://Scripts/cutscene_1.gd" id="2_8ayc8"]
 [ext_resource type="Texture2D" uid="uid://b3onqw84qur2i" path="res://Textures/Grass.webp" id="3_4ua3u"]
 [ext_resource type="FontFile" uid="uid://blkhiygeixt5i" path="res://Other/comic sans.ttf" id="3_scfax"]
 [ext_resource type="PackedScene" uid="uid://ifvbjpc2mfrp" path="res://Models/p/psx_building.glb" id="4_lklba"]
+[ext_resource type="PackedScene" uid="uid://di1fvicjwhp2a" path="res://Scenes/pause_screen.tscn" id="4_qoji4"]
 [ext_resource type="PackedScene" uid="uid://dklmb38tqqeek" path="res://Models/p/psx_apartment.glb" id="5_f75i2"]
+[ext_resource type="Texture2D" uid="uid://bc2v310re5krj" path="res://Textures/pause.png" id="5_jxrqu"]
+[ext_resource type="Texture2D" uid="uid://cduaigpmqp68u" path="res://Textures/pause_pressed.png" id="6_3nrun"]
 [ext_resource type="Texture2D" uid="uid://cnsmubi012rlt" path="res://Models/p/road_basic_maker_0.jpg" id="6_bay8v"]
 [ext_resource type="Texture2D" uid="uid://bvqpxgy5qgoft" path="res://Models/p/road_basic_maker_1.png" id="7_6bmst"]
 [ext_resource type="Texture2D" uid="uid://crgebm5tk1hgc" path="res://Models/p/road_basic_maker_2.jpg" id="8_f2f80"]
@@ -71,22 +74,6 @@ sky_material = SubResource("ProceduralSkyMaterial_2oywq")
 background_mode = 2
 sky = SubResource("Sky_oaupb")
 tonemap_mode = 2
-
-[sub_resource type="LabelSettings" id="LabelSettings_1ofax"]
-font = ExtResource("3_scfax")
-font_size = 30
-outline_size = 2
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_ituts"]
-font = ExtResource("3_scfax")
-font_size = 19
-outline_size = 2
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_qie3t"]
-font = ExtResource("3_scfax")
-font_color = Color(1, 1, 1, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_brp6v"]
 albedo_texture = ExtResource("3_4ua3u")
@@ -3089,7 +3076,7 @@ shadow_mesh = SubResource("ArrayMesh_aab2b")
 
 [sub_resource type="Animation" id="Animation_er60j"]
 length = 0.001
-step = 1.0
+step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -3153,7 +3140,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Camera3D:position")
+tracks/5/path = NodePath("Player/Neck/Camera3D:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -3165,7 +3152,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Camera3D/Label:label_settings:font_color")
+tracks/6/path = NodePath("Player/Neck/Camera3D/Label:label_settings:font_color")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -3177,7 +3164,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Camera3D/Label2:label_settings:font_color")
+tracks/7/path = NodePath("Player/Neck/Camera3D/Label2:label_settings:font_color")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -3189,7 +3176,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Camera3D/Label:label_settings:outline_color")
+tracks/8/path = NodePath("Player/Neck/Camera3D/Label:label_settings:outline_color")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -3201,7 +3188,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Camera3D/Label2:label_settings:outline_color")
+tracks/9/path = NodePath("Player/Neck/Camera3D/Label2:label_settings:outline_color")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -3213,14 +3200,14 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Camera3D/Label3:label_settings:font_color")
+tracks/10/path = NodePath("Player/Neck/Camera3D/skip:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_12uxo"]
@@ -3290,7 +3277,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Camera3D:position")
+tracks/5/path = NodePath("Player/Neck/Camera3D:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -3302,7 +3289,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Camera3D/Label:label_settings:font_color")
+tracks/6/path = NodePath("Player/Neck/Camera3D/Label:label_settings:font_color")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -3314,7 +3301,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Camera3D/Label2:label_settings:font_color")
+tracks/7/path = NodePath("Player/Neck/Camera3D/Label2:label_settings:font_color")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -3326,7 +3313,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Camera3D/Label:label_settings:outline_color")
+tracks/8/path = NodePath("Player/Neck/Camera3D/Label:label_settings:outline_color")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -3338,7 +3325,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Camera3D/Label2:label_settings:outline_color")
+tracks/9/path = NodePath("Player/Neck/Camera3D/Label2:label_settings:outline_color")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -3350,7 +3337,7 @@ tracks/9/keys = {
 tracks/10/type = "method"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Camera3D")
+tracks/10/path = NodePath("Player/Neck/Camera3D")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -3364,14 +3351,14 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Camera3D/Label3:label_settings:font_color")
+tracks/11/path = NodePath("Player/Neck/Camera3D/skip:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0, 0.1),
+"times": PackedFloat32Array(0, 0.01),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vtrut"]
@@ -3379,6 +3366,21 @@ _data = {
 "RESET": SubResource("Animation_er60j"),
 "cutscene": SubResource("Animation_12uxo")
 }
+
+[sub_resource type="LabelSettings" id="LabelSettings_1ofax"]
+font = ExtResource("3_scfax")
+font_size = 30
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ituts"]
+font = ExtResource("3_scfax")
+font_size = 19
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xaa1k"]
+radius = 256.0
 
 [node name="Gas Station Cutscene" type="Node3D"]
 
@@ -3392,42 +3394,10 @@ environment = SubResource("Environment_qrj8n")
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.664382, -0.208361, 0.717762, -0.0637252, 0.972649, 0.223367, -0.744671, 0.102662, -0.659489, 0, 0, 0)
-script = ExtResource("2_8ayc8")
-
-[node name="Label" type="Label" parent="Camera3D"]
-offset_left = 102.0
-offset_top = 53.0
-offset_right = 439.0
-offset_bottom = 129.0
-text = "alahu ahkbar simulator"
-label_settings = SubResource("LabelSettings_1ofax")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="Camera3D"]
-offset_left = -27.0
-offset_top = 84.0
-offset_right = 310.0
-offset_bottom = 160.0
-text = "2001 version"
-label_settings = SubResource("LabelSettings_ituts")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label3" type="Label" parent="Camera3D"]
-offset_left = 306.0
-offset_top = 373.0
-offset_right = 452.0
-offset_bottom = 396.0
-text = "press space to skip"
-label_settings = SubResource("LabelSettings_qie3t")
-
 [node name="grass" type="MeshInstance3D" parent="."]
 transform = Transform3D(750.962, 0, 0, 0, 1, 0, 0, 0, 766.103, 0, -5.84125, 0)
 mesh = SubResource("BoxMesh_sot41")
-skeleton = NodePath("../Camera3D")
+skeleton = NodePath("../Player/Neck/Camera3D")
 
 [node name="environments" type="Node3D" parent="."]
 
@@ -6638,3 +6608,55 @@ autoplay = "cutscene"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("58_3esyn")
+
+[node name="Player" type="Node3D" parent="."]
+
+[node name="Neck" type="Node3D" parent="Player"]
+
+[node name="Camera3D" type="Camera3D" parent="Player/Neck"]
+transform = Transform3D(-0.664382, -0.208361, 0.717762, -0.0637252, 0.972649, 0.223367, -0.744671, 0.102662, -0.659489, 0, 0, 0)
+current = true
+script = ExtResource("2_8ayc8")
+
+[node name="Label" type="Label" parent="Player/Neck/Camera3D"]
+offset_left = 102.0
+offset_top = 53.0
+offset_right = 439.0
+offset_bottom = 129.0
+text = "alahu ahkbar simulator"
+label_settings = SubResource("LabelSettings_1ofax")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Player/Neck/Camera3D"]
+offset_left = -27.0
+offset_top = 84.0
+offset_right = 310.0
+offset_bottom = 160.0
+text = "2001 version"
+label_settings = SubResource("LabelSettings_ituts")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pause Screen" parent="Player/Neck/Camera3D" instance=ExtResource("4_qoji4")]
+
+[node name="mobile controls" type="CanvasLayer" parent="Player/Neck/Camera3D"]
+visible = false
+
+[node name="pause" type="TouchScreenButton" parent="Player/Neck/Camera3D/mobile controls"]
+position = Vector2(429, 5.96046e-08)
+scale = Vector2(0.0410156, 0.0410156)
+texture_normal = ExtResource("5_jxrqu")
+texture_pressed = ExtResource("6_3nrun")
+shape = SubResource("CircleShape2D_xaa1k")
+action = "pause"
+
+[node name="skip" type="Button" parent="Player/Neck/Camera3D"]
+offset_left = 407.0
+offset_top = 371.0
+offset_right = 450.0
+offset_bottom = 399.0
+theme_override_fonts/font = ExtResource("3_scfax")
+text = "skip"
+
+[connection signal="pressed" from="Player/Neck/Camera3D/skip" to="Player/Neck/Camera3D" method="_on_skip_pressed"]

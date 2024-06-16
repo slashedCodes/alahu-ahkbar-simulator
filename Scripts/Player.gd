@@ -19,7 +19,9 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func fire():
 	if hand.get_child_count() > 0 and hand.get_child(0).is_in_group("gun"):
-		if Input.is_action_pressed("fire"):
+		var action = "fire"
+		if GameManager.is_running_on_mobile(): action = "mobile_fire"
+		if Input.is_action_pressed(action):
 			if not animation_player.is_playing():
 				gun_audio_player.playing = false
 				gun_audio_player.playing = true
@@ -39,7 +41,7 @@ func die():
 func _unhandled_input(event):
 	if event is InputEventMouseButton and not GameManager.is_running_on_mobile():
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	elif event.is_action_pressed("ui_cancel"):
+	elif event.is_action_pressed("pause"):
 		pause_screen.pause()
 	
 	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED and not GameManager.is_running_on_mobile():

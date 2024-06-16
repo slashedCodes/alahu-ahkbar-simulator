@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ijfntxr822tg"]
+[gd_scene load_steps=27 format=3 uid="uid://ijfntxr822tg"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_0ltis"]
 [ext_resource type="Texture2D" uid="uid://daeb5rdsh3vv1" path="res://Textures/MLG Hitmarker.png" id="2_kfhr7"]
@@ -18,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://608gixrk2dff" path="res://Textures/hotbar_left_pressed.png" id="15_7m3kj"]
 [ext_resource type="Texture2D" uid="uid://bjlo76dp21gg" path="res://Textures/hotbar_right.png" id="16_f88an"]
 [ext_resource type="Texture2D" uid="uid://64o3i145scr5" path="res://Textures/hotbar_right_pressed.png" id="17_fija3"]
+[ext_resource type="Texture2D" uid="uid://bc2v310re5krj" path="res://Textures/pause.png" id="18_g3dnv"]
+[ext_resource type="Texture2D" uid="uid://cduaigpmqp68u" path="res://Textures/pause_pressed.png" id="19_eud2g"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_bn3cl"]
 
@@ -144,7 +146,6 @@ target_position = Vector3(0, 0, -200)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.085, -1.08, -1.736)
 
 [node name="mobile controls" type="CanvasLayer" parent="Neck/Camera3D"]
-visible = false
 
 [node name="Move" parent="Neck/Camera3D/mobile controls" instance=ExtResource("7_lk51w")]
 anchors_preset = -1
@@ -176,7 +177,7 @@ scale = Vector2(0.0976562, 0.0976562)
 texture_normal = ExtResource("12_22f54")
 texture_pressed = ExtResource("13_av688")
 shape = SubResource("CircleShape2D_j4t3y")
-action = "fire"
+action = "mobile_fire"
 
 [node name="hotbar left" type="TouchScreenButton" parent="Neck/Camera3D/mobile controls"]
 position = Vector2(307, 223)
@@ -193,6 +194,14 @@ texture_normal = ExtResource("16_f88an")
 texture_pressed = ExtResource("17_fija3")
 shape = SubResource("CircleShape2D_j4t3y")
 action = "hotbar_right"
+
+[node name="pause" type="TouchScreenButton" parent="Neck/Camera3D/mobile controls"]
+position = Vector2(429, 5.96046e-08)
+scale = Vector2(0.0410156, 0.0410156)
+texture_normal = ExtResource("18_g3dnv")
+texture_pressed = ExtResource("19_eud2g")
+shape = SubResource("CircleShape2D_j4t3y")
+action = "pause"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
