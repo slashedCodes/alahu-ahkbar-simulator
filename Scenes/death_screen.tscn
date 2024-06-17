@@ -26,6 +26,16 @@ theme_override_fonts/font = ExtResource("2_uq003")
 theme_override_font_sizes/font_size = 23
 text = "respawn"
 
+[node name="respawn2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 248.0
+offset_right = 303.0
+offset_bottom = 296.0
+theme_override_fonts/font = ExtResource("2_uq003")
+theme_override_font_sizes/font_size = 23
+text = "main menu"
+
 [node name="title" type="Label" parent="."]
 layout_mode = 0
 offset_left = 81.0
@@ -38,3 +48,4 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="respawn" to="." method="_on_respawn_pressed"]
+[connection signal="pressed" from="respawn2" to="." method="_on_respawn_2_pressed"]

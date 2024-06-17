@@ -1,25 +1,25 @@
 [gd_scene load_steps=27 format=3 uid="uid://ijfntxr822tg"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_0ltis"]
-[ext_resource type="Texture2D" uid="uid://daeb5rdsh3vv1" path="res://Textures/MLG Hitmarker.png" id="2_kfhr7"]
+[ext_resource type="Texture2D" uid="uid://daeb5rdsh3vv1" path="res://Textures/Controls/MLG Hitmarker.png" id="2_kfhr7"]
 [ext_resource type="Script" path="res://Scripts/ui_handler.gd" id="2_y30i7"]
 [ext_resource type="PackedScene" uid="uid://di1fvicjwhp2a" path="res://Scenes/pause_screen.tscn" id="4_iu3md"]
 [ext_resource type="PackedScene" uid="uid://cjrl3cgbr8py5" path="res://Scenes/death_screen.tscn" id="5_715m5"]
 [ext_resource type="Script" path="res://Scripts/Inventory.gd" id="5_ydcyx"]
 [ext_resource type="AudioStream" uid="uid://cubpi6ub8e5ci" path="res://Audio/hitHurt.wav" id="6_yifrq"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="7_lk51w"]
-[ext_resource type="Texture2D" uid="uid://c8nnolsvu03xd" path="res://Textures/jump.png" id="8_lrmv2"]
-[ext_resource type="Texture2D" uid="uid://c6dr4q5nynwsw" path="res://Textures/jump_pressed.png" id="9_mbp8o"]
-[ext_resource type="Texture2D" uid="uid://cv0nrktsk3kg5" path="res://Textures/interact.png" id="10_fftaw"]
-[ext_resource type="Texture2D" uid="uid://buuturedse4an" path="res://Textures/interact_pressed.png" id="11_eww3l"]
-[ext_resource type="Texture2D" uid="uid://0vptu14vw3v7" path="res://Textures/shoot.png" id="12_22f54"]
-[ext_resource type="Texture2D" uid="uid://e4rky774uvx6" path="res://Textures/shoot_pressed.png" id="13_av688"]
-[ext_resource type="Texture2D" uid="uid://dxbm3w7olh4b1" path="res://Textures/hotbar_left.png" id="14_ffblr"]
-[ext_resource type="Texture2D" uid="uid://608gixrk2dff" path="res://Textures/hotbar_left_pressed.png" id="15_7m3kj"]
-[ext_resource type="Texture2D" uid="uid://bjlo76dp21gg" path="res://Textures/hotbar_right.png" id="16_f88an"]
-[ext_resource type="Texture2D" uid="uid://64o3i145scr5" path="res://Textures/hotbar_right_pressed.png" id="17_fija3"]
-[ext_resource type="Texture2D" uid="uid://bc2v310re5krj" path="res://Textures/pause.png" id="18_g3dnv"]
-[ext_resource type="Texture2D" uid="uid://cduaigpmqp68u" path="res://Textures/pause_pressed.png" id="19_eud2g"]
+[ext_resource type="Texture2D" uid="uid://c8nnolsvu03xd" path="res://Textures/Controls/jump.png" id="8_lrmv2"]
+[ext_resource type="Texture2D" uid="uid://c6dr4q5nynwsw" path="res://Textures/Controls/jump_pressed.png" id="9_mbp8o"]
+[ext_resource type="Texture2D" uid="uid://cv0nrktsk3kg5" path="res://Textures/Controls/interact.png" id="10_fftaw"]
+[ext_resource type="Texture2D" uid="uid://buuturedse4an" path="res://Textures/Controls/interact_pressed.png" id="11_eww3l"]
+[ext_resource type="Texture2D" uid="uid://0vptu14vw3v7" path="res://Textures/Controls/shoot.png" id="12_22f54"]
+[ext_resource type="Texture2D" uid="uid://e4rky774uvx6" path="res://Textures/Controls/shoot_pressed.png" id="13_av688"]
+[ext_resource type="Texture2D" uid="uid://dxbm3w7olh4b1" path="res://Textures/Controls/hotbar_left.png" id="14_ffblr"]
+[ext_resource type="Texture2D" uid="uid://608gixrk2dff" path="res://Textures/Controls/hotbar_left_pressed.png" id="15_7m3kj"]
+[ext_resource type="Texture2D" uid="uid://bjlo76dp21gg" path="res://Textures/Controls/hotbar_right.png" id="16_f88an"]
+[ext_resource type="Texture2D" uid="uid://64o3i145scr5" path="res://Textures/Controls/hotbar_right_pressed.png" id="17_fija3"]
+[ext_resource type="Texture2D" uid="uid://bc2v310re5krj" path="res://Textures/Controls/pause.png" id="18_g3dnv"]
+[ext_resource type="Texture2D" uid="uid://cduaigpmqp68u" path="res://Textures/Controls/pause_pressed.png" id="19_eud2g"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_bn3cl"]
 
@@ -146,6 +146,7 @@ target_position = Vector3(0, 0, -200)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.085, -1.08, -1.736)
 
 [node name="mobile controls" type="CanvasLayer" parent="Neck/Camera3D"]
+visible = false
 
 [node name="Move" parent="Neck/Camera3D/mobile controls" instance=ExtResource("7_lk51w")]
 anchors_preset = -1

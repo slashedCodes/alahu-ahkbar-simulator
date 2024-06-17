@@ -1,0 +1,133 @@
+[gd_scene load_steps=14 format=3 uid="uid://bl4udp2dj2ckq"]
+
+[ext_resource type="Script" path="res://Scripts/amongus card swipe.gd" id="1_atiac"]
+[ext_resource type="Texture2D" uid="uid://cfw7fp00op4iy" path="res://Textures/card swipe.png" id="2_0i5nr"]
+[ext_resource type="FontFile" uid="uid://blkhiygeixt5i" path="res://Other/comic sans.ttf" id="3_r0f1h"]
+[ext_resource type="Texture2D" uid="uid://cbgno3yvfiihy" path="res://Textures/id.png" id="4_v2mrn"]
+[ext_resource type="AudioStream" uid="uid://dd5a25fhbsgyw" path="res://Audio/card wrong.mp3" id="5_tbyqc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gtfhr"]
+font = ExtResource("3_r0f1h")
+font_size = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqs8d"]
+bg_color = Color(0.190762, 0.190762, 0.190762, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sdiig"]
+size = Vector2(3158.34, 2123.06)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xkgo7"]
+size = Vector2(2748.05, 1655.51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vpg6u"]
+size = Vector2(3149.03, 4152.48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_heee4"]
+size = Vector2(47.7664, 14.3127)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0wj38"]
+font = ExtResource("3_r0f1h")
+font_size = 60
+font_color = Color(0.512575, 0.672345, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0dw7"]
+size = Vector2(801.684, 476)
+
+[node name="amongus card swipe" type="Node2D"]
+z_index = 100
+script = ExtResource("1_atiac")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+z_index = 102
+offset_left = 62.0
+offset_top = 111.0
+offset_right = 349.0
+offset_bottom = 226.0
+text = "files erased"
+label_settings = SubResource("LabelSettings_gtfhr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 20.0
+offset_top = 24.0
+offset_right = 422.0
+offset_bottom = 338.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xqs8d")
+
+[node name="card swipe" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(223, 118)
+scale = Vector2(0.419207, 0.419207)
+texture = ExtResource("2_0i5nr")
+
+[node name="boundaries" type="StaticBody2D" parent="card swipe"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="card swipe/boundaries"]
+position = Vector2(-78.72, -1032.9)
+shape = SubResource("RectangleShape2D_sdiig")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="card swipe/boundaries"]
+position = Vector2(221.847, 1450.36)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_xkgo7")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="card swipe/boundaries"]
+position = Vector2(2111.13, -151.775)
+shape = SubResource("RectangleShape2D_vpg6u")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="card swipe/boundaries"]
+position = Vector2(-2225.63, 193.222)
+shape = SubResource("RectangleShape2D_vpg6u")
+
+[node name="detector" type="Area2D" parent="card swipe"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="card swipe/detector"]
+position = Vector2(-0.0286255, 40.5527)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_heee4")
+
+[node name="message" type="Label" parent="card swipe"]
+offset_left = -351.0
+offset_top = -103.0
+offset_right = 339.0
+offset_bottom = -8.0
+label_settings = SubResource("LabelSettings_0wj38")
+vertical_alignment = 1
+
+[node name="id" type="CharacterBody2D" parent="."]
+z_index = 1
+position = Vector2(72, 201)
+scale = Vector2(0.279412, 0.279412)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="id"]
+position = Vector2(-3.05176e-05, -1.78937)
+shape = SubResource("RectangleShape2D_e0dw7")
+
+[node name="drag" type="Button" parent="id"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -397.0
+offset_top = -236.0
+offset_right = 401.0
+offset_bottom = 233.0
+
+[node name="sprite" type="Sprite2D" parent="id"]
+texture = ExtResource("4_v2mrn")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_tbyqc")
+volume_db = -9.541
+
+[connection signal="body_entered" from="card swipe/detector" to="." method="_on_detector_body_entered"]
+[connection signal="body_exited" from="card swipe/detector" to="." method="_on_detector_body_exited"]
+[connection signal="button_down" from="id/drag" to="." method="_on_drag_button_down"]
+[connection signal="button_up" from="id/drag" to="." method="_on_drag_button_up"]

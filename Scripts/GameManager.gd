@@ -43,11 +43,11 @@ func objectives_visible(state):
 	refresh_vars()
 	objectives.visible = state
 
-func goto_scene(path):
+func goto_scene(path, save=true):
 	TransitionScreen.fade_to_black()
 	await TransitionScreen.transitioned
 	refresh_vars()
-	save_scene(path)
+	if save: save_scene(path)
 	call_deferred("_deferred_goto_scene", path)
 	TransitionScreen.fade_from_black()
 

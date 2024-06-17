@@ -10,7 +10,7 @@ func _input(event):
 		get_tree().paused = false
 		
 		if not GameManager.is_running_on_mobile(): Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-		if get_tree().current_scene.has_node("Player"):
+		if get_tree().current_scene.has_node("Player") and GameManager.is_running_on_mobile():
 			get_tree().current_scene.get_node("Player/Neck/Camera3D/mobile controls").visible = true
 
 func _on_resume_pressed():
@@ -18,7 +18,7 @@ func _on_resume_pressed():
 	get_tree().paused = false
 	visible = false
 
-	if get_tree().current_scene.has_node("Player"):
+	if get_tree().current_scene.has_node("Player") and GameManager.is_running_on_mobile():
 		get_tree().current_scene.get_node("Player/Neck/Camera3D/mobile controls").visible = true
 
 func pause():
@@ -33,7 +33,7 @@ func _on_exit_pressed():
 	get_tree().quit()
 
 func _on_exit_to_menu_pressed():
-	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	GameManager.goto_scene("res://Scenes/main_menu.tscn", false)
 
 func _on_reset_pressed():
 	if not GameManager.is_running_on_mobile(): Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

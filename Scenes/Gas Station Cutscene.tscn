@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://ifvbjpc2mfrp" path="res://Models/p/psx_building.glb" id="4_lklba"]
 [ext_resource type="PackedScene" uid="uid://di1fvicjwhp2a" path="res://Scenes/pause_screen.tscn" id="4_qoji4"]
 [ext_resource type="PackedScene" uid="uid://dklmb38tqqeek" path="res://Models/p/psx_apartment.glb" id="5_f75i2"]
-[ext_resource type="Texture2D" uid="uid://bc2v310re5krj" path="res://Textures/pause.png" id="5_jxrqu"]
-[ext_resource type="Texture2D" uid="uid://cduaigpmqp68u" path="res://Textures/pause_pressed.png" id="6_3nrun"]
+[ext_resource type="Texture2D" uid="uid://bc2v310re5krj" path="res://Textures/Controls/pause.png" id="5_jxrqu"]
+[ext_resource type="Texture2D" uid="uid://cduaigpmqp68u" path="res://Textures/Controls/pause_pressed.png" id="6_3nrun"]
 [ext_resource type="Texture2D" uid="uid://cnsmubi012rlt" path="res://Models/p/road_basic_maker_0.jpg" id="6_bay8v"]
 [ext_resource type="Texture2D" uid="uid://bvqpxgy5qgoft" path="res://Models/p/road_basic_maker_1.png" id="7_6bmst"]
 [ext_resource type="Texture2D" uid="uid://crgebm5tk1hgc" path="res://Models/p/road_basic_maker_2.jpg" id="8_f2f80"]
@@ -62,6 +62,7 @@
 [ext_resource type="Texture2D" uid="uid://c1hiish2pyev1" path="res://Models/retro_car_with_interior_-_psx_asset_free_0.png" id="56_vd1ct"]
 [ext_resource type="Texture2D" uid="uid://chuxuyn4ueas7" path="res://Models/retro_car_with_interior_-_psx_asset_free_1.png" id="57_kvpar"]
 [ext_resource type="AudioStream" uid="uid://deckpfpeqta4m" path="res://Audio/cp violation.mp3" id="58_3esyn"]
+
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2oywq"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
