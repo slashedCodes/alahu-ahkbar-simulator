@@ -55,7 +55,7 @@ func _deferred_goto_scene(path):
 	get_tree().change_scene_to_file(path)
 
 func is_running_on_mobile():
-	if OS.get_name() == "Android" or OS.get_name() == "iOS" or true:
+	if OS.get_name() == "Android" or OS.get_name() == "iOS":
 		return true
 	else:
 		return false
