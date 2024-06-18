@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ijfntxr822tg"]
+[gd_scene load_steps=23 format=3 uid="uid://ijfntxr822tg"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_0ltis"]
 [ext_resource type="Texture2D" uid="uid://daeb5rdsh3vv1" path="res://Textures/Controls/MLG Hitmarker.png" id="2_kfhr7"]
@@ -14,10 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://buuturedse4an" path="res://Textures/Controls/interact_pressed.png" id="11_eww3l"]
 [ext_resource type="Texture2D" uid="uid://0vptu14vw3v7" path="res://Textures/Controls/shoot.png" id="12_22f54"]
 [ext_resource type="Texture2D" uid="uid://e4rky774uvx6" path="res://Textures/Controls/shoot_pressed.png" id="13_av688"]
-[ext_resource type="Texture2D" uid="uid://dxbm3w7olh4b1" path="res://Textures/Controls/hotbar_left.png" id="14_ffblr"]
-[ext_resource type="Texture2D" uid="uid://608gixrk2dff" path="res://Textures/Controls/hotbar_left_pressed.png" id="15_7m3kj"]
-[ext_resource type="Texture2D" uid="uid://bjlo76dp21gg" path="res://Textures/Controls/hotbar_right.png" id="16_f88an"]
-[ext_resource type="Texture2D" uid="uid://64o3i145scr5" path="res://Textures/Controls/hotbar_right_pressed.png" id="17_fija3"]
 [ext_resource type="Texture2D" uid="uid://bc2v310re5krj" path="res://Textures/Controls/pause.png" id="18_g3dnv"]
 [ext_resource type="Texture2D" uid="uid://cduaigpmqp68u" path="res://Textures/Controls/pause_pressed.png" id="19_eud2g"]
 
@@ -146,7 +142,6 @@ target_position = Vector3(0, 0, -200)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.085, -1.08, -1.736)
 
 [node name="mobile controls" type="CanvasLayer" parent="Neck/Camera3D"]
-visible = false
 
 [node name="Move" parent="Neck/Camera3D/mobile controls" instance=ExtResource("7_lk51w")]
 anchors_preset = -1
@@ -173,28 +168,12 @@ shape = SubResource("CircleShape2D_j4t3y")
 action = "interact"
 
 [node name="shoot" type="TouchScreenButton" parent="Neck/Camera3D/mobile controls"]
-position = Vector2(244, 221)
+position = Vector2(370, 222)
 scale = Vector2(0.0976562, 0.0976562)
 texture_normal = ExtResource("12_22f54")
 texture_pressed = ExtResource("13_av688")
 shape = SubResource("CircleShape2D_j4t3y")
 action = "mobile_fire"
-
-[node name="hotbar left" type="TouchScreenButton" parent="Neck/Camera3D/mobile controls"]
-position = Vector2(307, 223)
-scale = Vector2(0.0976562, 0.0976562)
-texture_normal = ExtResource("14_ffblr")
-texture_pressed = ExtResource("15_7m3kj")
-shape = SubResource("CircleShape2D_j4t3y")
-action = "hotbar_left"
-
-[node name="hotbar right" type="TouchScreenButton" parent="Neck/Camera3D/mobile controls"]
-position = Vector2(371, 221)
-scale = Vector2(0.0976562, 0.0976562)
-texture_normal = ExtResource("16_f88an")
-texture_pressed = ExtResource("17_fija3")
-shape = SubResource("CircleShape2D_j4t3y")
-action = "hotbar_right"
 
 [node name="pause" type="TouchScreenButton" parent="Neck/Camera3D/mobile controls"]
 position = Vector2(429, 5.96046e-08)

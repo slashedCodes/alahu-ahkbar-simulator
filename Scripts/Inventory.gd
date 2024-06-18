@@ -14,6 +14,16 @@ func add_item(item):
 	style.bg_color = Color("#313131")
 	instance.add_theme_stylebox_override('panel', style)
 	
+	# mobile button code
+	if GameManager.is_running_on_mobile():
+		var b = Button.new()
+		
+		b.set_anchors_preset(Control.PRESET_FULL_RECT)
+		b.self_modulate = Color(1, 1, 1, 0)
+		var script = load("res://Scripts/Misc/mobile_hotbar_button.gd")
+		b.set_script(script)
+		instance.add_child(b)
+	
 	self.add_child(instance)
 	instance.visible = true
 
