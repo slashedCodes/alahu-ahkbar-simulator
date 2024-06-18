@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://ce3214ghee1bb"]
+
+[ext_resource type="PackedScene" uid="uid://cjrl3cgbr8py5" path="res://Scenes/death_screen.tscn" id="1_84747"]
+[ext_resource type="Script" path="res://Scripts/Misc/freddy.gd" id="1_b43lj"]
+[ext_resource type="VideoStream" path="res://Misc/freddy.ogv" id="2_vyc0g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yvplo"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="freddy" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b43lj")
+
+[node name="Death Screen" parent="." instance=ExtResource("1_84747")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Video" type="VideoStreamPlayer" parent="."]
+z_index = 100
+layout_mode = 1
+offset_right = 912.0
+offset_bottom = 800.0
+scale = Vector2(0.5, 0.5)
+stream = ExtResource("2_vyc0g")
+
+[node name="Panel" type="Panel" parent="."]
+z_index = -100
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yvplo")

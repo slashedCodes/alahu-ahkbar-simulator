@@ -63,7 +63,6 @@
 [ext_resource type="Texture2D" uid="uid://chuxuyn4ueas7" path="res://Models/retro_car_with_interior_-_psx_asset_free_1.png" id="57_kvpar"]
 [ext_resource type="AudioStream" uid="uid://deckpfpeqta4m" path="res://Audio/cp violation.mp3" id="58_3esyn"]
 
-
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2oywq"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
