@@ -16,10 +16,12 @@ func add_item(item):
 	
 	# mobile button code
 	if GameManager.is_running_on_mobile():
-		var b = Button.new()
+		var b = TouchScreenButton.new()
+		var shape = RectangleShape2D.new()
+		shape.size = Vector2(40, 40)
+		b.position = Vector2(20, 20)
+		b.shape = shape
 		
-		b.set_anchors_preset(Control.PRESET_FULL_RECT)
-		b.self_modulate = Color(1, 1, 1, 0)
 		var script = load("res://Scripts/Misc/mobile_hotbar_button.gd")
 		b.set_script(script)
 		instance.add_child(b)
