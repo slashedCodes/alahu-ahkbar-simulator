@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ijfntxr822tg"]
+[gd_scene load_steps=28 format=3 uid="uid://ijfntxr822tg"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_0ltis"]
 [ext_resource type="Texture2D" uid="uid://daeb5rdsh3vv1" path="res://Textures/Controls/MLG Hitmarker.png" id="2_kfhr7"]
@@ -7,12 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://cjrl3cgbr8py5" path="res://Scenes/death_screen.tscn" id="5_715m5"]
 [ext_resource type="Script" path="res://Scripts/Inventory.gd" id="5_ydcyx"]
 [ext_resource type="AudioStream" uid="uid://cubpi6ub8e5ci" path="res://Audio/hitHurt.wav" id="6_yifrq"]
+[ext_resource type="FontFile" uid="uid://blkhiygeixt5i" path="res://Other/comic sans.ttf" id="7_hts7p"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="7_lk51w"]
 [ext_resource type="Texture2D" uid="uid://c8nnolsvu03xd" path="res://Textures/Controls/jump.png" id="8_lrmv2"]
 [ext_resource type="Texture2D" uid="uid://c6dr4q5nynwsw" path="res://Textures/Controls/jump_pressed.png" id="9_mbp8o"]
 [ext_resource type="Texture2D" uid="uid://cv0nrktsk3kg5" path="res://Textures/Controls/interact.png" id="10_fftaw"]
+[ext_resource type="Texture2D" uid="uid://8sdxgltl43yc" path="res://Textures/Controls/reload.png" id="11_6cjfu"]
 [ext_resource type="Texture2D" uid="uid://buuturedse4an" path="res://Textures/Controls/interact_pressed.png" id="11_eww3l"]
 [ext_resource type="Texture2D" uid="uid://0vptu14vw3v7" path="res://Textures/Controls/shoot.png" id="12_22f54"]
+[ext_resource type="Texture2D" uid="uid://bu41am6fi1w2e" path="res://Textures/Controls/reload_pressed.png" id="12_dle13"]
 [ext_resource type="Texture2D" uid="uid://e4rky774uvx6" path="res://Textures/Controls/shoot_pressed.png" id="13_av688"]
 [ext_resource type="Texture2D" uid="uid://bc2v310re5krj" path="res://Textures/Controls/pause.png" id="18_g3dnv"]
 [ext_resource type="Texture2D" uid="uid://cduaigpmqp68u" path="res://Textures/Controls/pause_pressed.png" id="19_eud2g"]
@@ -22,6 +25,9 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mf8yx"]
 radius = 0.224981
 
+[sub_resource type="LabelSettings" id="LabelSettings_cqvmy"]
+font = ExtResource("7_hts7p")
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_j4t3y"]
 radius = 256.0
 
@@ -30,10 +36,22 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Neck/Camera3D/Hand:position")
+tracks/0/path = NodePath("Neck/Camera3D/Hand:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Neck/Camera3D/Hand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -57,10 +75,28 @@ tracks/0/keys = {
 "values": [Vector3(1.085, -1.08, -1.736), Vector3(1.085, -1.08, -2), Vector3(1.085, -1.08, -1.736)]
 }
 
+[sub_resource type="Animation" id="Animation_jxwi7"]
+resource_name = "hand_reload"
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Neck/Camera3D/Hand:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.39, 0.4),
+"transitions": PackedFloat32Array(1, -2, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(6.28319, 0, 0), Vector3(0, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_77tm5"]
 _data = {
 "RESET": SubResource("Animation_xl8ia"),
-"hand_fire": SubResource("Animation_0ho83")
+"hand_fire": SubResource("Animation_0ho83"),
+"hand_reload": SubResource("Animation_jxwi7")
 }
 
 [node name="Player" type="CharacterBody3D"]
@@ -132,6 +168,12 @@ offset_bottom = 394.0
 alignment = 2
 script = ExtResource("5_ydcyx")
 
+[node name="ammo" type="Label" parent="Neck/Camera3D"]
+offset_right = 78.0
+offset_bottom = 23.0
+text = "5/5 ammo"
+label_settings = SubResource("LabelSettings_cqvmy")
+
 [node name="AudioListener3D" type="AudioListener3D" parent="Neck/Camera3D"]
 current = true
 
@@ -149,6 +191,7 @@ offset_top = -129.0
 offset_right = 297.0
 offset_bottom = 153.0
 scale = Vector2(0.45, 0.45)
+clampzone_size = 60.0
 metadata/_edit_use_anchors_ = true
 
 [node name="jump" type="TouchScreenButton" parent="Neck/Camera3D/mobile controls"]
@@ -158,6 +201,14 @@ texture_normal = ExtResource("8_lrmv2")
 texture_pressed = ExtResource("9_mbp8o")
 shape = SubResource("CircleShape2D_j4t3y")
 action = "jump"
+
+[node name="reload" type="TouchScreenButton" parent="Neck/Camera3D/mobile controls"]
+position = Vector2(327, 242)
+scale = Vector2(0.0703124, 0.0703124)
+texture_normal = ExtResource("11_6cjfu")
+texture_pressed = ExtResource("12_dle13")
+shape = SubResource("CircleShape2D_j4t3y")
+action = "reload"
 
 [node name="interact" type="TouchScreenButton" parent="Neck/Camera3D/mobile controls"]
 position = Vector2(309, 287)

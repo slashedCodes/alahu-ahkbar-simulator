@@ -20,6 +20,7 @@ func add_item(item):
 		var shape = RectangleShape2D.new()
 		shape.size = Vector2(40, 40)
 		b.position = Vector2(20, 20)
+		b.texture_normal = load("res://Textures/Controls/interact.png")
 		b.shape = shape
 		
 		var script = load("res://Scripts/Misc/mobile_hotbar_button.gd")

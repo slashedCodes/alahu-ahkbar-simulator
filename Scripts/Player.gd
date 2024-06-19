@@ -14,24 +14,43 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var hand = $Neck/Camera3D/Hand
 @onready var animation_player = $AnimationPlayer
 @onready var gun_audio_player = $"Gun Shoot"
+@onready var ammo_label = $Neck/Camera3D/ammo
+var reloading = false
+var shooting = false
+var ammo = 5
 
 @onready var mobile_controls = camera.get_node("mobile controls")
 
 func fire():
+	if reloading:
+		animation_player.play("hand_reload")
+		await animation_player.animation_finished
+		ammo = 5
+		ammo_label.text = str(ammo) + "/5 ammo"
+		reloading = false
+	
+	if shooting:
+
+		animation_player.play("hand_fire")
+		shooting = false
+	
 	if hand.get_child_count() > 0 and hand.get_child(0).is_in_group("gun"):
 		var action = "fire"
 		if GameManager.is_running_on_mobile(): action = "mobile_fire"
-		if Input.is_action_pressed(action):
+		
+		if Input.is_action_pressed("reload"): reloading = true
+
+		if Input.is_action_just_pressed(action) and ammo > 0 and not reloading:
 			if not animation_player.is_playing():
+				ammo = ammo - 1
+				ammo_label.text = str(ammo) + "/5 ammo"
 				gun_audio_player.playing = false
 				gun_audio_player.playing = true
 				if raycast.is_colliding():
 					var target = raycast.get_collider()
 					if target.is_in_group("killable"):
 						target.die(camera.global_basis.z)
-			animation_player.play("hand_fire")
-		else:
-			animation_player.stop()
+			shooting = true
 
 func die():
 	$"Neck/Camera3D/Death Screen".visible = true
