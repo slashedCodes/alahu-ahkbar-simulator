@@ -30,7 +30,6 @@ func fire():
 		reloading = false
 	
 	if shooting:
-
 		animation_player.play("hand_fire")
 		shooting = false
 	

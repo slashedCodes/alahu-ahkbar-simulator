@@ -13,3 +13,6 @@ func _on_new_game_pressed():
 	GameManager.goto_scene("res://Scenes/Room.tscn")
 	if GameManager.is_running_on_mobile():
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

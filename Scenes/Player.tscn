@@ -169,6 +169,7 @@ alignment = 2
 script = ExtResource("5_ydcyx")
 
 [node name="ammo" type="Label" parent="Neck/Camera3D"]
+visible = false
 offset_right = 78.0
 offset_bottom = 23.0
 text = "5/5 ammo"
@@ -184,6 +185,7 @@ target_position = Vector3(0, 0, -200)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.085, -1.08, -1.736)
 
 [node name="mobile controls" type="CanvasLayer" parent="Neck/Camera3D"]
+visible = false
 
 [node name="Move" parent="Neck/Camera3D/mobile controls" instance=ExtResource("7_lk51w")]
 anchors_preset = -1

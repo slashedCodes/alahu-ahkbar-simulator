@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6lj7k1ow37pj"]
+[gd_scene load_steps=6 format=3 uid="uid://b6lj7k1ow37pj"]
 
 [ext_resource type="FontFile" uid="uid://blkhiygeixt5i" path="res://Other/comic sans.ttf" id="1_7vkau"]
 [ext_resource type="Script" path="res://Scripts/main_menu_ui.gd" id="1_lmj0c"]
+[ext_resource type="AudioStream" uid="uid://cs765syn6ul8h" path="res://Audio/main.mp3" id="3_63cur"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ba1cb"]
 font = ExtResource("1_7vkau")
@@ -71,6 +72,11 @@ text = "2001 version"
 label_settings = SubResource("LabelSettings_ohesy")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_63cur")
+volume_db = -10.041
+autoplay = true
 
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="new game" to="." method="_on_new_game_pressed"]

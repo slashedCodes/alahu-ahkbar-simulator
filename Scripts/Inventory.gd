@@ -17,14 +17,14 @@ func add_item(item):
 	# mobile button code
 	if GameManager.is_running_on_mobile():
 		var b = TouchScreenButton.new()
-		var shape = RectangleShape2D.new()
-		shape.size = Vector2(40, 40)
-		b.position = Vector2(20, 20)
-		b.texture_normal = load("res://Textures/Controls/interact.png")
-		b.shape = shape
+		b.position = Vector2(0, 0)
+		b.texture_normal = preload("res://Textures/Controls/mobile_hotbar_fix.png")
+		b.texture_pressed = preload("res://Textures/Controls/mobile_hotbar_fix.png")
+		b.shape = RectangleShape2D.new()
+		b.shape.size = Vector2(40, 40)
+		b.set_script(load("res://Scripts/Misc/mobile_hotbar_button.gd"))
+		b.shape_visible = true
 		
-		var script = load("res://Scripts/Misc/mobile_hotbar_button.gd")
-		b.set_script(script)
 		instance.add_child(b)
 	
 	self.add_child(instance)

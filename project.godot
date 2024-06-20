@@ -11,8 +11,12 @@ config_version=5
 [application]
 
 config/name="alahu ahkbar simulator"
-run/main_scene="res://Scenes/main_menu.tscn"
+run/main_scene="res://Scenes/intro.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
+boot_splash/fullsize=false
+boot_splash/use_filter=false
 config/icon="res://icon.png"
 
 [autoload]

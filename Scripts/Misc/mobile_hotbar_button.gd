@@ -1,6 +1,10 @@
 extends TouchScreenButton
 
-func _pressed():
+func _ready():
+	print("googoo")
+	connect("pressed", _on_pressed)
+
+func _on_pressed():
 	var index = get_parent().get_index()
 	var root = get_tree().current_scene
 	if root.has_node("Player"):
