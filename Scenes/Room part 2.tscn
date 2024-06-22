@@ -1,4 +1,4 @@
-[gd_scene load_steps=387 format=3 uid="uid://j5a7qgpc6rod"]
+[gd_scene load_steps=400 format=3 uid="uid://j5a7qgpc6rod"]
 
 [ext_resource type="PackedScene" uid="uid://g4e2cyrofo76" path="res://Scenes/transition_screen.tscn" id="1_appjw"]
 [ext_resource type="PackedScene" uid="uid://d2bu7ovj0ct1o" path="res://Models/p/low_poly_prisoner_bed_psx.glb" id="2_ie6x6"]
@@ -20,8 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://bto8qg1wgq5w6" path="res://Models/p/door___old___metal_-_14mb_0.png" id="18_4csci"]
 [ext_resource type="Texture2D" uid="uid://bvpqja3dr83gg" path="res://Models/p/door___old___metal_-_14mb_1.png" id="19_kd3ku"]
 [ext_resource type="Texture2D" uid="uid://y080pxjw4kfk" path="res://Models/p/door___old___metal_-_14mb_2.png" id="20_4nonq"]
-[ext_resource type="Script" path="res://Scripts/Interactables/door_apartment.gd" id="21_ag0ap"]
 [ext_resource type="Texture2D" uid="uid://daxtodepkp442" path="res://Models/p/cn40k99826b91.webp" id="22_fatnu"]
+[ext_resource type="Texture2D" uid="uid://c2flxpxo6fwwg" path="res://Textures/87-870020_m.png" id="22_lbn41"]
 [ext_resource type="Texture2D" uid="uid://c8u3dacmiqbbj" path="res://Models/p/hdcmfpdh37ya1.webp" id="23_q7mdq"]
 [ext_resource type="Texture2D" uid="uid://dtoqoufr8wi23" path="res://Models/p/38-386037_resized-glass-pane-icon-minecraft-glass-pane-png.png" id="24_0a4r1"]
 [ext_resource type="Texture2D" uid="uid://ci6su4pw1d5ko" path="res://Models/p/5677713404.png" id="25_x7fi3"]
@@ -86,6 +86,14 @@
 [ext_resource type="Texture2D" uid="uid://b3onqw84qur2i" path="res://Textures/Grass.webp" id="84_0urba"]
 [ext_resource type="Texture2D" uid="uid://cnox3fn26ywgm" path="res://Models/fat money stack_Usdollar100front.jpg" id="85_2110f"]
 [ext_resource type="PackedScene" uid="uid://ijfntxr822tg" path="res://Scenes/Player.tscn" id="85_uc7eh"]
+[ext_resource type="Script" path="res://Scripts/Interactables/room2_bed.gd" id="87_1qlyf"]
+[ext_resource type="AudioStream" uid="uid://btuxr2d3ri032" path="res://Audio/pick up the phone baby.mp3" id="88_8vhy4"]
+[ext_resource type="AudioStream" uid="uid://cn1nqch65moe8" path="res://Audio/iphone alarm.mp3" id="89_0quuc"]
+[ext_resource type="AudioStream" uid="uid://5jtqlu6x3k34" path="res://Audio/sleeping.mp3" id="90_p31dn"]
+[ext_resource type="Script" path="res://Scripts/Interactables/room2_computer.gd" id="91_6gf6j"]
+[ext_resource type="Texture2D" uid="uid://ds8y7q7jdfssi" path="res://Textures/freakbob.webp" id="92_fyv14"]
+[ext_resource type="AudioStream" uid="uid://b8ex22m03wrec" path="res://Audio/boom.mp3" id="93_041ku"]
+[ext_resource type="PackedScene" uid="uid://0j24otmqbon6" path="res://Models/cookie_phone.glb" id="93_qrs8x"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cu43x"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -951,8 +959,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ki4cg")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ou2kh"]
-size = Vector3(131.928, 243.4, 39.626)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lpmet"]
+albedo_texture = ExtResource("22_lbn41")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0jmxg"]
 albedo_texture = ExtResource("22_fatnu")
@@ -3732,9 +3740,126 @@ data = PackedVector3Array(1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_u4jjn"]
 data = PackedVector3Array(1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_r32om"]
+size = Vector3(1.02319, 0.170532, 2.25659)
+
+[sub_resource type="Animation" id="Animation_2d71s"]
+resource_name = "sleep"
+length = 7.01
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 6.99, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pick up the phone baby:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 6.8, 7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("alarm:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4.4, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("sleeping:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.61, 1.74),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_mvikg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pick up the phone baby:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("alarm:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("sleeping:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w2pi0"]
+_data = {
+"RESET": SubResource("Animation_mvikg"),
+"sleep": SubResource("Animation_2d71s")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1n4d7"]
+size = Vector3(0.541008, 0.042717, 0.259144)
+
 [node name="Room part 2" type="Node3D"]
 
 [node name="TransitionScreen" parent="." instance=ExtResource("1_appjw")]
+visible = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -4031,14 +4156,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -123.945, -52.7417, -0.283733
 mesh = SubResource("ArrayMesh_vn2rr")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="apartment/furniture/door"]
-script = ExtResource("21_ag0ap")
-metadata/interactable = true
-metadata/text = "exit"
+[node name="phone" parent="apartment/furniture" instance=ExtResource("93_qrs8x")]
+transform = Transform3D(-0.299983, 0, -0.00334053, 0, 0.300002, 0, 0.00334053, 0, -0.299983, 2.35363, 0.277342, 2.46096)
+visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="apartment/furniture/door/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.8247, 75.1503, 5.92307)
-shape = SubResource("BoxShape3D_ou2kh")
+[node name="screen" type="CSGBox3D" parent="apartment/furniture/phone"]
+transform = Transform3D(-1, 0, -8.75443e-08, 0, 1, 0, 8.75443e-08, 0, -1, -0.574191, 0.0634999, -0.0081687)
+material_override = SubResource("StandardMaterial3D_lpmet")
+size = Vector3(0.654175, 0.0738525, 0.752502)
 
 [node name="box" type="Node3D" parent="apartment"]
 
@@ -4678,3 +4803,116 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6967, 0.468633, 2.3598)
 
 [node name="menu_camera" type="Camera3D" parent="."]
 transform = Transform3D(0.789727, -0.382147, 0.479891, 0, 0.782271, 0.622938, -0.613459, -0.491951, 0.61778, 4.19339, 4.44467, 3.11315)
+
+[node name="important interactables" type="Node3D" parent="."]
+
+[node name="sleep" type="StaticBody3D" parent="important interactables"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.03112, 0.0279273, 0.985369)
+script = ExtResource("87_1qlyf")
+metadata/interactable = true
+metadata/text = "go to sleep"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="important interactables/sleep"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0404053, 0.156799, 0.0255127)
+shape = SubResource("BoxShape3D_r32om")
+
+[node name="fade" type="CanvasLayer" parent="important interactables/sleep"]
+
+[node name="ColorRect" type="ColorRect" parent="important interactables/sleep/fade"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -142.0
+offset_top = -90.0
+offset_right = 208.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="important interactables/sleep/fade"]
+libraries = {
+"": SubResource("AnimationLibrary_w2pi0")
+}
+
+[node name="pick up the phone baby" type="AudioStreamPlayer" parent="important interactables/sleep/fade"]
+stream = ExtResource("88_8vhy4")
+
+[node name="alarm" type="AudioStreamPlayer" parent="important interactables/sleep/fade"]
+stream = ExtResource("89_0quuc")
+
+[node name="sleeping" type="AudioStreamPlayer" parent="important interactables/sleep/fade"]
+stream = ExtResource("90_p31dn")
+volume_db = -10.481
+
+[node name="phone" type="StaticBody3D" parent="important interactables"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38288, 0.252853, -0.854951)
+script = ExtResource("91_6gf6j")
+metadata/text = ""
+metadata/interactable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="important interactables/phone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0106697, 0.0286217, -0.00580025)
+shape = SubResource("BoxShape3D_1n4d7")
+
+[node name="ui" type="Control" parent="important interactables/phone"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="ColorRect" parent="important interactables/phone/ui"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="freakbob" type="TextureRect" parent="important interactables/phone/ui"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.5
+offset_top = -200.0
+offset_right = 105.5
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("92_fyv14")
+expand_mode = 1
+
+[node name="decline" type="Button" parent="important interactables/phone/ui"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 132.0
+offset_top = 348.0
+offset_right = 224.0
+offset_bottom = 391.0
+
+[node name="answer" type="Button" parent="important interactables/phone/ui"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 233.0
+offset_top = 347.0
+offset_right = 325.0
+offset_bottom = 390.0
+
+[node name="boom" type="AudioStreamPlayer" parent="important interactables/phone"]
+process_mode = 3
+stream = ExtResource("93_041ku")
+
+[connection signal="pressed" from="important interactables/phone/ui/decline" to="important interactables/phone" method="_on_decline_pressed"]
+[connection signal="pressed" from="important interactables/phone/ui/answer" to="important interactables/phone" method="_on_answer_pressed"]

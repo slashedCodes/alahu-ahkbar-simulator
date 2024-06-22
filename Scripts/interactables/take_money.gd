@@ -9,3 +9,5 @@ func interact(player):
 	
 	var door = get_tree().current_scene.get_node("important interactables/car door")
 	door.set_meta("money", true)
+	set_meta("interactable", false)
+	set_meta("text", "")

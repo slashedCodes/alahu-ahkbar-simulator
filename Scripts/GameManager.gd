@@ -7,6 +7,11 @@ extends Node
 func _ready():
 	refresh_vars()
 
+func movement(value):
+	refresh_vars()
+	if player:
+		player.movement = value
+
 func save_scene(scene):
 	var save_game = FileAccess.open("user://savegame.save", FileAccess.WRITE)
 	save_game.store_line(scene)
@@ -50,9 +55,17 @@ func goto_scene(path, save=true):
 	if save: save_scene(path)
 	call_deferred("_deferred_goto_scene", path)
 	TransitionScreen.fade_from_black()
+	if not is_running_on_mobile():
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _deferred_goto_scene(path):
 	get_tree().change_scene_to_file(path)
+
+func is_running_in_web_browser():
+	if OS.get_name() == "Web":
+		return true
+	else:
+		return false
 
 func is_running_on_mobile():
 	if OS.get_name() == "Android" or OS.get_name() == "iOS":

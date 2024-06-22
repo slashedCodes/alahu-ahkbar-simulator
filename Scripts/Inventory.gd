@@ -111,11 +111,6 @@ func unhighlight_panel(panel):
 	style.bg_color = Color("#313131")
 
 func _input(event):
-	if event.is_action_pressed("hotbar_left"):
-		select_item((hand_index - 1) % item_count)
-	elif event.is_action_pressed("hotbar_right"):
-		select_item((hand_index + 1) % item_count)
-	
 	if event.is_action_pressed("slot1"):
 		select_item(0)
 	elif event.is_action_pressed("slot2"):

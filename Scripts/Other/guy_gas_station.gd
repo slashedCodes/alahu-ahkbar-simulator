@@ -19,6 +19,8 @@ func die(direction):
 	GameManager.remove_objectives()
 	GameManager.add_objective("erase the security tapes from the cashiers computer")
 	
+	get_tree().current_scene.get_node("important interactables/computer screen").set_meta("text", "computer")
+	get_tree().current_scene.get_node("important interactables/computer screen").set_meta("interactable", true)
 	get_tree().current_scene.get_node("cop_timer").start()
 	get_tree().current_scene.get_node("intense music").playing = true
 	get_tree().current_scene.get_node("important interactables/buy chips/line 1").playing = false

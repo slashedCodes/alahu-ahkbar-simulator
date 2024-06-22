@@ -4,6 +4,7 @@ const JUMP_VELOCITY = 4.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+var movement = true
 
 @onready var neck := $Neck
 @onready var camera := $Neck/Camera3D
@@ -52,7 +53,10 @@ func fire():
 			shooting = true
 
 func die():
+	$"Neck/Camera3D/interaction".visible = false
 	$"Neck/Camera3D/Death Screen".visible = true
+	GameManager.remove_objectives()
+	GameManager.objectives_visible(false)
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	get_tree().paused = true
 
@@ -62,12 +66,12 @@ func _unhandled_input(event):
 	elif event.is_action_pressed("pause"):
 		pause_screen.pause()
 	
-	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED and not GameManager.is_running_on_mobile():
+	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED and not GameManager.is_running_on_mobile() and movement:
 		if event is InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x * 0.01)
 			camera.rotate_x(-event.relative.y * 0.01)
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(60))
-	elif GameManager.is_running_on_mobile():
+	elif GameManager.is_running_on_mobile() and movement:
 		if event is InputEventScreenDrag:
 			neck.rotate_y(-event.relative.x * 0.01)
 			camera.rotate_x(-event.relative.y * 0.01)
@@ -76,7 +80,7 @@ func _unhandled_input(event):
 func _physics_process(delta):
 	gun_cam.global_transform = camera.global_transform
 	fire()
-	
+	if not movement: return
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
