@@ -34,4 +34,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Windows - Nightly Release
-        path: ${{ github.workspace }}/${{ steps.export.outputs.archive_directory }}
+        path: ${{ steps.export.outputs.archive_directory }}
