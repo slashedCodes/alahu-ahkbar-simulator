@@ -31,6 +31,7 @@ func refresh_vars():
 		objectives = player.get_node("Neck/Camera3D/objectives")
 
 func add_objective(text):
+	if get_tree().current_scene.name == "Main Menu": return
 	refresh_vars()
 	var label = Label.new()
 	label.text = text
@@ -39,12 +40,15 @@ func add_objective(text):
 	container.add_child(label)
 
 func remove_objectives():
+	if get_tree().current_scene.name == "Main Menu": return
+	
 	refresh_vars()
 	var container = objectives.get_node("container")
 	for label in container.get_children():
 		label.queue_free()
 
 func objectives_visible(state):
+	if get_tree().current_scene.name == "Main Menu": return
 	refresh_vars()
 	objectives.visible = state
 

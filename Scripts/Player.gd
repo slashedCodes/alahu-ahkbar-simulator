@@ -70,12 +70,13 @@ func _unhandled_input(event):
 		if event is InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x * 0.01)
 			camera.rotate_x(-event.relative.y * 0.01)
-			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(60))
 	elif GameManager.is_running_on_mobile() and movement:
 		if event is InputEventScreenDrag:
 			neck.rotate_y(-event.relative.x * 0.01)
 			camera.rotate_x(-event.relative.y * 0.01)
-			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(60))
+
+func _process(delta):
+	camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(60))
 
 func _physics_process(delta):
 	gun_cam.global_transform = camera.global_transform
