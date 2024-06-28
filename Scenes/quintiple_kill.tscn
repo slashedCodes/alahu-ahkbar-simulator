@@ -1,4 +1,4 @@
-[gd_scene load_steps=323 format=3 uid="uid://chpwilxrochis"]
+[gd_scene load_steps=324 format=3 uid="uid://chpwilxrochis"]
 
 [ext_resource type="PackedScene" uid="uid://g4e2cyrofo76" path="res://Scenes/transition_screen.tscn" id="1_afgfy"]
 [ext_resource type="Texture2D" uid="uid://d3o7m2vuo4coc" path="res://Textures/Grass.webp" id="2_6h83y"]
@@ -3374,21 +3374,24 @@ albedo_texture = ExtResource("59_vyi8r")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cbp0j"]
 albedo_texture = ExtResource("60_mk6e6")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4f3yv"]
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("62_x3q22")
-uv1_scale = Vector3(0.64, 0.64, 0.64)
-uv1_offset = Vector3(0.175, 0.175, 0)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_ute05"]
-size = Vector3(0.354004, 0.349609, 0.0496216)
+size = Vector3(0.354004, 0.349609, 0.467018)
 
 [sub_resource type="LabelSettings" id="LabelSettings_6suki"]
 font = ExtResource("64_uonti")
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4f3yv"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("62_x3q22")
+uv1_scale = Vector3(1.79, 1.29, 1.79)
+uv1_offset = Vector3(-1.995, 0.17, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_s8y5y"]
+material = SubResource("StandardMaterial3D_4f3yv")
 
 [node name="Gas Station Cutscene" type="Node3D"]
 
@@ -8169,7 +8172,6 @@ transform = Transform3D(-0.000862167, 7.5373e-11, -1.67362e-26, 0, 1.9144e-19, 0
 [node name="StaticBody3D" type="StaticBody3D" parent="stairs"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="stairs/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_tys01")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="stairs/StaticBody3D"]
@@ -8269,13 +8271,8 @@ script = ExtResource("61_gcl1a")
 metadata/interactable = true
 metadata/text = "eject air conditioner"
 
-[node name="CSGBox3D" type="CSGBox3D" parent="important interactables/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.322754, -0.322998, -0.170685)
-size = Vector3(0.354492, 0.354004, 0.0103149)
-material = SubResource("StandardMaterial3D_4f3yv")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="important interactables/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.322998, -0.325195, -0.199982)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.322998, -0.325195, -0.40868)
 shape = SubResource("BoxShape3D_ute05")
 
 [node name="pipe" type="AudioStreamPlayer" parent="important interactables/StaticBody3D"]
@@ -8292,3 +8289,7 @@ text = "respect++ quintiple kill wombo combo"
 label_settings = SubResource("LabelSettings_6suki")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="important interactables/StaticBody3D"]
+transform = Transform3D(0.33318, 0, 0, 0, 0.377782, 0, 0, 0, 0.0914011, -0.307755, -0.346153, -0.142444)
+mesh = SubResource("BoxMesh_s8y5y")
