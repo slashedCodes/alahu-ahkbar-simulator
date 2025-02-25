@@ -1,0 +1,16 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://clfg4fpi3qqf0"
+path="res://.godot/imported/gas_station_props.glb-269faebde4374445ee66f7d2665e580e.scn"
+
+[deps]
+
+source_file="res://Models/p/gas_station_props.glb"
+dest_files=["res://.godot/imported/gas_station_props.glb-269faebde4374445ee66f7d2665e580e.scn"]
+
+[params]
+
+dummy_value_ignore_me=0

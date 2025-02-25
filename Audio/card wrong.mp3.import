@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://nere750gwbkv"
+path="res://.godot/imported/card wrong.mp3-91a77fa8625d3aadcbcdf72d00ffdfa0.mp3str"
+
+[deps]
+
+source_file="res://Audio/card wrong.mp3"
+dest_files=["res://.godot/imported/card wrong.mp3-91a77fa8625d3aadcbcdf72d00ffdfa0.mp3str"]
+
+[params]
+
+dummy_value_ignore_me=0

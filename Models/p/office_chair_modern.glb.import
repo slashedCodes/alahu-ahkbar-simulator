@@ -1,0 +1,16 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://bnkjgs7bjhoad"
+path="res://.godot/imported/office_chair_modern.glb-d113d7bd04f22a0b0913cd52bd78c9af.scn"
+
+[deps]
+
+source_file="res://Models/p/office_chair_modern.glb"
+dest_files=["res://.godot/imported/office_chair_modern.glb-d113d7bd04f22a0b0913cd52bd78c9af.scn"]
+
+[params]
+
+dummy_value_ignore_me=0

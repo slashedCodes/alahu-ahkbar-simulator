@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ci15b1mh5yr6y"
+path="res://.godot/imported/gas station dude line 1.mp3-37158fb897674ca47d66f5dd6cebc0ff.mp3str"
+
+[deps]
+
+source_file="res://Audio/gas station dude line 1.mp3"
+dest_files=["res://.godot/imported/gas station dude line 1.mp3-37158fb897674ca47d66f5dd6cebc0ff.mp3str"]
+
+[params]
+
+dummy_value_ignore_me=0

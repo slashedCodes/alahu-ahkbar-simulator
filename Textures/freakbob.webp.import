@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://filn0jegvtj5"
+path="res://.godot/imported/freakbob.webp-7ca0b6c694f8308f922bcedd6c8f0c87.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Textures/freakbob.webp"
+dest_files=["res://.godot/imported/freakbob.webp-7ca0b6c694f8308f922bcedd6c8f0c87.ctex"]
+
+[params]
+
+dummy_value_ignore_me=0

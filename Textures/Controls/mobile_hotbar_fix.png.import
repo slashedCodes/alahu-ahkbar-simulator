@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dghd8xyfcnddv"
+path="res://.godot/imported/mobile_hotbar_fix.png-c6b20934a1db75f812733181a2201e5c.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Textures/Controls/mobile_hotbar_fix.png"
+dest_files=["res://.godot/imported/mobile_hotbar_fix.png-c6b20934a1db75f812733181a2201e5c.ctex"]
+
+[params]
+
+dummy_value_ignore_me=0

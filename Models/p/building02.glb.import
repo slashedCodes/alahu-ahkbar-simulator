@@ -1,0 +1,16 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dfkmxa4hv0o3w"
+path="res://.godot/imported/building02.glb-370c43587fe9d2ca6194d32b0f025952.scn"
+
+[deps]
+
+source_file="res://Models/p/building02.glb"
+dest_files=["res://.godot/imported/building02.glb-370c43587fe9d2ca6194d32b0f025952.scn"]
+
+[params]
+
+dummy_value_ignore_me=0

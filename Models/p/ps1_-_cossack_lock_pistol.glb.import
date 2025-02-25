@@ -1,0 +1,16 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://cjar8umr4u6t7"
+path="res://.godot/imported/ps1_-_cossack_lock_pistol.glb-02714b23a8449a96a3e3220be00d11f1.scn"
+
+[deps]
+
+source_file="res://Models/p/ps1_-_cossack_lock_pistol.glb"
+dest_files=["res://.godot/imported/ps1_-_cossack_lock_pistol.glb-02714b23a8449a96a3e3220be00d11f1.scn"]
+
+[params]
+
+dummy_value_ignore_me=0

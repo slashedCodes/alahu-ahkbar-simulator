@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bqwabj01ydqy6"
+path="res://.godot/imported/card swipe.png-19d647d30a4c650056c81cc65342bbe1.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Textures/card swipe.png"
+dest_files=["res://.godot/imported/card swipe.png-19d647d30a4c650056c81cc65342bbe1.ctex"]
+
+[params]
+
+dummy_value_ignore_me=0

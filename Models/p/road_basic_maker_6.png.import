@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bevo4n313kq4j"
+path="res://.godot/imported/road_basic_maker_6.png-a738d4835fb148f96c8bc8170b7085a3.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Models/p/road_basic_maker_6.png"
+dest_files=["res://.godot/imported/road_basic_maker_6.png-a738d4835fb148f96c8bc8170b7085a3.ctex"]
+
+[params]
+
+dummy_value_ignore_me=0

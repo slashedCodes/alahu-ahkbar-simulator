@@ -1,0 +1,15 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://kg31mjbadlq6"
+path="res://.godot/imported/hitHurt.wav-516cb33b0e6b499aa36faefabbcafc42.sample"
+
+[deps]
+
+source_file="res://Audio/hitHurt.wav"
+dest_files=["res://.godot/imported/hitHurt.wav-516cb33b0e6b499aa36faefabbcafc42.sample"]
+
+[params]
+
+dummy_value_ignore_me=0

@@ -1,0 +1,16 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://cal3n3gg26sn7"
+path="res://.godot/imported/ps1_wood_table.glb-ff7d71f06e1fbcb1e771895ed85d53d6.scn"
+
+[deps]
+
+source_file="res://Models/p/ps1_wood_table.glb"
+dest_files=["res://.godot/imported/ps1_wood_table.glb-ff7d71f06e1fbcb1e771895ed85d53d6.scn"]
+
+[params]
+
+dummy_value_ignore_me=0

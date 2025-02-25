@@ -1,0 +1,16 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dcj4kkxw2d0re"
+path="res://.godot/imported/ps1_style_tv.glb-9060c3f2bb67673f28a6ef42f484bafa.scn"
+
+[deps]
+
+source_file="res://Models/p/ps1_style_tv.glb"
+dest_files=["res://.godot/imported/ps1_style_tv.glb-9060c3f2bb67673f28a6ef42f484bafa.scn"]
+
+[params]
+
+dummy_value_ignore_me=0

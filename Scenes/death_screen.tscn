@@ -1,20 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://cjrl3cgbr8py5"]
 
-[ext_resource type="Script" path="res://Scripts/death_screen.gd" id="1_7bj6v"]
-[ext_resource type="FontFile" uid="uid://blkhiygeixt5i" path="res://Other/comic sans.ttf" id="2_uq003"]
+[ext_resource type="Script" path="res://Scripts/death_screen.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://3088fs7yhrwi" path="res://Other/comic sans.ttf" id="2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0r3ax"]
-font = ExtResource("2_uq003")
+font = ExtResource("2")
 font_size = 32
 
 [node name="Death Screen" type="Panel"]
 process_mode = 2
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_7bj6v")
+script = ExtResource("1")
 
 [node name="respawn" type="Button" parent="."]
 layout_mode = 0
@@ -22,7 +21,7 @@ offset_left = 124.0
 offset_top = 192.0
 offset_right = 304.0
 offset_bottom = 240.0
-theme_override_fonts/font = ExtResource("2_uq003")
+theme_override_fonts/font = ExtResource("2")
 theme_override_font_sizes/font_size = 23
 text = "respawn"
 
@@ -32,7 +31,7 @@ offset_left = 123.0
 offset_top = 248.0
 offset_right = 303.0
 offset_bottom = 296.0
-theme_override_fonts/font = ExtResource("2_uq003")
+theme_override_fonts/font = ExtResource("2")
 theme_override_font_sizes/font_size = 23
 text = "main menu"
 
@@ -42,7 +41,7 @@ offset_left = 124.0
 offset_top = 302.0
 offset_right = 304.0
 offset_bottom = 350.0
-theme_override_fonts/font = ExtResource("2_uq003")
+theme_override_fonts/font = ExtResource("2")
 theme_override_font_sizes/font_size = 23
 text = "exit"
 

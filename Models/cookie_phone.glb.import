@@ -1,0 +1,16 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dd50md784eo5e"
+path="res://.godot/imported/cookie_phone.glb-032b292edbf728975d3098e664434836.scn"
+
+[deps]
+
+source_file="res://Models/cookie_phone.glb"
+dest_files=["res://.godot/imported/cookie_phone.glb-032b292edbf728975d3098e664434836.scn"]
+
+[params]
+
+dummy_value_ignore_me=0

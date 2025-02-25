@@ -1,0 +1,16 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://0pos5r5jyc7c"
+path="res://.godot/imported/character__female_01.glb-5c1b9515790d0c0d40911229a2331a30.scn"
+
+[deps]
+
+source_file="res://Models/blood card/character__female_01.glb"
+dest_files=["res://.godot/imported/character__female_01.glb-5c1b9515790d0c0d40911229a2331a30.scn"]
+
+[params]
+
+dummy_value_ignore_me=0

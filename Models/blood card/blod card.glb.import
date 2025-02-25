@@ -1,0 +1,16 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://c164hyjhiuk1c"
+path="res://.godot/imported/blod card.glb-96ccccc82a76ceb121d6b6add6009374.scn"
+
+[deps]
+
+source_file="res://Models/blood card/blod card.glb"
+dest_files=["res://.godot/imported/blod card.glb-96ccccc82a76ceb121d6b6add6009374.scn"]
+
+[params]
+
+dummy_value_ignore_me=0

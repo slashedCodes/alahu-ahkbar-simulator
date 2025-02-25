@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://h7eg1cxs8k51"
+path="res://.godot/imported/office_chair_modern_0.png-1a4d895a42a91911b296f338c42fea2b.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Models/p/office_chair_modern_0.png"
+dest_files=["res://.godot/imported/office_chair_modern_0.png-1a4d895a42a91911b296f338c42fea2b.ctex"]
+
+[params]
+
+dummy_value_ignore_me=0

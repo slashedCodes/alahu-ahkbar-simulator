@@ -1,13 +1,13 @@
 [gd_scene load_steps=14 format=3 uid="uid://bl4udp2dj2ckq"]
 
-[ext_resource type="Script" path="res://Scripts/amongus card swipe.gd" id="1_atiac"]
-[ext_resource type="Texture2D" uid="uid://cfw7fp00op4iy" path="res://Textures/card swipe.png" id="2_0i5nr"]
-[ext_resource type="FontFile" uid="uid://blkhiygeixt5i" path="res://Other/comic sans.ttf" id="3_r0f1h"]
-[ext_resource type="Texture2D" uid="uid://cbgno3yvfiihy" path="res://Textures/id.png" id="4_v2mrn"]
-[ext_resource type="AudioStream" uid="uid://dd5a25fhbsgyw" path="res://Audio/card wrong.mp3" id="5_tbyqc"]
+[ext_resource type="Script" path="res://Scripts/amongus card swipe.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://3088fs7yhrwi" path="res://Other/comic sans.ttf" id="2"]
+[ext_resource type="Texture2D" uid="uid://bqwabj01ydqy6" path="res://Textures/card swipe.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://cj0jig84rshek" path="res://Textures/id.png" id="4"]
+[ext_resource type="AudioStream" uid="uid://nere750gwbkv" path="res://Audio/card wrong.mp3" id="5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gtfhr"]
-font = ExtResource("3_r0f1h")
+font = ExtResource("2")
 font_size = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqs8d"]
@@ -34,7 +34,7 @@ size = Vector2(3149.03, 4152.48)
 size = Vector2(47.7664, 14.3127)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0wj38"]
-font = ExtResource("3_r0f1h")
+font = ExtResource("2")
 font_size = 60
 font_color = Color(0.512575, 0.672345, 0, 1)
 
@@ -43,7 +43,7 @@ size = Vector2(801.684, 476)
 
 [node name="amongus card swipe" type="Node2D"]
 z_index = 100
-script = ExtResource("1_atiac")
+script = ExtResource("1")
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -68,7 +68,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_xqs8d")
 z_index = 3
 position = Vector2(223, 118)
 scale = Vector2(0.419207, 0.419207)
-texture = ExtResource("2_0i5nr")
+texture = ExtResource("3")
 
 [node name="boundaries" type="StaticBody2D" parent="card swipe"]
 
@@ -93,7 +93,6 @@ shape = SubResource("RectangleShape2D_vpg6u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="card swipe/detector"]
 position = Vector2(-0.0286255, 40.5527)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_heee4")
 
 [node name="message" type="Label" parent="card swipe"]
@@ -121,11 +120,11 @@ offset_right = 401.0
 offset_bottom = 233.0
 
 [node name="sprite" type="Sprite2D" parent="id"]
-texture = ExtResource("4_v2mrn")
+texture = ExtResource("4")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_tbyqc")
-volume_db = -9.541
+stream = ExtResource("5")
+volume_db = -9.541000366210938
 
 [connection signal="body_entered" from="card swipe/detector" to="." method="_on_detector_body_entered"]
 [connection signal="body_exited" from="card swipe/detector" to="." method="_on_detector_body_exited"]

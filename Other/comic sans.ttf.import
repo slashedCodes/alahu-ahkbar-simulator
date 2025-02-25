@@ -1,0 +1,15 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://3088fs7yhrwi"
+path="res://.godot/imported/comic sans.ttf-a275ec96aef828d6b29e03b3c6748fdd.fontdata"
+
+[deps]
+
+source_file="res://Other/comic sans.ttf"
+dest_files=["res://.godot/imported/comic sans.ttf-a275ec96aef828d6b29e03b3c6748fdd.fontdata"]
+
+[params]
+
+dummy_value_ignore_me=0

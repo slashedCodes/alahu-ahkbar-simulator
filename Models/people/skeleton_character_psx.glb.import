@@ -1,0 +1,16 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://brs7ua8jyn7ot"
+path="res://.godot/imported/skeleton_character_psx.glb-97f0631dee0f4f7b6395536a281191af.scn"
+
+[deps]
+
+source_file="res://Models/people/skeleton_character_psx.glb"
+dest_files=["res://.godot/imported/skeleton_character_psx.glb-97f0631dee0f4f7b6395536a281191af.scn"]
+
+[params]
+
+dummy_value_ignore_me=0

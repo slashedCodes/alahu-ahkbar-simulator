@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://ch7lay8kmpcp3"
+path="res://.godot/imported/pause.png-f0b2a90c3dc8b23677fa0ee331411b46.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Textures/Controls/pause.png"
+dest_files=["res://.godot/imported/pause.png-f0b2a90c3dc8b23677fa0ee331411b46.ctex"]
+
+[params]
+
+dummy_value_ignore_me=0

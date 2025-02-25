@@ -1,0 +1,16 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://cm14ib6pohb3p"
+path="res://.godot/imported/door___old___metal_-_14mb.glb-bff3e91596246e2d348edf6189fe1053.scn"
+
+[deps]
+
+source_file="res://Models/p/door___old___metal_-_14mb.glb"
+dest_files=["res://.godot/imported/door___old___metal_-_14mb.glb-bff3e91596246e2d348edf6189fe1053.scn"]
+
+[params]
+
+dummy_value_ignore_me=0

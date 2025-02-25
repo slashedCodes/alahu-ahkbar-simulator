@@ -1,0 +1,16 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dcer7q10qbt6j"
+path="res://.godot/imported/psx_building.glb-d98a935bc6d375780c3611102384e9b1.scn"
+
+[deps]
+
+source_file="res://Models/p/psx_building.glb"
+dest_files=["res://.godot/imported/psx_building.glb-d98a935bc6d375780c3611102384e9b1.scn"]
+
+[params]
+
+dummy_value_ignore_me=0

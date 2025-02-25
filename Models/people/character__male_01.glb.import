@@ -1,0 +1,16 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://yferigu08jeq"
+path="res://.godot/imported/character__male_01.glb-76935d69cebdc9e5a7c4ae289797e371.scn"
+
+[deps]
+
+source_file="res://Models/people/character__male_01.glb"
+dest_files=["res://.godot/imported/character__male_01.glb-76935d69cebdc9e5a7c4ae289797e371.scn"]
+
+[params]
+
+dummy_value_ignore_me=0

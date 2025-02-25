@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bduqui2atorh7"
+path="res://.godot/imported/gitpreview.png-563bca0573dd9b736c150c9a38429544.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://addons/virtual_joystick/previews/gitpreview.png"
+dest_files=["res://.godot/imported/gitpreview.png-563bca0573dd9b736c150c9a38429544.ctex"]
+
+[params]
+
+dummy_value_ignore_me=0

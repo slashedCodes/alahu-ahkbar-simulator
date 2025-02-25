@@ -1,0 +1,16 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dw64kbgsq4j8m"
+path="res://.godot/imported/road_basic_maker.glb-351417e3410bfa9d042132e90c8de278.scn"
+
+[deps]
+
+source_file="res://Models/p/road_basic_maker.glb"
+dest_files=["res://.godot/imported/road_basic_maker.glb-351417e3410bfa9d042132e90c8de278.scn"]
+
+[params]
+
+dummy_value_ignore_me=0

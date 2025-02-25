@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://kr8fhy00ym0d"
+path="res://.godot/imported/Apprehension and evasion.mp3-db49f9d9801e59cfd47e4a696e2b60c8.mp3str"
+
+[deps]
+
+source_file="res://Audio/Apprehension and evasion.mp3"
+dest_files=["res://.godot/imported/Apprehension and evasion.mp3-db49f9d9801e59cfd47e4a696e2b60c8.mp3str"]
+
+[params]
+
+dummy_value_ignore_me=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c6ywn46che07b"
+path="res://.godot/imported/main character - 911 is such a good idea.wav-5c74bd61965ab5890f2a34816aacb493.sample"
+
+[deps]
+
+source_file="res://Audio/main character - 911 is such a good idea.wav"
+dest_files=["res://.godot/imported/main character - 911 is such a good idea.wav-5c74bd61965ab5890f2a34816aacb493.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

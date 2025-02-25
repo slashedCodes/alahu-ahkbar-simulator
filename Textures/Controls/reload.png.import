@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bljc2vayshggi"
+path="res://.godot/imported/reload.png-40075dfd633852a878c834221e9cdb92.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Textures/Controls/reload.png"
+dest_files=["res://.godot/imported/reload.png-40075dfd633852a878c834221e9cdb92.ctex"]
+
+[params]
+
+dummy_value_ignore_me=0

@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bpupbkaelw2y7"
+path="res://.godot/imported/joystick_base_outline.png-1529fbc0a23b5af9e961e1a3d047aa0b.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://addons/virtual_joystick/textures/joystick_base_outline.png"
+dest_files=["res://.godot/imported/joystick_base_outline.png-1529fbc0a23b5af9e961e1a3d047aa0b.ctex"]
+
+[params]
+
+dummy_value_ignore_me=0

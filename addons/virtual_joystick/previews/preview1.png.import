@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dx8cym42gnvgu"
+path="res://.godot/imported/preview1.png-27b8e19ea1c97132f2a0bb7961aa0ffd.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://addons/virtual_joystick/previews/preview1.png"
+dest_files=["res://.godot/imported/preview1.png-27b8e19ea1c97132f2a0bb7961aa0ffd.ctex"]
+
+[params]
+
+dummy_value_ignore_me=0

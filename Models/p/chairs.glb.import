@@ -1,0 +1,16 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://cbp008kj4uj2e"
+path="res://.godot/imported/chairs.glb-fcb1a94a66c74ed248b9dc846b064bc6.scn"
+
+[deps]
+
+source_file="res://Models/p/chairs.glb"
+dest_files=["res://.godot/imported/chairs.glb-fcb1a94a66c74ed248b9dc846b064bc6.scn"]
+
+[params]
+
+dummy_value_ignore_me=0

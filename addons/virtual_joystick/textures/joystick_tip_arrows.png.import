@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://da2c363pfkygc"
+path="res://.godot/imported/joystick_tip_arrows.png-cd5fb367005f4e3e79a192d69a489560.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://addons/virtual_joystick/textures/joystick_tip_arrows.png"
+dest_files=["res://.godot/imported/joystick_tip_arrows.png-cd5fb367005f4e3e79a192d69a489560.ctex"]
+
+[params]
+
+dummy_value_ignore_me=0

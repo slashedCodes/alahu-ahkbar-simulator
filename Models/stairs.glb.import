@@ -1,0 +1,16 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://d171xyclojy7x"
+path="res://.godot/imported/stairs.glb-810670acbb3a3bb929c3e740cf2b7567.scn"
+
+[deps]
+
+source_file="res://Models/stairs.glb"
+dest_files=["res://.godot/imported/stairs.glb-810670acbb3a3bb929c3e740cf2b7567.scn"]
+
+[params]
+
+dummy_value_ignore_me=0

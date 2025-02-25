@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bb37cqteuapua"
+path="res://.godot/imported/sleeping.mp3-a7d76235d46d6e8bdf215693a68397d4.mp3str"
+
+[deps]
+
+source_file="res://Audio/sleeping.mp3"
+dest_files=["res://.godot/imported/sleeping.mp3-a7d76235d46d6e8bdf215693a68397d4.mp3str"]
+
+[params]
+
+dummy_value_ignore_me=0

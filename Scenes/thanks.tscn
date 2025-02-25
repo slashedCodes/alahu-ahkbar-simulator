@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://dmiel5e6ir5nh"]
 
-[ext_resource type="FontFile" uid="uid://blkhiygeixt5i" path="res://Other/comic sans.ttf" id="1_fmrss"]
-[ext_resource type="Script" path="res://Scripts/Other/quit_button.gd" id="2_4w18a"]
+[ext_resource type="FontFile" uid="uid://3088fs7yhrwi" path="res://Other/comic sans.ttf" id="1"]
+[ext_resource type="Script" path="res://Scripts/Other/quit_button.gd" id="2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_m1yh2"]
-font = ExtResource("1_fmrss")
+font = ExtResource("1")
 font_size = 30
 
 [node name="Thanks" type="Control"]
@@ -62,9 +62,9 @@ offset_left = 157.0
 offset_top = 290.0
 offset_right = 293.0
 offset_bottom = 368.0
-theme_override_fonts/font = ExtResource("1_fmrss")
+theme_override_fonts/font = ExtResource("1")
 theme_override_font_sizes/font_size = 56
 text = "quit"
-script = ExtResource("2_4w18a")
+script = ExtResource("2")
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

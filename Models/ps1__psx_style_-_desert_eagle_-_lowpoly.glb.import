@@ -1,0 +1,16 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://bdloiu81auemg"
+path="res://.godot/imported/ps1__psx_style_-_desert_eagle_-_lowpoly.glb-a9bc22104d673c567f0786f9df1e8826.scn"
+
+[deps]
+
+source_file="res://Models/ps1__psx_style_-_desert_eagle_-_lowpoly.glb"
+dest_files=["res://.godot/imported/ps1__psx_style_-_desert_eagle_-_lowpoly.glb-a9bc22104d673c567f0786f9df1e8826.scn"]
+
+[params]
+
+dummy_value_ignore_me=0

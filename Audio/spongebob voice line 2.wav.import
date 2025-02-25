@@ -1,0 +1,15 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d2exqgymtufcl"
+path="res://.godot/imported/spongebob voice line 2.wav-fef5148edfdd05baf0d1f1d12cd4de56.sample"
+
+[deps]
+
+source_file="res://Audio/spongebob voice line 2.wav"
+dest_files=["res://.godot/imported/spongebob voice line 2.wav-fef5148edfdd05baf0d1f1d12cd4de56.sample"]
+
+[params]
+
+dummy_value_ignore_me=0

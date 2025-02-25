@@ -72,6 +72,7 @@ func _on_yes_pressed():
 	GameManager.remove_objectives()
 	GameManager.objectives_visible(true)
 	GameManager.add_objective("exit apartment")
+	%door.set_meta("interactable", true)
 	
 func _on_no_pressed():
 	$ui.visible = false
@@ -92,8 +93,6 @@ func _on_no_pressed():
 	sleep.set_meta("text", "go back to sleep")
 	
 	await $"hang up".finished
-	
-	
 	
 	await get_tree().create_timer(4.5).timeout
 	

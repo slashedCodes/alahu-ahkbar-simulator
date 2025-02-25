@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dj75vp5a7ismv"
+path="res://.godot/imported/stairway_1.png-90591130740af48f549c716c288c757a.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Models/stairway_1.png"
+dest_files=["res://.godot/imported/stairway_1.png-90591130740af48f549c716c288c757a.ctex"]
+
+[params]
+
+dummy_value_ignore_me=0

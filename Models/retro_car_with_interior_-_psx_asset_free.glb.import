@@ -1,0 +1,16 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dsk0uevxrxfra"
+path="res://.godot/imported/retro_car_with_interior_-_psx_asset_free.glb-df49f44b4cb5c0af1198d9f13076bbd2.scn"
+
+[deps]
+
+source_file="res://Models/retro_car_with_interior_-_psx_asset_free.glb"
+dest_files=["res://.godot/imported/retro_car_with_interior_-_psx_asset_free.glb-df49f44b4cb5c0af1198d9f13076bbd2.scn"]
+
+[params]
+
+dummy_value_ignore_me=0

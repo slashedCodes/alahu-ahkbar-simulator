@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cx81xbpijar4e"
+path="res://.godot/imported/freakbob calling.png-7a1a4394b5df1eec738a407647434e83.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Textures/freakbob calling.png"
+dest_files=["res://.godot/imported/freakbob calling.png-7a1a4394b5df1eec738a407647434e83.ctex"]
+
+[params]
+
+dummy_value_ignore_me=0

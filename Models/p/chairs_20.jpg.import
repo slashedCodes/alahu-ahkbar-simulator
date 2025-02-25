@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://djmgsckmhgnxr"
+path="res://.godot/imported/chairs_20.jpg-4c7efca9b93f20fc948637e090b98ced.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Models/p/chairs_20.jpg"
+dest_files=["res://.godot/imported/chairs_20.jpg-4c7efca9b93f20fc948637e090b98ced.ctex"]
+
+[params]
+
+dummy_value_ignore_me=0

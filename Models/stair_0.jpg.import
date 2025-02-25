@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://df36roqfk3lx4"
+path="res://.godot/imported/stair_0.jpg-936270b20cb5bf3bcbff177b585e748d.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Models/stair_0.jpg"
+dest_files=["res://.godot/imported/stair_0.jpg-936270b20cb5bf3bcbff177b585e748d.ctex"]
+
+[params]
+
+dummy_value_ignore_me=0

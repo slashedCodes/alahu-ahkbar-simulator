@@ -1,0 +1,16 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://bkd8sc4uwghqi"
+path="res://.godot/imported/fat money stack.glb-0493ee032741b6c48f12fe95a5e269cf.scn"
+
+[deps]
+
+source_file="res://Models/fat money stack.glb"
+dest_files=["res://.godot/imported/fat money stack.glb-0493ee032741b6c48f12fe95a5e269cf.scn"]
+
+[params]
+
+dummy_value_ignore_me=0

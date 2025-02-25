@@ -1,0 +1,15 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://clra5gl0fhi82"
+path="res://.godot/imported/kick police.wav-49767cb6228a4764db5f1222b3598d7a.sample"
+
+[deps]
+
+source_file="res://Audio/kick police.wav"
+dest_files=["res://.godot/imported/kick police.wav-49767cb6228a4764db5f1222b3598d7a.sample"]
+
+[params]
+
+dummy_value_ignore_me=0

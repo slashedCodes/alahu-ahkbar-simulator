@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bwvo1sslnmn43"
+path="res://.godot/imported/virtual_joystick_icon.png-de46b24999f9aaea71ffaa7771da41e6.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://addons/virtual_joystick/virtual_joystick_icon.png"
+dest_files=["res://.godot/imported/virtual_joystick_icon.png-de46b24999f9aaea71ffaa7771da41e6.ctex"]
+
+[params]
+
+dummy_value_ignore_me=0

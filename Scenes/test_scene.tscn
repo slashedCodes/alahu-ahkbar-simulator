@@ -1,15 +1,15 @@
 [gd_scene load_steps=23 format=3 uid="uid://cx4ck6j7nqbqt"]
 
-[ext_resource type="Texture2D" uid="uid://d3o7m2vuo4coc" path="res://Textures/Grass.webp" id="1_jxcpg"]
-[ext_resource type="PackedScene" uid="uid://g4e2cyrofo76" path="res://Scenes/transition_screen.tscn" id="2_3v3tt"]
-[ext_resource type="PackedScene" uid="uid://ijfntxr822tg" path="res://Scenes/Player.tscn" id="3_aqw6d"]
-[ext_resource type="PackedScene" uid="uid://cfed8felowioj" path="res://Scenes/Weapons/gun_pickup.tscn" id="4_j4s7g"]
-[ext_resource type="PackedScene" uid="uid://dmqsm134ou56f" path="res://Scenes/guy.tscn" id="5_3jd3u"]
-[ext_resource type="Texture2D" uid="uid://hewij7symblr" path="res://Models/p/gas_station_props_21.jpg" id="6_c34yc"]
-[ext_resource type="Shader" uid="uid://cscvr3086tglu" path="res://Other/weapon_shader.tres" id="7_ohe0k"]
+[ext_resource type="Texture2D" uid="uid://de7khbgr7vn6r" path="res://Textures/Grass.webp" id="1"]
+[ext_resource type="PackedScene" uid="uid://g4e2cyrofo76" path="res://Scenes/transition_screen.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://ijfntxr822tg" path="res://Scenes/Player.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://cfed8felowioj" path="res://Scenes/Weapons/gun_pickup.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://dmqsm134ou56f" path="res://Scenes/guy.tscn" id="5"]
+[ext_resource type="Texture2D" uid="uid://cvphgnvmag1ax" path="res://Models/p/gas_station_props_21.jpg" id="6"]
+[ext_resource type="Shader" uid="uid://cscvr3086tglu" path="res://Other/weapon_shader.tres" id="7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_brp6v"]
-albedo_texture = ExtResource("1_jxcpg")
+albedo_texture = ExtResource("1")
 metallic = 1.0
 uv1_scale = Vector3(38.955, 38.955, 38.955)
 uv1_triplanar = true
@@ -35,7 +35,7 @@ tonemap_mode = 2
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y5fjj"]
 resource_name = "Foods_02"
 cull_mode = 2
-albedo_texture = ExtResource("6_c34yc")
+albedo_texture = ExtResource("6")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_4ky67"]
 _surfaces = [{
@@ -90,7 +90,8 @@ environment = SubResource("Environment_u3lvh")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0lqlq"]
 resource_name = "Foods_02"
 render_priority = 0
-shader = ExtResource("7_ohe0k")
+next_pass = null
+shader = ExtResource("7")
 shader_parameter/albedo = Color(1, 1, 1, 1)
 shader_parameter/point_size = 1.0
 shader_parameter/roughness = 1.0
@@ -102,7 +103,9 @@ shader_parameter/uv1_offset = Vector3(0, 0, 0)
 shader_parameter/uv2_scale = Vector3(1, 1, 1)
 shader_parameter/uv2_offset = Vector3(0, 0, 0)
 shader_parameter/fov = 90.0
-shader_parameter/texture_albedo = ExtResource("6_c34yc")
+shader_parameter/texture_albedo = ExtResource("6")
+shader_parameter/texture_metallic = null
+shader_parameter/texture_roughness = null
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_hm0s5"]
 resource_name = "Sketchfab_Scene_Frying_04_002_Foods_02_0"
@@ -135,7 +138,7 @@ skeleton = NodePath("../../..")
 transform = Transform3D(750.962, 0, 0, 0, 1, 0, 0, 0, 766.103, 0, -0.501142, 0)
 shape = SubResource("ConcavePolygonShape3D_ktrch")
 
-[node name="TransitionScreen" parent="." instance=ExtResource("2_3v3tt")]
+[node name="TransitionScreen" parent="." instance=ExtResource("2")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pjey7")
@@ -145,13 +148,13 @@ transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -
 layers = 3
 shadow_enabled = true
 
-[node name="Player" parent="." instance=ExtResource("3_aqw6d")]
+[node name="Player" parent="." instance=ExtResource("3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.67596, 1.03682, 10.4237)
 
-[node name="GunPickup" parent="." instance=ExtResource("4_j4s7g")]
+[node name="GunPickup" parent="." instance=ExtResource("4")]
 transform = Transform3D(0.918777, -0.394776, 0, 0.394776, 0.918777, 0, 0, 0, 1, 8.80578, 1.30502, 7.86308)
 
-[node name="guy" parent="." instance=ExtResource("5_3jd3u")]
+[node name="guy" parent="." instance=ExtResource("5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.98155, 0, 6.01158)
 
 [node name="chips" type="Node3D" parent="."]

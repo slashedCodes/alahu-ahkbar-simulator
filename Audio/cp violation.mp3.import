@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b73051s88tpe4"
+path="res://.godot/imported/cp violation.mp3-f95ac39eddd7240bdd0e958ace60f5f4.mp3str"
+
+[deps]
+
+source_file="res://Audio/cp violation.mp3"
+dest_files=["res://.godot/imported/cp violation.mp3-f95ac39eddd7240bdd0e958ace60f5f4.mp3str"]
+
+[params]
+
+dummy_value_ignore_me=0

@@ -1,0 +1,18 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://t4h1wr8umk6b"
+path="res://.godot/imported/gas_station_props_31.jpg-e494f26d31f04a014a885fc1b1cd6704.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Models/p/gas_station_props_31.jpg"
+dest_files=["res://.godot/imported/gas_station_props_31.jpg-e494f26d31f04a014a885fc1b1cd6704.ctex"]
+
+[params]
+
+dummy_value_ignore_me=0
