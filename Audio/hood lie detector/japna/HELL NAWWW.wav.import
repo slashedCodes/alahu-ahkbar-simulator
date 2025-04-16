@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://y6otbj1k3x0x"
+path="res://.godot/imported/HELL NAWWW.wav-d658271b680752b3777d61af89a355e6.sample"
+
+[deps]
+
+source_file="res://Audio/hood lie detector/japna/HELL NAWWW.wav"
+dest_files=["res://.godot/imported/HELL NAWWW.wav-d658271b680752b3777d61af89a355e6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

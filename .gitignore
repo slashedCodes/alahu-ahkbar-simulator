@@ -16,3 +16,5 @@ mono_crash.*.json
 
 # Alahu Ahkbar specific
 Exports/
+
+android/

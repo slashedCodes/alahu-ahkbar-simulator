@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bxvu4s63b2o3a"
+path="res://.godot/imported/911 thats a good idea.wav-99a2e661db685de9f8e85ee7ad411010.sample"
+
+[deps]
+
+source_file="res://Audio/hood lie detector/japna/911 thats a good idea.wav"
+dest_files=["res://.godot/imported/911 thats a good idea.wav-99a2e661db685de9f8e85ee7ad411010.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

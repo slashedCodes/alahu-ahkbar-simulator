@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bb87t2s181ed7"
+path="res://.godot/imported/aw hell na i got a date w osama bin laden tonight.wav-aec28a66ef3d674845bb58d5c4c8f279.sample"
+
+[deps]
+
+source_file="res://Audio/hood lie detector/japna/aw hell na i got a date w osama bin laden tonight.wav"
+dest_files=["res://.godot/imported/aw hell na i got a date w osama bin laden tonight.wav-aec28a66ef3d674845bb58d5c4c8f279.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://df5oj7pbw7syg"
+path="res://.godot/imported/actually i dont remember.wav-2d9909c218f0bf1924f88ab2dbbc87d5.sample"
+
+[deps]
+
+source_file="res://Audio/hood lie detector/japna/actually i dont remember.wav"
+dest_files=["res://.godot/imported/actually i dont remember.wav-2d9909c218f0bf1924f88ab2dbbc87d5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

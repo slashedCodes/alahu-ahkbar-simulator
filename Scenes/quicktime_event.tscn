@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://deygcm6ka5r0l"]
+
+[ext_resource type="Script" path="res://scripts/quicktimeEvent.gd" id="1_4y42p"]
+[ext_resource type="Texture2D" uid="uid://u7uik36x6fyo" path="res://Textures/quicktime event.png" id="2_nubse"]
+[ext_resource type="Texture2D" uid="uid://8e6xme06pctj" path="res://Textures/outline.png" id="3_5ydrg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_afkaq"]
+line_spacing = 0.0
+font_size = 271
+outline_size = 30
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s2h1y"]
+radius = 252.66
+
+[node name="quicktimeEvent" type="Node2D"]
+script = ExtResource("1_4y42p")
+
+[node name="qte" type="Sprite2D" parent="."]
+position = Vector2(220, 187)
+scale = Vector2(0.352, 0.344)
+texture = ExtResource("2_nubse")
+
+[node name="Label" type="Label" parent="qte"]
+offset_left = -185.0
+offset_top = -180.0
+offset_right = 176.0
+offset_bottom = 177.0
+text = "E"
+label_settings = SubResource("LabelSettings_afkaq")
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+clip_text = true
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="qte"]
+shape = SubResource("CircleShape2D_s2h1y")
+
+[node name="Outline" type="Sprite2D" parent="."]
+position = Vector2(220, 189)
+scale = Vector2(1.304, 1.304)
+texture = ExtResource("3_5ydrg")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.85
+one_shot = true
+autostart = true
+
+[connection signal="pressed" from="qte/TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]

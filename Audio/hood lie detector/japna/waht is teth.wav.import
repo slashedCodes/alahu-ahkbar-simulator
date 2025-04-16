@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dxt63cvi5ikhc"
+path="res://.godot/imported/waht is teth.wav-d8880dafb646c777d3c9f0e6bd6d9911.sample"
+
+[deps]
+
+source_file="res://Audio/hood lie detector/japna/waht is teth.wav"
+dest_files=["res://.godot/imported/waht is teth.wav-d8880dafb646c777d3c9f0e6bd6d9911.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

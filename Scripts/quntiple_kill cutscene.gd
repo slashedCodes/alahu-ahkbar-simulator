@@ -9,4 +9,6 @@ func _on_body_entered(body):
 		GameManager.objectives_visible(false)
 		%cutscene.play("cutscene")
 		await %cutscene.animation_finished
-		GameManager.goto_scene("res://Scenes/thanks.tscn", false)
+		
+		# go to next scene vro 💔
+		GameManager.goto_scene("res://Scenes/police_dungeon_cutscene.tscn", true)

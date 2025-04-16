@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cdtmuce1283w3"
+path="res://.godot/imported/i got the alice heimer.wav-51f491e8b3374ec53e87e32d69c4ce9f.sample"
+
+[deps]
+
+source_file="res://Audio/hood lie detector/japna/i got the alice heimer.wav"
+dest_files=["res://.godot/imported/i got the alice heimer.wav-51f491e8b3374ec53e87e32d69c4ce9f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

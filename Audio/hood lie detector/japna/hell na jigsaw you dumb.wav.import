@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b8jxfilcnm8i1"
+path="res://.godot/imported/hell na jigsaw you dumb.wav-c656b3f956a4218cfd5388b74458cf0f.sample"
+
+[deps]
+
+source_file="res://Audio/hood lie detector/japna/hell na jigsaw you dumb.wav"
+dest_files=["res://.godot/imported/hell na jigsaw you dumb.wav-c656b3f956a4218cfd5388b74458cf0f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -7,6 +7,10 @@ extends Node
 func _ready():
 	refresh_vars()
 
+func die():
+	if player:
+		player.die()
+
 func movement(value):
 	refresh_vars()
 	if player:

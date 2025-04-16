@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://fpaq3vcylibe"
+path="res://.godot/imported/HELL NA you goin to JAIL.wav-dd71e41d7b2c4a22aa32670ae0fd1a4b.sample"
+
+[deps]
+
+source_file="res://Audio/hood lie detector/HELL NA you goin to JAIL.wav"
+dest_files=["res://.godot/imported/HELL NA you goin to JAIL.wav-dd71e41d7b2c4a22aa32670ae0fd1a4b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

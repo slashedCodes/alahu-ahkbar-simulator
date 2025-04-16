@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b55byo677ni8i"
+path="res://.godot/imported/idk what ur talking abt.wav-1e020bc7f35f72c91bd02de9ff5385ba.sample"
+
+[deps]
+
+source_file="res://Audio/hood lie detector/japna/idk what ur talking abt.wav"
+dest_files=["res://.godot/imported/idk what ur talking abt.wav-1e020bc7f35f72c91bd02de9ff5385ba.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

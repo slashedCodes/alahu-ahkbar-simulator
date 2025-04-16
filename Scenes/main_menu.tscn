@@ -7,3 +7,4 @@
 script = ExtResource("1")
 
 [node name="Main Menu UI" parent="." instance=ExtResource("2")]
+anchors_preset = 15
