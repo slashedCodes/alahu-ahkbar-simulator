@@ -7,6 +7,11 @@ func _ready():
 	if not get_tree().root.name == "Main Menu":
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		GameManager.movement(false)
+		dialog.set_text("")
+		await $eye_opening/AnimationPlayer.animation_finished
+		await get_tree().create_timer(0.5).timeout
+		
+		
 		dialog.set_text("i know who you are.... and i want you to tell me one thing.... did you kill those people...? why did you do it?")
 		$"voice line 1".play()
 		await $"voice line 1".finished

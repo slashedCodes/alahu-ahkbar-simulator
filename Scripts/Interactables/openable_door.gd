@@ -11,9 +11,13 @@ func _ready():
 
 func interact(player):
 	if open:
+		if has_node("AudioStreamPlayer3D"):
+			$AudioStreamPlayer3D.play()
 		set_meta("text", "open")
 		door.rotation_degrees = angle
 	else:
+		if has_node("AudioStreamPlayer3D"):
+			$AudioStreamPlayer3D.play()
 		set_meta("text", "close")
 		door.rotation_degrees = Vector3(0, 0, 100)
 	open = !open

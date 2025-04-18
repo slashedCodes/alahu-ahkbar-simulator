@@ -14,6 +14,8 @@ func _on_drag_button_up():
 	dragging = false
 
 func _physics_process(delta):
+	if visible:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if dragging:
 		card.position = get_global_mouse_position() - offset
 		card.move_and_slide()

@@ -122,10 +122,6 @@ mobile_fire={
 "events": []
 }
 
-[input_devices]
-
-pointing/emulate_touch_from_mouse=true
-
 [layer_names]
 
 3d_render/layer_1="Default"

@@ -17,7 +17,7 @@ func _on_kill_yourself_pressed():
 	get_owner().get_node("apartment/furniture/fridge/Refrigerator_door_01/fridge door").set_meta("text", "nuh uh")
 	
 	get_owner().get_node("apartment/furniture/door/StaticBody3D").set_meta("text", "nuh uh")
-	get_owner().get_node("apartment/furniture/door/StaticBody3D").set_meta("interactable", false)
+	#get_owner().get_node("apartment/furniture/door/StaticBody3D").set_meta("interactable", false)
 	get_owner().get_node("apartment/box/window").queue_free()
 	get_tree().paused = false
 

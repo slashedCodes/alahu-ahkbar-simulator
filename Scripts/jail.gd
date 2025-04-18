@@ -17,4 +17,4 @@ func _on_timer_timeout():
 
 func _on_video_stream_player_finished():
 	$Control.visible = false
-	GameManager.goto_scene("res://Scenes/main_menu.tscn", false)
+	GameManager.die()

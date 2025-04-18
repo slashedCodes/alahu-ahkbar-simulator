@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://xyxx7vypjx83"
+path="res://.godot/imported/lie detector phonk.wav-52cc938a04926536a5f0a9f6f2eac8bc.sample"
+
+[deps]
+
+source_file="res://Audio/music/lie detector phonk.wav"
+dest_files=["res://.godot/imported/lie detector phonk.wav-52cc938a04926536a5f0a9f6f2eac8bc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

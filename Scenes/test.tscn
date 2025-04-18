@@ -1,0 +1,317 @@
+[gd_scene load_steps=31 format=3 uid="uid://ciigkbencgq36"]
+
+[ext_resource type="Texture2D" uid="uid://de7khbgr7vn6r" path="res://Textures/Grass.webp" id="1_gc6dg"]
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_mt24l"]
+[ext_resource type="Script" path="res://Scripts/ui_handler.gd" id="2_b6xnf"]
+[ext_resource type="PackedScene" uid="uid://di1fvicjwhp2a" path="res://Scenes/pause_screen.tscn" id="3_tri13"]
+[ext_resource type="Texture2D" uid="uid://db1igregnmakb" path="res://Textures/Controls/MLG Hitmarker.png" id="4_3myid"]
+[ext_resource type="PackedScene" uid="uid://cjrl3cgbr8py5" path="res://Scenes/death_screen.tscn" id="5_mqxy8"]
+[ext_resource type="Script" path="res://Scripts/Inventory.gd" id="6_wq5kj"]
+[ext_resource type="FontFile" uid="uid://3088fs7yhrwi" path="res://Other/comic sans.ttf" id="7_wgxfe"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="8_ry0pn"]
+[ext_resource type="Texture2D" uid="uid://cunjv0lj0krd1" path="res://Textures/Controls/jump.png" id="9_gjc6h"]
+[ext_resource type="Texture2D" uid="uid://clgt4oy12723p" path="res://Textures/Controls/jump_pressed.png" id="10_qplay"]
+[ext_resource type="Texture2D" uid="uid://bljc2vayshggi" path="res://Textures/Controls/reload.png" id="11_1p8ha"]
+[ext_resource type="Texture2D" uid="uid://u4gf0cr1rlrc" path="res://Textures/Controls/reload_pressed.png" id="12_4c7mo"]
+[ext_resource type="Texture2D" uid="uid://dg1br6xx7uc1t" path="res://Textures/Controls/interact.png" id="13_ufn2g"]
+[ext_resource type="Texture2D" uid="uid://bgytct4238m2b" path="res://Textures/Controls/interact_pressed.png" id="14_hjjny"]
+[ext_resource type="Texture2D" uid="uid://dguwvgwjdjwe0" path="res://Textures/Controls/shoot.png" id="15_cpqp4"]
+[ext_resource type="Texture2D" uid="uid://cbq4ix6tjmf3k" path="res://Textures/Controls/shoot_pressed.png" id="16_0dyaq"]
+[ext_resource type="Texture2D" uid="uid://ch7lay8kmpcp3" path="res://Textures/Controls/pause.png" id="17_ws8t8"]
+[ext_resource type="Texture2D" uid="uid://ch3irnvh44bvu" path="res://Textures/Controls/pause_pressed.png" id="18_qag2r"]
+[ext_resource type="AudioStream" uid="uid://kg31mjbadlq6" path="res://Audio/hitHurt.wav" id="19_vkwwp"]
+[ext_resource type="AudioStream" uid="uid://58wb0ewsdtyg" path="res://Audio/sfx/reload.wav" id="20_ljgnw"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_bn3cl"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mf8yx"]
+radius = 0.224981
+
+[sub_resource type="LabelSettings" id="LabelSettings_cqvmy"]
+font = ExtResource("7_wgxfe")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j4t3y"]
+radius = 256.0
+
+[sub_resource type="Animation" id="Animation_xl8ia"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Neck/Camera3D/Hand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.92744, -0.647957, -1.13801)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Neck/Camera3D/Hand:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("reload:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_0ho83"]
+resource_name = "hand_fire"
+length = 0.08
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Neck/Camera3D/Hand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.04, 0.08),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.92744, -0.647957, -1.13801), Vector3(0.92744, -0.647957, -0.895956), Vector3(0.92744, -0.647957, -1.13801)]
+}
+
+[sub_resource type="Animation" id="Animation_jxwi7"]
+resource_name = "hand_reload"
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Neck/Camera3D/Hand:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(3.14159, 0, 0), Vector3(6.28319, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("reload:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_77tm5"]
+_data = {
+"RESET": SubResource("Animation_xl8ia"),
+"hand_fire": SubResource("Animation_0ho83"),
+"hand_reload": SubResource("Animation_jxwi7")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ganws"]
+albedo_texture = ExtResource("1_gc6dg")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(450, 400)
+render_target_update_mode = 4
+
+[node name="Player" type="CharacterBody3D" parent="SubViewportContainer/SubViewport"]
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56594, 1.84074, 0)
+floor_max_angle = 1.55334
+script = ExtResource("1_mt24l")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Player"]
+mesh = SubResource("CapsuleMesh_bn3cl")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Player"]
+shape = SubResource("CapsuleShape3D_mf8yx")
+
+[node name="Neck" type="Node3D" parent="SubViewportContainer/SubViewport/Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.549726, 0)
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Player/Neck"]
+fov = 90.0
+script = ExtResource("2_b6xnf")
+
+[node name="Pause Screen" parent="SubViewportContainer/SubViewport/Player/Neck/Camera3D" instance=ExtResource("3_tri13")]
+
+[node name="Hand" type="Node3D" parent="SubViewportContainer/SubViewport/Player/Neck/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.92744, -0.647957, -1.13801)
+
+[node name="hitmarker" type="Sprite2D" parent="SubViewportContainer/SubViewport/Player/Neck/Camera3D"]
+position = Vector2(225, 200)
+scale = Vector2(0.0142857, 0.0142857)
+texture = ExtResource("4_3myid")
+
+[node name="objectives" type="Panel" parent="SubViewportContainer/SubViewport/Player/Neck/Camera3D"]
+visible = false
+offset_left = 260.0
+offset_top = 2.0
+offset_right = 451.0
+offset_bottom = 108.0
+mouse_filter = 2
+
+[node name="text" type="Label" parent="SubViewportContainer/SubViewport/Player/Neck/Camera3D/objectives"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -1.0
+offset_right = 87.0
+offset_bottom = 22.0
+text = "objectives:"
+
+[node name="container" type="BoxContainer" parent="SubViewportContainer/SubViewport/Player/Neck/Camera3D/objectives"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 21.0
+offset_right = 190.0
+offset_bottom = 106.0
+vertical = true
+
+[node name="Death Screen" parent="SubViewportContainer/SubViewport/Player/Neck/Camera3D" instance=ExtResource("5_mqxy8")]
+visible = false
+anchors_preset = 15
+
+[node name="interaction" type="Label" parent="SubViewportContainer/SubViewport/Player/Neck/Camera3D"]
+offset_left = 130.0
+offset_top = 204.0
+offset_right = 321.0
+offset_bottom = 298.0
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="inventory" type="HBoxContainer" parent="SubViewportContainer/SubViewport/Player/Neck/Camera3D"]
+offset_left = 230.0
+offset_top = 354.0
+offset_right = 446.0
+offset_bottom = 394.0
+alignment = 2
+script = ExtResource("6_wq5kj")
+
+[node name="ammo" type="Label" parent="SubViewportContainer/SubViewport/Player/Neck/Camera3D"]
+visible = false
+offset_left = 375.0
+offset_top = 330.0
+offset_right = 453.0
+offset_bottom = 353.0
+text = "5/5 ammo"
+label_settings = SubResource("LabelSettings_cqvmy")
+
+[node name="AudioListener3D" type="AudioListener3D" parent="SubViewportContainer/SubViewport/Player/Neck/Camera3D"]
+current = true
+
+[node name="RayCast3D" type="RayCast3D" parent="SubViewportContainer/SubViewport/Player/Neck/Camera3D"]
+target_position = Vector3(0, 0, -200)
+
+[node name="mobile controls" type="CanvasLayer" parent="SubViewportContainer/SubViewport/Player/Neck/Camera3D"]
+visible = false
+
+[node name="Move" parent="SubViewportContainer/SubViewport/Player/Neck/Camera3D/mobile controls" instance=ExtResource("8_ry0pn")]
+anchors_preset = -1
+offset_top = -129.0
+offset_right = 297.0
+offset_bottom = 153.0
+scale = Vector2(0.45, 0.45)
+clampzone_size = 60.0
+metadata/_edit_use_anchors_ = true
+
+[node name="jump" type="TouchScreenButton" parent="SubViewportContainer/SubViewport/Player/Neck/Camera3D/mobile controls"]
+position = Vector2(370, 284)
+scale = Vector2(0.0976562, 0.0976562)
+texture_normal = ExtResource("9_gjc6h")
+texture_pressed = ExtResource("10_qplay")
+shape = SubResource("CircleShape2D_j4t3y")
+action = "jump"
+
+[node name="reload" type="TouchScreenButton" parent="SubViewportContainer/SubViewport/Player/Neck/Camera3D/mobile controls"]
+position = Vector2(327, 242)
+scale = Vector2(0.0703124, 0.0703124)
+texture_normal = ExtResource("11_1p8ha")
+texture_pressed = ExtResource("12_4c7mo")
+shape = SubResource("CircleShape2D_j4t3y")
+action = "reload"
+
+[node name="interact" type="TouchScreenButton" parent="SubViewportContainer/SubViewport/Player/Neck/Camera3D/mobile controls"]
+position = Vector2(309, 287)
+scale = Vector2(0.0976562, 0.0976562)
+texture_normal = ExtResource("13_ufn2g")
+texture_pressed = ExtResource("14_hjjny")
+shape = SubResource("CircleShape2D_j4t3y")
+action = "interact"
+
+[node name="shoot" type="TouchScreenButton" parent="SubViewportContainer/SubViewport/Player/Neck/Camera3D/mobile controls"]
+position = Vector2(370, 222)
+scale = Vector2(0.0976562, 0.0976562)
+texture_normal = ExtResource("15_cpqp4")
+texture_pressed = ExtResource("16_0dyaq")
+shape = SubResource("CircleShape2D_j4t3y")
+action = "mobile_fire"
+
+[node name="pause" type="TouchScreenButton" parent="SubViewportContainer/SubViewport/Player/Neck/Camera3D/mobile controls"]
+position = Vector2(429, 5.96046e-08)
+scale = Vector2(0.0410156, 0.0410156)
+texture_normal = ExtResource("17_ws8t8")
+texture_pressed = ExtResource("18_qag2r")
+shape = SubResource("CircleShape2D_j4t3y")
+action = "pause"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/Player"]
+libraries = {
+"": SubResource("AnimationLibrary_77tm5")
+}
+
+[node name="Gun Shoot" type="AudioStreamPlayer" parent="SubViewportContainer/SubViewport/Player"]
+stream = ExtResource("19_vkwwp")
+volume_db = -8.915
+
+[node name="reload" type="AudioStreamPlayer" parent="SubViewportContainer/SubViewport/Player"]
+stream = ExtResource("20_ljgnw")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.39879, 0, -0.367523)
+material_override = SubResource("StandardMaterial3D_ganws")
+size = Vector3(80.4019, 1, 23.7231)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(0.999367, 0.0355798, 0, -0.0355798, 0.999367, 0, 0, 0, 1, -1.23809, 2.87947, 2.92004)
+material_override = SubResource("StandardMaterial3D_ganws")
+size = Vector3(2.12009, 7.04034, 1.21007)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.503824, 4.15839, -0.0222623)
+material_override = SubResource("StandardMaterial3D_ganws")
+size = Vector3(2.12009, 9.59613, 1.21007)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(0.991079, -0.133277, 0, 0.133277, 0.991079, 0, 0, 0, 1, -3.13911, 3.61532, 5.73186)
+material_override = SubResource("StandardMaterial3D_ganws")
+size = Vector3(2.12009, 8.55231, 1.21007)

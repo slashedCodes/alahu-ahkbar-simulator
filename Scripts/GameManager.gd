@@ -15,6 +15,8 @@ func movement(value):
 	refresh_vars()
 	if player:
 		player.movement = value
+		if is_running_on_mobile():
+			player.get_node("Neck/Camera3D/mobile controls").visible = value
 
 func save_scene(scene):
 	var save_game = FileAccess.open("user://savegame.save", FileAccess.WRITE)
@@ -79,4 +81,5 @@ func is_running_on_mobile():
 	if OS.get_name() == "Android" or OS.get_name() == "iOS":
 		return true
 	else:
+		#return true
 		return false

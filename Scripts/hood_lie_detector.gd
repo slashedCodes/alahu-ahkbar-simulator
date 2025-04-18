@@ -33,12 +33,67 @@ var possible_keys = [
 var qte_cooldown = 0
 var last_qte_time = 0
 
-# Core functions
-func success():
-	confidence += 0.05
+func _process(delta):
+	if minigame:
+		time_bar.visible = true
+		confidence_bar.visible = true
+		
+		time_left -= 0.08 * delta
+		time_left = max(time_left, 0)
+		time_bar.scale = Vector2(time_left, time_bar.scale.y)
+		if time_left == 0: time_fail()
+		
+		confidence -= 0.05 * delta
+		confidence = max(confidence, 0)
+		confidence_bar.scale = Vector2(confidence, confidence_bar.scale.y)
+		if confidence == 0: confidence_fail()
+		
+		# Handle QTE cooldown
+		qte_cooldown -= delta
+		
+		# Generate new quicktime events occasionally if cooldown has expired
+		if qte_cooldown <= 0 and Time.get_ticks_msec() - last_qte_time > 500:
+			generate_random_quicktime()
+			
+			# Set a random cooldown between 2-4 seconds before next QTE 
+			qte_cooldown = randf_range(0.5, 1.5)
+	else:
+		time_bar.visible = false
+		confidence_bar.visible = false
 
-func fail():
-	print("failed")
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	if not get_tree().root.get_child(2).name == "Main Menu":
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		dialog.visible = true
+		dialog.clear_options()
+		await get_tree().create_timer(2).timeout
+		await show_cop_dialog("alright, did you kill those people cuh?", $audio/cop/alr_did_you_kill_those_people_cuh)
+		
+		dialog.add_option("DUHHH", duhhh)
+		dialog.add_option("HELL NAW", hell_naw)
+		dialog.add_option("idk what ur talking about", idk_what_ur_talking_about)
+		dialog.show_options()
+
+var time_fale = false
+func time_fail():
+	if time_fale: return
+	minigame = false
+	time_fale = true
+	$Camera3D/pointer.visible = true
+	$Camera3D/pointer/buzzer.play()
+	jail()
+
+var confidence_fale = false
+func confidence_fail():
+	if confidence_fale: return
+	minigame = false
+	confidence_fale = true
+	confidence += 0.3
+	$Camera3D/pointer.visible = true
+	$Camera3D/pointer/buzzer.play()
+	jail()
+
 
 # New function to generate random quicktime events
 func generate_random_quicktime():
@@ -109,55 +164,12 @@ func handle_dialog_sequence(player_audio, detector_result):
 		
 	hide_detector()
 
-var time_fale = false
-func time_fail():
-	if time_fale: return
-	minigame = false
-	time_fale = true
-	$Camera3D/pointer.visible = true
-	$Camera3D/pointer/buzzer.play()
-	jail()
+# Core functions
+func success():
+	confidence += 0.05
 
-func _process(delta):
-	if minigame:
-		time_bar.visible = true
-		confidence_bar.visible = true
-		
-		time_left -= 0.08 * delta
-		time_left = max(time_left, 0)
-		time_bar.scale = Vector2(time_left, time_bar.scale.y)
-		if time_left == 0: time_fail()
-		
-		confidence -= 0.05 * delta
-		confidence = max(confidence, 0)
-		confidence_bar.scale = Vector2(confidence, confidence_bar.scale.y)
-		
-		# Handle QTE cooldown
-		qte_cooldown -= delta
-		
-		# Generate new quicktime events occasionally if cooldown has expired
-		if qte_cooldown <= 0 and Time.get_ticks_msec() - last_qte_time > 500:
-			generate_random_quicktime()
-			
-			# Set a random cooldown between 2-4 seconds before next QTE 
-			qte_cooldown = randf_range(0.5, 1.5)
-	else:
-		time_bar.visible = false
-		confidence_bar.visible = false
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	if not get_tree().root.get_child(2).name == "Main Menu":
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		dialog.visible = true
-		dialog.clear_options()
-		await get_tree().create_timer(2).timeout
-		await show_cop_dialog("alright, did you kill those people cuh?", $audio/cop/alr_did_you_kill_those_people_cuh)
-		
-		dialog.add_option("DUHHH", duhhh)
-		dialog.add_option("HELL NAW", hell_naw)
-		dialog.add_option("idk what ur talking about", idk_what_ur_talking_about)
-		dialog.show_options()
+func fail():
+	print("failed")
 
 # Helper for showing cop dialog
 func show_cop_dialog(text: String, audio_node):
