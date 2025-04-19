@@ -12030,7 +12030,7 @@ volume_db = -10.463
 
 [node name="good idea" type="AudioStreamPlayer" parent="Sketchfab_Scene"]
 stream = ExtResource("87_0bbfn")
-volume_db = -26.35
+volume_db = -6.333
 
 [node name="kick" type="AudioStreamPlayer" parent="Sketchfab_Scene"]
 stream = ExtResource("88")

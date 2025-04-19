@@ -6,10 +6,6 @@ func _ready():
 	GameManager.objectives_visible(true)
 	GameManager.add_objective("escape jail")
 	$Timer.start()
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 func _on_timer_timeout():
 	$Control.visible = true

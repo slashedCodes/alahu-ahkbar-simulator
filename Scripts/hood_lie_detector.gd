@@ -118,16 +118,16 @@ func generate_random_quicktime():
 	# Create the quicktime event
 	add_quicktime(random_key, key_text, random_time, success, fail, random_position, Vector2(0.3, 0.2))
 
-func add_quicktime(key, text: String, time: float, success: Callable, fail: Callable, position: Vector2, scale: Vector2):
+func add_quicktime(key, text: String, time: float, success_c: Callable, fail_c: Callable, pos: Vector2, scal: Vector2):
 	var qte = quicktime_scene.instantiate()
 	add_child(qte)
 	qte.set_key(key)
 	qte.set_text(text)
 	qte.set_time(time)
-	qte.set_success_callback(success)
-	qte.set_fail_callback(fail)
-	qte.position = position
-	qte.scale = scale
+	qte.set_success_callback(success_c)
+	qte.set_fail_callback(fail_c)
+	qte.position = pos
+	qte.scale = scal
 
 func detector_true():
 	$"fucking_lie_detec/he lying".visible = false
@@ -173,7 +173,7 @@ func success():
 	confidence += 0.05
 
 func fail():
-	print("failed")
+	confidence -= 0.01
 
 # Helper for showing cop dialog
 func show_cop_dialog(text: String, audio_node):

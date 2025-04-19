@@ -130,7 +130,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mf8yx"]
 radius = 0.224981
 
-[sub_resource type="CompositorEffect" id="CompositorEffect_tiau7"]
+[sub_resource type="CompositorEffect" id="CompositorEffect_1tixq"]
 resource_local_to_scene = false
 resource_name = ""
 enabled = true
@@ -141,7 +141,7 @@ script = ExtResource("2_xvb1a")
 metadata/_custom_type_script = "uid://banl4y3rrrjbw"
 
 [sub_resource type="Compositor" id="Compositor_0vcjp"]
-compositor_effects = Array[CompositorEffect]([SubResource("CompositorEffect_tiau7")])
+compositor_effects = Array[CompositorEffect]([SubResource("CompositorEffect_1tixq")])
 
 [sub_resource type="LabelSettings" id="LabelSettings_cqvmy"]
 font = ExtResource("8")

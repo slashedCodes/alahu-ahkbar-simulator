@@ -10,7 +10,8 @@ func interact(_player):
 		set_meta("interactable", true)
 		return
 	
-	get_owner().get_node("TransitionScreen").fade_to_black() # DOESNT WORK???
+	get_owner().get_node("TransitionScreen").show()
+	get_owner().get_node("TransitionScreen").fade_to_black()
 	GameManager.movement(false)
 	$AudioStreamPlayer3D.play()
 	await $AudioStreamPlayer3D.finished

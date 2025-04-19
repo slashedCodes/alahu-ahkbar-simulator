@@ -1,4 +1,4 @@
-[gd_scene load_steps=430 format=4 uid="uid://derh614ppxnaf"]
+[gd_scene load_steps=431 format=4 uid="uid://derh614ppxnaf"]
 
 [ext_resource type="PackedScene" uid="uid://g4e2cyrofo76" path="res://Scenes/transition_screen.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://pounoaulac8g" path="res://Models/p/low_poly_prisoner_bed_psx.glb" id="2"]
@@ -94,6 +94,7 @@
 [ext_resource type="PackedScene" uid="uid://ijfntxr822tg" path="res://Scenes/Player.tscn" id="90"]
 [ext_resource type="Script" uid="uid://demqfjlxmhk4t" path="res://Scripts/Interactables/die.gd" id="91"]
 [ext_resource type="Texture2D" uid="uid://baryuu1i51klf" path="res://Textures/eyelid.png" id="93_mttmp"]
+[ext_resource type="Script" uid="uid://xufrykgbas3q" path="res://Scripts/eye_opening.gd" id="94_6hgvc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cb5tl"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -5641,6 +5642,7 @@ transform = Transform3D(0.789727, -0.382147, 0.479891, 0, 0.782271, 0.622938, -0
 
 [node name="eye_opening" type="Node2D" parent="."]
 z_index = 5
+script = ExtResource("94_6hgvc")
 
 [node name="eyelid1" type="Sprite2D" parent="eye_opening"]
 position = Vector2(225, 300)

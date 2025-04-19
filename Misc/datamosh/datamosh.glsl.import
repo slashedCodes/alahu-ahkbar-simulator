@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://65sqfk4bxqe"
+path="res://.godot/imported/datamosh.glsl-f0aed057ea396d428eb3f4cc1a4b2e68.res"
+
+[deps]
+
+source_file="res://Misc/datamosh/datamosh.glsl"
+dest_files=["res://.godot/imported/datamosh.glsl-f0aed057ea396d428eb3f4cc1a4b2e68.res"]
+
+[params]
+

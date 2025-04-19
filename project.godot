@@ -129,8 +129,6 @@ mobile_fire={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
 lights_and_shadows/directional_shadow/size=1024
 lights_and_shadows/directional_shadow/size.mobile=1024
@@ -163,3 +161,10 @@ lights_and_shadows/positional_shadow/atlas_quadrant_0_subdiv=1
 lights_and_shadows/positional_shadow/atlas_quadrant_1_subdiv=1
 lights_and_shadows/positional_shadow/atlas_quadrant_2_subdiv=1
 lights_and_shadows/positional_shadow/atlas_quadrant_3_subdiv=1
+
+[shader_globals]
+
+refresh_frame={
+"type": "bool",
+"value": false
+}

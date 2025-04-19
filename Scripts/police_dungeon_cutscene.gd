@@ -20,7 +20,7 @@ func _ready():
 		dialog.add_option("i was just performing for the show", option1)
 		dialog.add_option("i want a lawyer", option2)
 		dialog.add_option("...", option3)
-		dialog.show_options() 
+		dialog.show_options()
 
 func option1():
 	$"voice line 2".play()
@@ -39,5 +39,5 @@ func option3():
 	GameManager.goto_scene("res://Scenes/jail.tscn", false)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

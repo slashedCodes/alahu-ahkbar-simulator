@@ -40,7 +40,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 var min_scale = 0.334
 var max_scale = 1.304
-func _process(delta):
+func _process(_delta):
 	if timer.time_left <= 0:
 		fail()
 	else:
