@@ -187,7 +187,6 @@ vertical = true
 
 [node name="Death Screen" parent="Neck/Camera3D" instance=ExtResource("5")]
 visible = false
-anchors_preset = 15
 
 [node name="interaction" type="Label" parent="Neck/Camera3D"]
 offset_left = 130.0

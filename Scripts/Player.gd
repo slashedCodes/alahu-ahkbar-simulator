@@ -61,9 +61,15 @@ func fire():
 						target.die(camera.global_basis.z)
 			shooting = true
 
-func die():
+func die(message = "you die"):
 	$"Neck/Camera3D/interaction".visible = false
+	$"Neck/Camera3D/objectives".visible = false
+	$Neck/Camera3D/inventory.visible = false
+	$Neck/Camera3D/ammo.visible = false
+	$Neck/Camera3D/hitmarker.visible = false
+	$"Neck/Camera3D/mobile controls".visible = false
 	$"Neck/Camera3D/Death Screen".visible = true
+	$"Neck/Camera3D/Death Screen/title".text = message
 	GameManager.remove_objectives()
 	GameManager.objectives_visible(false)
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

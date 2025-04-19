@@ -7,6 +7,7 @@ func _on_body_entered(body):
 		%"cutscene camera".current = true
 		%Camera3D.current = false
 		GameManager.objectives_visible(false)
+		$"../../Player".hide()
 		%cutscene.play("cutscene")
 		await %cutscene.animation_finished
 		

@@ -7,11 +7,13 @@ func _ready():
 	GameManager.objectives_visible(true)
 	GameManager.add_objective("go to sleep")
 
-func interact(_player):
+func interact(camera: Camera3D):
 	anim_player.play("sleep")
 	GameManager.movement(false)
 	
 	await anim_player.animation_finished # wait for the anim to be finished
+	camera.compositor.compositor_effects.get(0).enabled = true
+	Engine.max_fps = 20
 	
 	var phone = $"../../apartment/furniture/phone"
 	phone.visible = true

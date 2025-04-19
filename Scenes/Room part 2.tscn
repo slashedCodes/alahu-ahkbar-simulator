@@ -133,7 +133,7 @@ radius = 0.224981
 [sub_resource type="CompositorEffect" id="CompositorEffect_tiau7"]
 resource_local_to_scene = false
 resource_name = ""
-enabled = true
+enabled = false
 effect_callback_type = 4
 needs_motion_vectors = true
 needs_normal_roughness = false

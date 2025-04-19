@@ -27,8 +27,8 @@ void main() {
 
 	ivec2 uvr=ivec2(vec2(uv)/10.0)*10;
 
-	//float n = nrand(time,uvr.x*uvr.y);
-	float n = nrand(time,uvr.x+uvr.y*size.x);
+	float n = nrand(time,uvr.x*uvr.y);
+	//float n = nrand(time,uvr.x+uvr.y*size.x);
 
 	vec4 color_vel = imageLoad(velocity_image, uvr);
 	color_vel=max(abs(color_vel)-round(n/1.4),0)*sign(color_vel);

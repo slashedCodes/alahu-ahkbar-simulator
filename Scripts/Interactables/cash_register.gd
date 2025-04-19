@@ -51,4 +51,4 @@ func interact(player_cam):
 			$"line 2".playing = true
 			await $"line 2".finished
 			$boom.playing = true
-			player_cam.get_parent().get_parent().die()
+			player_cam.get_parent().get_parent().die("you got shot")

@@ -4,10 +4,11 @@ class_name CompositorEffectDatamosh
 
 var context : StringName = "PreviousFrame"
 var texture : StringName = "texture"
-var refresh_frame
+var refresh_frame : bool = false
 
-# This is a very simple effects demo that takes our color values and writes
-# back gray scale values. 
+# Change these variables
+var datamosh_path : String = "res://Misc/datamosh/"
+var datamosh_amount : float = 0.4
 
 func _init():
 	needs_motion_vectors = true
@@ -40,22 +41,25 @@ func _initialize_compute():
 		return
 
 	# Create our shader
-	var shader_file = load("res://Misc/datamosh/datamosh.glsl")
+	var shader_file = load(datamosh_path + "datamosh.glsl")
 	var shader_spirv: RDShaderSPIRV = shader_file.get_spirv()
 	datamosh_shader = rd.shader_create_from_spirv(shader_spirv)
 	datamosh_pipeline = rd.compute_pipeline_create(datamosh_shader)
 	
-	shader_file = load("res://Misc/datamosh/loop_frame.glsl")
+	shader_file = load(datamosh_path + "loop_frame.glsl")
 	shader_spirv = shader_file.get_spirv()
 	loop_frame_shader = rd.shader_create_from_spirv(shader_spirv)
 	loop_frame_pipeline = rd.compute_pipeline_create(loop_frame_shader)
+
 
 func get_image_uniform(image : RID, binding : int = 0) -> RDUniform:
 	var uniform : RDUniform = RDUniform.new()
 	uniform.uniform_type = RenderingDevice.UNIFORM_TYPE_IMAGE
 	uniform.binding = binding
 	uniform.add_id(image)
+
 	return uniform
+
 
 func _render_callback(p_effect_callback_type, p_render_data):
 	if Engine.is_editor_hint():
@@ -83,19 +87,12 @@ func _render_callback(p_effect_callback_type, p_render_data):
 					render_scene_buffers.clear_context(context)
 			else:
 				var usage_bits : int = RenderingDevice.TEXTURE_USAGE_SAMPLING_BIT | RenderingDevice.TEXTURE_USAGE_STORAGE_BIT
-				#render_scene_buffers.create_texture(context, texture, RenderingDevice.DATA_FORMAT_R16_UNORM, usage_bits, RenderingDevice.TEXTURE_SAMPLES_1, size, 1, 1, true, false)
-				render_scene_buffers.create_texture(context, texture, RenderingDevice.DATA_FORMAT_R16G16B16A16_SFLOAT, usage_bits, RenderingDevice.TEXTURE_SAMPLES_1, size, 1, 1, true, false)
-				
+				render_scene_buffers.create_texture(context, texture, RenderingDevice.DATA_FORMAT_R8G8B8A8_SNORM, usage_bits, RenderingDevice.TEXTURE_SAMPLES_1, size, 1, 1, true, false)
 				refresh_frame = true
 				print("recreate")
 
-			# Barrier
-			# Deprecated. Barriers are automatically inserted by RenderingDevice.
-			# rd.barrier(RenderingDevice.BARRIER_MASK_ALL_BARRIERS, RenderingDevice.BARRIER_MASK_COMPUTE)
-
 			# Loop through views just in case we're doing stereo rendering. No extra cost if this is mono.
 			var view_count = render_scene_buffers.get_view_count()
-			print(refresh_frame)
 			for view in range(view_count):
 				# Get the RID for our color image, we will be reading from and writing to it.
 				var input_image = render_scene_buffers.get_color_layer(view)
@@ -103,10 +100,11 @@ func _render_callback(p_effect_callback_type, p_render_data):
 				var velocity_buffer = render_scene_buffers.get_velocity_texture()
 				var previous_texture_image = render_scene_buffers.get_texture(context, texture)
 				
-				var push_constant : PackedInt64Array = PackedInt64Array()
+				var push_constant : PackedInt32Array = PackedInt32Array()
 				push_constant.push_back(size.x)
 				push_constant.push_back(size.y)
 				push_constant.push_back(Time.get_ticks_msec())
+				push_constant.push_back(int(datamosh_amount*100.0))
 				
 				if not refresh_frame:
 					# Create a uniform set, this will be cached, the cache will be cleared if our viewports configuration is changed
@@ -125,7 +123,7 @@ func _render_callback(p_effect_callback_type, p_render_data):
 					rd.compute_list_bind_uniform_set(compute_list, input_set, 0)
 					rd.compute_list_bind_uniform_set(compute_list, velocity_set, 1)
 					rd.compute_list_bind_uniform_set(compute_list, previous_set, 2)
-					rd.compute_list_set_push_constant(compute_list, push_constant.to_byte_array(), 16)
+					rd.compute_list_set_push_constant(compute_list, push_constant.to_byte_array(), push_constant.size() * 4)
 					rd.compute_list_dispatch(compute_list, x_groups, y_groups, 1)
 					rd.compute_list_end()
 				
@@ -143,11 +141,4 @@ func _render_callback(p_effect_callback_type, p_render_data):
 				rd.compute_list_dispatch(compute_list, x_groups, y_groups, 1)
 				rd.compute_list_end()
 				
-				#
-				#var cfrom := Vector3.ZERO
-				#var cto := Vector3(1, 1, 0)
-				#var csize := Vector3(size.x, size.y, 0)
-				#rd.texture_copy(input_image, previous_texture_image, cfrom, cto, csize, 0, 0, 0, 0)
-				
 				refresh_frame = false
-				#refresh_frame = true

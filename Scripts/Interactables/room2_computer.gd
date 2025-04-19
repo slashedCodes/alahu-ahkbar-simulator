@@ -6,6 +6,8 @@ var player = null
 
 func interact(player_cam):
 	player = player_cam
+	player_cam.compositor.compositor_effects.get(0).enabled = false
+	Engine.max_fps = 0
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	$ui.visible = true
 	GameManager.movement(false)
@@ -38,7 +40,7 @@ func _on_decline_pressed():
 	var sleep_ui = $"../sleep/fade"
 	sleep_ui.visible = false
 	
-	player_body.die()
+	player_body.die("you got sniped")
 	
 
 func _on_answer_pressed():
@@ -102,4 +104,4 @@ func _on_no_pressed():
 	
 	var sleep_ui = $"../sleep/fade"
 	sleep_ui.visible = false
-	player_body.die()
+	player_body.die("you got sniped")

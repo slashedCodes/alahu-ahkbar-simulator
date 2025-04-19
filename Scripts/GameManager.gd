@@ -7,9 +7,9 @@ extends Node
 func _ready():
 	refresh_vars()
 
-func die():
+func die(message = "you die"):
 	if player:
-		player.die()
+		player.die(message)
 
 func movement(value):
 	refresh_vars()
