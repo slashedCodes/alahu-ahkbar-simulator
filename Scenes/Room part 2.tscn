@@ -1,25 +1,7 @@
-[gd_scene load_steps=434 format=4 uid="uid://j5a7qgpc6rod"]
+[gd_scene load_steps=409 format=4 uid="uid://j5a7qgpc6rod"]
 
 [ext_resource type="PackedScene" uid="uid://g4e2cyrofo76" path="res://Scenes/transition_screen.tscn" id="1"]
-[ext_resource type="Script" uid="uid://bmtn1x85p6i63" path="res://Scripts/Player.gd" id="2"]
-[ext_resource type="Script" uid="uid://bi11j8yvisf2u" path="res://Scripts/ui_handler.gd" id="3"]
-[ext_resource type="Texture2D" uid="uid://db1igregnmakb" path="res://Textures/Controls/MLG Hitmarker.png" id="4"]
-[ext_resource type="PackedScene" uid="uid://di1fvicjwhp2a" path="res://Scenes/pause_screen.tscn" id="5"]
-[ext_resource type="PackedScene" uid="uid://cjrl3cgbr8py5" path="res://Scenes/death_screen.tscn" id="6"]
-[ext_resource type="Script" uid="uid://qc7f0meblvt3" path="res://Scripts/Inventory.gd" id="7"]
 [ext_resource type="FontFile" uid="uid://3088fs7yhrwi" path="res://Other/comic sans.ttf" id="8"]
-[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="9"]
-[ext_resource type="Texture2D" uid="uid://cunjv0lj0krd1" path="res://Textures/Controls/jump.png" id="10"]
-[ext_resource type="Texture2D" uid="uid://clgt4oy12723p" path="res://Textures/Controls/jump_pressed.png" id="11"]
-[ext_resource type="Texture2D" uid="uid://bljc2vayshggi" path="res://Textures/Controls/reload.png" id="12"]
-[ext_resource type="Texture2D" uid="uid://u4gf0cr1rlrc" path="res://Textures/Controls/reload_pressed.png" id="13"]
-[ext_resource type="Texture2D" uid="uid://dg1br6xx7uc1t" path="res://Textures/Controls/interact.png" id="14"]
-[ext_resource type="Texture2D" uid="uid://bgytct4238m2b" path="res://Textures/Controls/interact_pressed.png" id="15"]
-[ext_resource type="Texture2D" uid="uid://dguwvgwjdjwe0" path="res://Textures/Controls/shoot.png" id="16"]
-[ext_resource type="Texture2D" uid="uid://cbq4ix6tjmf3k" path="res://Textures/Controls/shoot_pressed.png" id="17"]
-[ext_resource type="Texture2D" uid="uid://ch7lay8kmpcp3" path="res://Textures/Controls/pause.png" id="18"]
-[ext_resource type="Texture2D" uid="uid://ch3irnvh44bvu" path="res://Textures/Controls/pause_pressed.png" id="19"]
-[ext_resource type="AudioStream" uid="uid://kg31mjbadlq6" path="res://Audio/hitHurt.wav" id="20"]
 [ext_resource type="PackedScene" uid="uid://pounoaulac8g" path="res://Models/p/low_poly_prisoner_bed_psx.glb" id="21"]
 [ext_resource type="PackedScene" uid="uid://cn6v02mfeiupd" path="res://Models/p/waste_bin.glb" id="22"]
 [ext_resource type="PackedScene" uid="uid://dugdq52nffjri" path="res://Models/p/psx_fire_extinguisher.glb" id="23"]
@@ -107,17 +89,18 @@
 [ext_resource type="Texture2D" uid="uid://de7khbgr7vn6r" path="res://Textures/Grass.webp" id="104"]
 [ext_resource type="Texture2D" uid="uid://dc4nsl0d4kw3x" path="res://Models/fat money stack_Usdollar100front.jpg" id="105"]
 [ext_resource type="Script" uid="uid://c1jbibgl3jylx" path="res://Scripts/Interactables/room2_bed.gd" id="106"]
-[ext_resource type="AudioStream" uid="uid://iqob8qcgy536" path="res://Audio/pick up the phone baby.mp3" id="107"]
-[ext_resource type="AudioStream" uid="uid://dld8d108vg54m" path="res://Audio/iphone alarm.mp3" id="108"]
-[ext_resource type="AudioStream" uid="uid://bb37cqteuapua" path="res://Audio/sleeping.mp3" id="109"]
+[ext_resource type="AudioStream" uid="uid://iqob8qcgy536" path="res://Audio/music/pick up the phone baby.mp3" id="107"]
+[ext_resource type="AudioStream" uid="uid://dld8d108vg54m" path="res://Audio/sfx/iphone alarm.mp3" id="108"]
+[ext_resource type="AudioStream" uid="uid://bb37cqteuapua" path="res://Audio/music/sleeping.mp3" id="109"]
 [ext_resource type="Script" uid="uid://23ubl2lbrhbd" path="res://Scripts/Interactables/room2_computer.gd" id="110"]
 [ext_resource type="Texture2D" uid="uid://filn0jegvtj5" path="res://Textures/freakbob.webp" id="111"]
 [ext_resource type="Texture2D" uid="uid://cx81xbpijar4e" path="res://Textures/freakbob calling.png" id="112"]
-[ext_resource type="AudioStream" uid="uid://c6s2e7ekr0mdq" path="res://Audio/boom.mp3" id="113"]
-[ext_resource type="AudioStream" uid="uid://bsk5gm7u450p1" path="res://Audio/spongebob voice line 1.wav" id="114"]
-[ext_resource type="AudioStream" uid="uid://d2exqgymtufcl" path="res://Audio/spongebob voice line 2.wav" id="115"]
-[ext_resource type="AudioStream" uid="uid://lmct3e475di8" path="res://Audio/hang up.mp3" id="116"]
+[ext_resource type="AudioStream" uid="uid://c6s2e7ekr0mdq" path="res://Audio/sfx/boom.mp3" id="113"]
+[ext_resource type="AudioStream" uid="uid://bsk5gm7u450p1" path="res://Audio/voice lines/spongebob voice line 1.wav" id="114"]
+[ext_resource type="AudioStream" uid="uid://d2exqgymtufcl" path="res://Audio/voice lines/spongebob voice line 2.wav" id="115"]
+[ext_resource type="AudioStream" uid="uid://lmct3e475di8" path="res://Audio/sfx/hang up.mp3" id="116"]
 [ext_resource type="Script" uid="uid://4dr5hiic357b" path="res://Scripts/Interactables/door_apartment2.gd" id="117"]
+[ext_resource type="PackedScene" uid="uid://ijfntxr822tg" path="res://Scenes/Player.tscn" id="119_wh5s2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cu43x"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -131,85 +114,6 @@ background_mode = 2
 sky = SubResource("Sky_337ab")
 ambient_light_source = 3
 tonemap_mode = 2
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_bn3cl"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mf8yx"]
-radius = 0.224981
-
-[sub_resource type="LabelSettings" id="LabelSettings_cqvmy"]
-font = ExtResource("8")
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_j4t3y"]
-radius = 256.0
-
-[sub_resource type="Animation" id="Animation_xl8ia"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Neck/Camera3D/Hand:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Neck/Camera3D/Hand:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(1.085, -1.08, -1.736)]
-}
-
-[sub_resource type="Animation" id="Animation_0ho83"]
-resource_name = "hand_fire"
-length = 0.08
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Neck/Camera3D/Hand:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.03, 0.08),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(1.085, -1.08, -1.736), Vector3(1.085, -1.08, -2), Vector3(1.085, -1.08, -1.736)]
-}
-
-[sub_resource type="Animation" id="Animation_jxwi7"]
-resource_name = "hand_reload"
-length = 0.4
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Neck/Camera3D/Hand:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.39, 0.4),
-"transitions": PackedFloat32Array(1, -2, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(6.28319, 0, 0), Vector3(0, 0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_77tm5"]
-_data = {
-&"RESET": SubResource("Animation_xl8ia"),
-&"hand_fire": SubResource("Animation_0ho83"),
-&"hand_reload": SubResource("Animation_jxwi7")
-}
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sgipa"]
 size = Vector3(1.10266, 0.646973, 2.24847)
@@ -3968,6 +3872,9 @@ size = Vector3(0.0164185, 0.0253448, 0.00341797)
 
 [node name="Room part 2" type="Node3D"]
 
+[node name="Player" parent="." instance=ExtResource("119_wh5s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.79445, 2.00294, 1.91853)
+
 [node name="TransitionScreen" parent="." instance=ExtResource("1")]
 visible = false
 
@@ -3980,168 +3887,6 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_32uu8")
-
-[node name="Player" type="CharacterBody3D" parent="."]
-process_mode = 1
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.68988, 2.46451, 1.88029)
-script = ExtResource("2")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
-mesh = SubResource("CapsuleMesh_bn3cl")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-shape = SubResource("CapsuleShape3D_mf8yx")
-
-[node name="Neck" type="Node3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.549726, 0)
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Player/Neck"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-stretch = true
-
-[node name="SubViewport" type="SubViewport" parent="Player/Neck/SubViewportContainer"]
-handle_input_locally = false
-size = Vector2i(450, 400)
-render_target_clear_mode = 1
-render_target_update_mode = 4
-
-[node name="Camera3D" type="Camera3D" parent="Player/Neck"]
-fov = 90.0
-script = ExtResource("3")
-
-[node name="hitmarker" type="Sprite2D" parent="Player/Neck/Camera3D"]
-position = Vector2(225, 200)
-scale = Vector2(0.0142857, 0.0142857)
-texture = ExtResource("4")
-
-[node name="objectives" type="Panel" parent="Player/Neck/Camera3D"]
-visible = false
-offset_left = 260.0
-offset_top = 2.0
-offset_right = 451.0
-offset_bottom = 108.0
-mouse_filter = 2
-
-[node name="text" type="Label" parent="Player/Neck/Camera3D/objectives"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = -1.0
-offset_right = 87.0
-offset_bottom = 22.0
-text = "objectives:"
-
-[node name="container" type="BoxContainer" parent="Player/Neck/Camera3D/objectives"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 21.0
-offset_right = 190.0
-offset_bottom = 106.0
-vertical = true
-
-[node name="Pause Screen" parent="Player/Neck/Camera3D" instance=ExtResource("5")]
-
-[node name="Death Screen" parent="Player/Neck/Camera3D" instance=ExtResource("6")]
-visible = false
-anchors_preset = 15
-
-[node name="interaction" type="Label" parent="Player/Neck/Camera3D"]
-offset_left = 130.0
-offset_top = 204.0
-offset_right = 321.0
-offset_bottom = 298.0
-horizontal_alignment = 1
-autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="inventory" type="HBoxContainer" parent="Player/Neck/Camera3D"]
-offset_left = 230.0
-offset_top = 354.0
-offset_right = 446.0
-offset_bottom = 394.0
-alignment = 2
-script = ExtResource("7")
-
-[node name="ammo" type="Label" parent="Player/Neck/Camera3D"]
-visible = false
-offset_right = 78.0
-offset_bottom = 23.0
-text = "5/5 ammo"
-label_settings = SubResource("LabelSettings_cqvmy")
-
-[node name="AudioListener3D" type="AudioListener3D" parent="Player/Neck/Camera3D"]
-current = true
-
-[node name="RayCast3D" type="RayCast3D" parent="Player/Neck/Camera3D"]
-target_position = Vector3(0, 0, -200)
-
-[node name="Hand" type="Node3D" parent="Player/Neck/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.085, -1.08, -1.736)
-
-[node name="mobile controls" type="CanvasLayer" parent="Player/Neck/Camera3D"]
-visible = false
-
-[node name="Move" parent="Player/Neck/Camera3D/mobile controls" instance=ExtResource("9")]
-anchors_preset = -1
-offset_top = -129.0
-offset_right = 297.0
-offset_bottom = 153.0
-scale = Vector2(0.45, 0.45)
-clampzone_size = 60.0
-metadata/_edit_use_anchors_ = true
-
-[node name="jump" type="TouchScreenButton" parent="Player/Neck/Camera3D/mobile controls"]
-position = Vector2(370, 284)
-scale = Vector2(0.0976562, 0.0976562)
-texture_normal = ExtResource("10")
-texture_pressed = ExtResource("11")
-shape = SubResource("CircleShape2D_j4t3y")
-action = "jump"
-
-[node name="reload" type="TouchScreenButton" parent="Player/Neck/Camera3D/mobile controls"]
-position = Vector2(327, 242)
-scale = Vector2(0.0703124, 0.0703124)
-texture_normal = ExtResource("12")
-texture_pressed = ExtResource("13")
-shape = SubResource("CircleShape2D_j4t3y")
-action = "reload"
-
-[node name="interact" type="TouchScreenButton" parent="Player/Neck/Camera3D/mobile controls"]
-position = Vector2(309, 287)
-scale = Vector2(0.0976562, 0.0976562)
-texture_normal = ExtResource("14")
-texture_pressed = ExtResource("15")
-shape = SubResource("CircleShape2D_j4t3y")
-action = "interact"
-
-[node name="shoot" type="TouchScreenButton" parent="Player/Neck/Camera3D/mobile controls"]
-position = Vector2(370, 222)
-scale = Vector2(0.0976562, 0.0976562)
-texture_normal = ExtResource("16")
-texture_pressed = ExtResource("17")
-shape = SubResource("CircleShape2D_j4t3y")
-action = "mobile_fire"
-
-[node name="pause" type="TouchScreenButton" parent="Player/Neck/Camera3D/mobile controls"]
-position = Vector2(429, 5.96046e-08)
-scale = Vector2(0.0410156, 0.0410156)
-texture_normal = ExtResource("18")
-texture_pressed = ExtResource("19")
-shape = SubResource("CircleShape2D_j4t3y")
-action = "pause"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
-libraries = {
-&"": SubResource("AnimationLibrary_77tm5")
-}
-
-[node name="Gun Shoot" type="AudioStreamPlayer" parent="Player"]
-stream = ExtResource("20")
-volume_db = -20.47
 
 [node name="apartment" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.32435)

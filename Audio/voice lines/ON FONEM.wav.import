@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://uc54440kff5q"
+path="res://.godot/imported/ON FONEM.wav-62f73be0f378bfaac0f082bd80590d0b.sample"
+
+[deps]
+
+source_file="res://Audio/voice lines/ON FONEM.wav"
+dest_files=["res://.godot/imported/ON FONEM.wav-62f73be0f378bfaac0f082bd80590d0b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

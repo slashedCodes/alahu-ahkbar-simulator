@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://co81swlimka1o" path="res://Scripts/killable.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://cwbdwekfl4rum" path="res://Models/people/character__male_01_0.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://bofl53mc41dv2" path="res://Models/people/skeleton_character_psx_0.png" id="3"]
-[ext_resource type="AudioStream" uid="uid://b7hnn1o4miqki" path="res://Audio/hl2-stalker-scream.mp3" id="4"]
+[ext_resource type="AudioStream" uid="uid://b7hnn1o4miqki" path="res://Audio/sfx/hl2-stalker-scream.mp3" id="4"]
 
 [sub_resource type="Animation" id="Animation_vylpo"]
 resource_name = "mixamo_com"

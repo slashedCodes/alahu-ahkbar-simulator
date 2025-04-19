@@ -1,4 +1,4 @@
-[gd_scene load_steps=489 format=4 uid="uid://bvckeuulik4ue"]
+[gd_scene load_steps=490 format=4 uid="uid://bvckeuulik4ue"]
 
 [ext_resource type="PackedScene" uid="uid://g4e2cyrofo76" path="res://Scenes/transition_screen.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://pounoaulac8g" path="res://Models/p/low_poly_prisoner_bed_psx.glb" id="2"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://bt7krblxpkg08" path="res://Models/p/cn40k99826b91.webp" id="22"]
 [ext_resource type="Texture2D" uid="uid://bqjge7fsxu2d7" path="res://Models/p/hdcmfpdh37ya1.webp" id="23"]
 [ext_resource type="Texture2D" uid="uid://du0n4qrb8jrog" path="res://Models/p/38-386037_resized-glass-pane-icon-minecraft-glass-pane-png.png" id="24"]
+[ext_resource type="AudioStream" uid="uid://bgybb3qvrg6so" path="res://Audio/sfx/locked.mp3" id="24_uwdvk"]
 [ext_resource type="Texture2D" uid="uid://c70ehlpb2ahqt" path="res://Models/p/5677713404.png" id="25"]
 [ext_resource type="Texture2D" uid="uid://cto1albwvtup8" path="res://Models/ps1__psx_style_-_desert_eagle_-_lowpoly_0.png" id="26"]
 [ext_resource type="Script" uid="uid://cxxftin50xbul" path="res://Scripts/Interactables/gun_apartment.gd" id="27"]
@@ -89,7 +90,7 @@
 [ext_resource type="Texture2D" uid="uid://b2l5fng45pm3k" path="res://Models/p/buildings_55.png" id="86"]
 [ext_resource type="Texture2D" uid="uid://de7khbgr7vn6r" path="res://Textures/Grass.webp" id="87"]
 [ext_resource type="Script" uid="uid://rm5s4d4kgt7v" path="res://Scripts/Questions/apartment_question1.gd" id="88"]
-[ext_resource type="AudioStream" uid="uid://dhgktd7i4u543" path="res://Audio/kill yourself music.mp3" id="89"]
+[ext_resource type="AudioStream" uid="uid://dhgktd7i4u543" path="res://Audio/music/kill yourself music.mp3" id="89"]
 [ext_resource type="PackedScene" uid="uid://ijfntxr822tg" path="res://Scenes/Player.tscn" id="90"]
 [ext_resource type="Script" uid="uid://demqfjlxmhk4t" path="res://Scripts/Interactables/die.gd" id="91"]
 
@@ -5061,6 +5062,9 @@ size = Vector3(19.9778, 1, 7.53027)
 
 [node name="Broke ahh room" type="Node3D"]
 
+[node name="Player" parent="." instance=ExtResource("90")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75753, 0.588884, 2.09557)
+
 [node name="TransitionScreen" parent="." instance=ExtResource("1")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -5370,8 +5374,8 @@ metadata/text = "exit"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.8247, 75.1503, 5.92307)
 shape = SubResource("BoxShape3D_jd1f0")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="apartment/furniture/door/StaticBody3D"]
-stream = ExtResource("11_b3i4w")
+[node name="locked" type="AudioStreamPlayer3D" parent="apartment/furniture/door/StaticBody3D"]
+stream = ExtResource("24_uwdvk")
 
 [node name="box" type="Node3D" parent="apartment"]
 
@@ -6371,9 +6375,6 @@ fit_content = true
 
 [node name="kill_yourself_music" type="AudioStreamPlayer" parent="questions/1"]
 stream = ExtResource("89")
-
-[node name="Player" parent="." instance=ExtResource("90")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.99288, 1.27207, 1.62422)
 
 [node name="Area3D" type="Area3D" parent="."]
 script = ExtResource("91")

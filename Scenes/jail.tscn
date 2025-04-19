@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ijfntxr822tg" path="res://Scenes/Player.tscn" id="8_gwndq"]
 [ext_resource type="Script" uid="uid://eci1nid2xn7l" path="res://Scripts/locked_door.gd" id="9_vlhj4"]
 [ext_resource type="VideoStream" uid="uid://uib5wiv51drc" path="res://Misc/jail.ogv" id="10_4u6r7"]
-[ext_resource type="AudioStream" uid="uid://bgybb3qvrg6so" path="res://Audio/locked.mp3" id="12_dq4du"]
+[ext_resource type="AudioStream" uid="uid://bgybb3qvrg6so" path="res://Audio/sfx/locked.mp3" id="12_dq4du"]
 [ext_resource type="AudioStream" uid="uid://cgcv24tkjlda2" path="res://Audio/sfx/wilhelm.mp3" id="13_b1qve"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dgrwt"]

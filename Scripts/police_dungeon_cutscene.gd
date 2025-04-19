@@ -1,11 +1,12 @@
 extends Node3D
 
-@onready var dialog = $Player/Neck/Camera3D/dialog
+@onready var dialog = $dialog
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if not get_tree().root.name == "Main Menu":
+	if not get_tree().root.has_node("Main Menu"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		dialog.show()
 		GameManager.movement(false)
 		dialog.set_text("")
 		await $eye_opening/AnimationPlayer.animation_finished

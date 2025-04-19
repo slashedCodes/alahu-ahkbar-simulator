@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://wpwgcry3psck"
+path="res://.godot/imported/i know ho you are.wav-16743ae5ba58df5c1c7f7c4c0ba2b7df.sample"
+
+[deps]
+
+source_file="res://Audio/voice lines/i know ho you are.wav"
+dest_files=["res://.godot/imported/i know ho you are.wav-16743ae5ba58df5c1c7f7c4c0ba2b7df.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

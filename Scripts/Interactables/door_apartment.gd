@@ -1,9 +1,13 @@
 extends StaticBody3D
 
-func interact(player):
+func interact(_player):
 	if get_meta("text") == "nuh uh":
 		$locked.play()
+		set_meta("text", "locked")
+		set_meta("interactable", false)
 		await $locked.finished
+		set_meta("text", "nuh uh")
+		set_meta("interactable", true)
 		return
 	
 	get_owner().get_node("TransitionScreen").fade_to_black() # DOESNT WORK???

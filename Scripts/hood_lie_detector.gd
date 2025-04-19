@@ -63,7 +63,8 @@ func _process(delta):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if not get_tree().root.get_child(2).name == "Main Menu":
+	if not get_tree().root.has_node("Main Menu"):
+		dialog.set_text("")
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		dialog.visible = true
 		dialog.clear_options()
@@ -74,6 +75,9 @@ func _ready():
 		dialog.add_option("HELL NAW", hell_naw)
 		dialog.add_option("idk what ur talking about", idk_what_ur_talking_about)
 		dialog.show_options()
+
+func _on_music_finished() -> void:
+	$music.play()
 
 var time_fale = false
 func time_fail():
@@ -104,8 +108,8 @@ func generate_random_quicktime():
 	
 	# Generate random position within visible screen area
 	var screen_size = get_viewport().get_visible_rect().size
-	var random_x = randf_range(10, screen_size.x - 10)
-	var random_y = randf_range(10, screen_size.y - 10)
+	var random_x = randf_range(70, screen_size.x - 70)
+	var random_y = randf_range(70, screen_size.y - 70)
 	var random_position = Vector2(random_x, random_y)
 	
 	# Random time between 0.6 and 1.2 seconds
@@ -209,6 +213,7 @@ func duhhh():
 
 func hell_naw():
 	minigame = true
+	$music.play()
 	await handle_dialog_sequence($audio/player/hell_na, "false")
 	
 	await show_cop_dialog("you finna go to jail for LIFE  cuh", $audio/cop/you_finna_go_to_jail_for_LIFE_cuh)
@@ -220,6 +225,7 @@ func hell_naw():
 
 func idk_what_ur_talking_about():
 	minigame = true
+	$music.play()
 	await handle_dialog_sequence($audio/player/idk_what_ur_talking_about, "false")
 	
 	await show_cop_dialog("are you DUMB cuh? we finna SANDPAPER yo TEETH", $audio/cop/are_you_dumb_cuh_we_finna_sandpaper_yo_teeth)

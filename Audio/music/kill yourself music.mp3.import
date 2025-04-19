@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dhgktd7i4u543"
+path="res://.godot/imported/kill yourself music.mp3-13bfb1e42191b17d4f70e5089c504f40.mp3str"
+
+[deps]
+
+source_file="res://Audio/music/kill yourself music.mp3"
+dest_files=["res://.godot/imported/kill yourself music.mp3-13bfb1e42191b17d4f70e5089c504f40.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

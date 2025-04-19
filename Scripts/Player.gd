@@ -27,6 +27,10 @@ var ammo = 5
 @export var headbob_amplitude := 0.04
 var headbob_time := 0.0
 
+@onready var footstep_audio = $footstep
+var footstep_can_play := true
+var footstep_landed
+
 func fire():
 	if reloading:
 		animation_player.play("hand_reload")
@@ -84,8 +88,6 @@ func _process(_delta):
 	camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(60))
 
 func _physics_process(delta):
-	gun_cam.global_transform = camera.global_transform
-	fire()
 	if not movement: return
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -104,13 +106,31 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+	
+	gun_cam.global_transform = camera.global_transform
+	fire()
+	
 	headbob_time += delta * velocity.length() * float(is_on_floor()) 
 	camera.transform.origin = headbob(headbob_time)
+	
+	if not footstep_landed and is_on_floor():
+		footstep_audio.play()
+	elif footstep_landed and not is_on_floor():
+		footstep_audio.play()
+	footstep_landed = is_on_floor()
 
 func headbob(time):
 	var headbob_position = Vector3.ZERO
 	headbob_position.y = sin(time * headbob_frequency) * headbob_amplitude
 	headbob_position.x = cos(time * headbob_frequency / 2) * headbob_amplitude
+	
+	var footstep_thershold = -headbob_amplitude + 0.002
+	if headbob_position.y > footstep_thershold:
+		footstep_can_play = true
+	elif headbob_position.y < footstep_thershold and footstep_can_play:
+		footstep_can_play = false
+		footstep_audio.play()
+	
 	return headbob_position
 
 func _ready():

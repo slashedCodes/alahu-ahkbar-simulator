@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://2c8rwuq5sane"
+path="res://.godot/imported/omg im calling 911.wav-ea7c994bbcedfc82062a6ad0f9c61df2.sample"
+
+[deps]
+
+source_file="res://Audio/voice lines/omg im calling 911.wav"
+dest_files=["res://.godot/imported/omg im calling 911.wav-ea7c994bbcedfc82062a6ad0f9c61df2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

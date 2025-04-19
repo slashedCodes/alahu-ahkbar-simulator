@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://iqob8qcgy536"
+path="res://.godot/imported/pick up the phone baby.mp3-9fe6c37bfbd54f4491a8d87868373205.mp3str"
+
+[deps]
+
+source_file="res://Audio/music/pick up the phone baby.mp3"
+dest_files=["res://.godot/imported/pick up the phone baby.mp3-9fe6c37bfbd54f4491a8d87868373205.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

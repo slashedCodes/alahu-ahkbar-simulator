@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://clra5gl0fhi82"
+path="res://.godot/imported/kick police.wav-d6f7fb5c63e86e0abad6fd1a578d6e8a.sample"
+
+[deps]
+
+source_file="res://Audio/sfx/kick police.wav"
+dest_files=["res://.godot/imported/kick police.wav-d6f7fb5c63e86e0abad6fd1a578d6e8a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

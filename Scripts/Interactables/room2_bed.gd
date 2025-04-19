@@ -7,7 +7,7 @@ func _ready():
 	GameManager.objectives_visible(true)
 	GameManager.add_objective("go to sleep")
 
-func interact(player):
+func interact(_player):
 	anim_player.play("sleep")
 	GameManager.movement(false)
 	

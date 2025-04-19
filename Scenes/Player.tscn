@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ijfntxr822tg"]
+[gd_scene load_steps=34 format=3 uid="uid://ijfntxr822tg"]
 
 [ext_resource type="Script" uid="uid://bmtn1x85p6i63" path="res://Scripts/Player.gd" id="1"]
 [ext_resource type="Script" uid="uid://bi11j8yvisf2u" path="res://Scripts/ui_handler.gd" id="2"]
@@ -18,8 +18,12 @@
 [ext_resource type="Texture2D" uid="uid://cbq4ix6tjmf3k" path="res://Textures/Controls/shoot_pressed.png" id="16"]
 [ext_resource type="Texture2D" uid="uid://ch7lay8kmpcp3" path="res://Textures/Controls/pause.png" id="17"]
 [ext_resource type="Texture2D" uid="uid://ch3irnvh44bvu" path="res://Textures/Controls/pause_pressed.png" id="18"]
-[ext_resource type="AudioStream" uid="uid://kg31mjbadlq6" path="res://Audio/hitHurt.wav" id="19"]
+[ext_resource type="AudioStream" uid="uid://kg31mjbadlq6" path="res://Audio/sfx/hitHurt.wav" id="19"]
 [ext_resource type="AudioStream" uid="uid://58wb0ewsdtyg" path="res://Audio/sfx/reload.wav" id="20_puqj4"]
+[ext_resource type="AudioStream" uid="uid://bbr1enmvln5vj" path="res://Audio/sfx/footstep 1.wav" id="21_qidb7"]
+[ext_resource type="AudioStream" uid="uid://pjunjs66vfso" path="res://Audio/sfx/footstep 2.wav" id="22_70hv0"]
+[ext_resource type="AudioStream" uid="uid://vg1p1sp7i5sy" path="res://Audio/sfx/footstep 3.wav" id="23_8flut"]
+[ext_resource type="AudioStream" uid="uid://lguad0fwoc73" path="res://Audio/sfx/footstep 4.wav" id="24_u7x0b"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_bn3cl"]
 
@@ -124,9 +128,16 @@ _data = {
 &"hand_reload": SubResource("Animation_jxwi7")
 }
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_utwlt"]
+streams_count = 4
+stream_0/stream = ExtResource("21_qidb7")
+stream_1/stream = ExtResource("22_70hv0")
+stream_2/stream = ExtResource("23_8flut")
+stream_3/stream = ExtResource("24_u7x0b")
+
 [node name="Player" type="CharacterBody3D"]
 process_mode = 1
-floor_max_angle = 1.55334
+floor_max_angle = 1.22173
 script = ExtResource("1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -276,3 +287,8 @@ volume_db = -8.915
 
 [node name="reload" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_puqj4")
+
+[node name="footstep" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.01009, 0)
+stream = SubResource("AudioStreamRandomizer_utwlt")
+bus = &"Reverb"
