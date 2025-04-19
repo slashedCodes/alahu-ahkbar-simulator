@@ -1,6 +1,6 @@
 extends StaticBody3D
 
-func interact(player):
+func interact(_player):
 	if get_meta("money"):
 		# Playtest
 		#GameManager.goto_scene("res://Scenes/thanks.tscn", false)

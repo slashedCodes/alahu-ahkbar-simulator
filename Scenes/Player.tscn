@@ -1,11 +1,11 @@
 [gd_scene load_steps=29 format=3 uid="uid://ijfntxr822tg"]
 
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="1"]
-[ext_resource type="Script" path="res://Scripts/ui_handler.gd" id="2"]
+[ext_resource type="Script" uid="uid://bmtn1x85p6i63" path="res://Scripts/Player.gd" id="1"]
+[ext_resource type="Script" uid="uid://bi11j8yvisf2u" path="res://Scripts/ui_handler.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://db1igregnmakb" path="res://Textures/Controls/MLG Hitmarker.png" id="3"]
 [ext_resource type="PackedScene" uid="uid://di1fvicjwhp2a" path="res://Scenes/pause_screen.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://cjrl3cgbr8py5" path="res://Scenes/death_screen.tscn" id="5"]
-[ext_resource type="Script" path="res://Scripts/Inventory.gd" id="6"]
+[ext_resource type="Script" uid="uid://qc7f0meblvt3" path="res://Scripts/Inventory.gd" id="6"]
 [ext_resource type="FontFile" uid="uid://3088fs7yhrwi" path="res://Other/comic sans.ttf" id="7"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="8"]
 [ext_resource type="Texture2D" uid="uid://cunjv0lj0krd1" path="res://Textures/Controls/jump.png" id="9"]
@@ -37,7 +37,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Neck/Camera3D/Hand:position")
+tracks/0/path = NodePath("Neck/Hand:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -49,7 +49,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Neck/Camera3D/Hand:rotation")
+tracks/1/path = NodePath("Neck/Hand:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -78,7 +78,7 @@ step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Neck/Camera3D/Hand:position")
+tracks/0/path = NodePath("Neck/Hand:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -95,7 +95,7 @@ step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Neck/Camera3D/Hand:rotation")
+tracks/0/path = NodePath("Neck/Hand:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -119,9 +119,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_77tm5"]
 _data = {
-"RESET": SubResource("Animation_xl8ia"),
-"hand_fire": SubResource("Animation_0ho83"),
-"hand_reload": SubResource("Animation_jxwi7")
+&"RESET": SubResource("Animation_xl8ia"),
+&"hand_fire": SubResource("Animation_0ho83"),
+&"hand_reload": SubResource("Animation_jxwi7")
 }
 
 [node name="Player" type="CharacterBody3D"]
@@ -144,9 +144,6 @@ fov = 90.0
 script = ExtResource("2")
 
 [node name="Pause Screen" parent="Neck/Camera3D" instance=ExtResource("4")]
-
-[node name="Hand" type="Node3D" parent="Neck/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.92744, -0.647957, -1.13801)
 
 [node name="hitmarker" type="Sprite2D" parent="Neck/Camera3D"]
 position = Vector2(225, 200)
@@ -265,9 +262,12 @@ texture_pressed = ExtResource("18")
 shape = SubResource("CircleShape2D_j4t3y")
 action = "pause"
 
+[node name="Hand" type="Node3D" parent="Neck"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.92744, -0.647957, -1.13801)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_77tm5")
+&"": SubResource("AnimationLibrary_77tm5")
 }
 
 [node name="Gun Shoot" type="AudioStreamPlayer" parent="."]

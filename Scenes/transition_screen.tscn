@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://g4e2cyrofo76"]
 
-[ext_resource type="Script" path="res://Scripts/transition_screen.gd" id="1"]
+[ext_resource type="Script" uid="uid://c1ms1bgcsi83v" path="res://Scripts/transition_screen.gd" id="1"]
 
 [sub_resource type="Animation" id="Animation_203op"]
-length = 0.0010000000474974513
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -50,9 +50,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cgxjx"]
 _data = {
-"RESET": SubResource("Animation_203op"),
-"fade_from_black": SubResource("Animation_w6gkv"),
-"fade_to_black": SubResource("Animation_8o11d")
+&"RESET": SubResource("Animation_203op"),
+&"fade_from_black": SubResource("Animation_w6gkv"),
+&"fade_to_black": SubResource("Animation_8o11d")
 }
 
 [node name="TransitionScreen" type="CanvasLayer"]

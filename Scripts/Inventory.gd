@@ -1,6 +1,6 @@
 extends Control
 
-@onready var hand = get_parent().get_node("Hand")
+@onready var hand = get_parent().get_parent().get_node("Hand")
 var hand_index = 0
 var hand_selected = false
 var item_count = 0
@@ -50,7 +50,7 @@ func remove_item(item):
 	item_count = item_count - 1
 
 func select_item(index):
-	if get_child(index):
+	if get_child_count() >= index and get_child(index):
 		if hand_selected and hand_index == index:
 			for child in hand.get_children():
 				child.queue_free()

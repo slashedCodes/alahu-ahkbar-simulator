@@ -9,9 +9,12 @@ func _ready():
 func interact(player):
 	set_meta("interactable", false)
 	set_meta("text", "")
+	$"button click".play()
 	GameManager.remove_objectives()
-	await get_tree().create_timer(0.7).timeout
-	$pipe.playing = true
+	await get_tree().create_timer(0.3).timeout
+	$scream.play()
+	await get_tree().create_timer(0.4).timeout
+	$pipe.play()
 	$kill.visible = true
 	%"blood car".visible = true
 	%car.queue_free()

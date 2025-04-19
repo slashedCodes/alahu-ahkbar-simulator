@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://ce3214ghee1bb"]
 
-[ext_resource type="Script" path="res://Scripts/Misc/freddy.gd" id="1"]
+[ext_resource type="Script" uid="uid://cl4ot7wgv1l0e" path="res://Scripts/Misc/freddy.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://cjrl3cgbr8py5" path="res://Scenes/death_screen.tscn" id="2"]
-[ext_resource type="VideoStream" path="res://Misc/freddy.ogv" id="3"]
+[ext_resource type="VideoStream" uid="uid://buyywr307t70u" path="res://Misc/freddy.ogv" id="3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yvplo"]
 bg_color = Color(0, 0, 0, 1)

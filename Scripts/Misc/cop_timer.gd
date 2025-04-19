@@ -7,7 +7,7 @@ func start():
 	$Timer.start()
 	started = true
 
-func _process(delta):
+func _process(_delta):
 	if $Timer.time_left > 0 and started:
 		text = str(int($Timer.time_left)) + " seconds till the popo bust yo ass"
 	elif started:

@@ -12,4 +12,8 @@ dest_files=["res://.godot/imported/pipe.mp3-e6a2b8f1f78666f09e12bb74fe0faf93.mp3
 
 [params]
 
-dummy_value_ignore_me=0
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

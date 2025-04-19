@@ -1,6 +1,6 @@
 extends StaticBody3D
 
-func interact(player):
+func interact(_player):
 	$AudioStreamPlayer3D.playing = false
 	$AudioStreamPlayer3D.playing = true
 	

@@ -12,7 +12,7 @@ var movement = true
 @onready var pause_screen := $"Neck/Camera3D/Pause Screen"
 
 @onready var raycast = $Neck/Camera3D/RayCast3D
-@onready var hand = $Neck/Camera3D/Hand
+@onready var hand = $Neck/Hand
 @onready var animation_player = $AnimationPlayer
 @onready var gun_audio_player = $"Gun Shoot"
 @onready var ammo_label = $Neck/Camera3D/ammo
@@ -21,6 +21,11 @@ var shooting = false
 var ammo = 5
 
 @onready var mobile_controls = camera.get_node("mobile controls")
+
+@export_group("headbob")
+@export var headbob_frequency := 2.0
+@export var headbob_amplitude := 0.04
+var headbob_time := 0.0
 
 func fire():
 	if reloading:
@@ -75,14 +80,13 @@ func _unhandled_input(event):
 			neck.rotate_y(-event.relative.x * 0.01)
 			camera.rotate_x(-event.relative.y * 0.01)
 
-func _process(delta):
+func _process(_delta):
 	camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(60))
 
 func _physics_process(delta):
 	gun_cam.global_transform = camera.global_transform
 	fire()
 	if not movement: return
-	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
@@ -100,6 +104,14 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+	headbob_time += delta * velocity.length() * float(is_on_floor()) 
+	camera.transform.origin = headbob(headbob_time)
+
+func headbob(time):
+	var headbob_position = Vector3.ZERO
+	headbob_position.y = sin(time * headbob_frequency) * headbob_amplitude
+	headbob_position.x = cos(time * headbob_frequency / 2) * headbob_amplitude
+	return headbob_position
 
 func _ready():
 	if GameManager.is_running_on_mobile():

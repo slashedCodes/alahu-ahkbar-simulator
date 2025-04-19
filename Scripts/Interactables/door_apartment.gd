@@ -6,8 +6,8 @@ func interact(player):
 		await $locked.finished
 		return
 	
+	get_owner().get_node("TransitionScreen").fade_to_black() # DOESNT WORK???
 	GameManager.movement(false)
-	$"../../../../TransitionScreen".fade_to_black()
 	$AudioStreamPlayer3D.play()
 	await $AudioStreamPlayer3D.finished
 	GameManager.movement(true)

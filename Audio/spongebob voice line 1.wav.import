@@ -12,4 +12,13 @@ dest_files=["res://.godot/imported/spongebob voice line 1.wav-7a12c7572e4a9f3783
 
 [params]
 
-dummy_value_ignore_me=0
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

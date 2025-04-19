@@ -13,7 +13,7 @@ func _on_drag_button_down():
 func _on_drag_button_up():
 	dragging = false
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if visible:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if dragging:
@@ -39,7 +39,7 @@ var fail_messages = [
 	"F"
 ]
 
-func _on_detector_body_entered(body):
+func _on_detector_body_entered(_body):
 	var rng = RandomNumberGenerator.new()
 	var num = rng.randf_range(1, 10)
 	if num > 9.8 and not success_var:

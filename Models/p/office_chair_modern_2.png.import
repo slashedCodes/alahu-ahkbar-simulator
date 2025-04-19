@@ -3,25 +3,27 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://il6v6hdoqfnb"
-path="res://.godot/imported/office_chair_modern_2.png-eb6113dbbc9b33e59da36afd8677cefd.ctex"
+path.s3tc="res://.godot/imported/office_chair_modern_2.png-eb6113dbbc9b33e59da36afd8677cefd.s3tc.ctex"
+path.etc2="res://.godot/imported/office_chair_modern_2.png-eb6113dbbc9b33e59da36afd8677cefd.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/p/office_chair_modern_2.png"
-dest_files=["res://.godot/imported/office_chair_modern_2.png-eb6113dbbc9b33e59da36afd8677cefd.ctex"]
+dest_files=["res://.godot/imported/office_chair_modern_2.png-eb6113dbbc9b33e59da36afd8677cefd.s3tc.ctex", "res://.godot/imported/office_chair_modern_2.png-eb6113dbbc9b33e59da36afd8677cefd.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=1
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
 roughness/src_normal="res://Models/p/office_chair_modern_2.png"
@@ -31,4 +33,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

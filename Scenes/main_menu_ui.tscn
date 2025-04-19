@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b6lj7k1ow37pj"]
 
-[ext_resource type="Script" path="res://Scripts/main_menu_ui.gd" id="1"]
+[ext_resource type="Script" uid="uid://cdmv2q16wrqr5" path="res://Scripts/main_menu_ui.gd" id="1"]
 [ext_resource type="FontFile" uid="uid://3088fs7yhrwi" path="res://Other/comic sans.ttf" id="2"]
 [ext_resource type="AudioStream" uid="uid://rv2rbn87jw85" path="res://Audio/main.mp3" id="3"]
 
@@ -74,7 +74,7 @@ vertical_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3")
-volume_db = -10.041000366210938
+volume_db = -10.041
 autoplay = true
 
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]

@@ -9,7 +9,7 @@ func _ready():
 		set_meta("interactable", true)
 		set_meta("text", "open")
 
-func interact(player):
+func interact(_player):
 	if open:
 		if has_node("AudioStreamPlayer3D"):
 			$AudioStreamPlayer3D.play()

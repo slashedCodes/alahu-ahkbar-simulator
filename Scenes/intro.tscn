@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bgtsy7aenaogj"]
 
-[ext_resource type="Script" path="res://Scripts/intro.gd" id="1"]
+[ext_resource type="Script" uid="uid://ppio6ib01ppx" path="res://Scripts/intro.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://ctrqywx50hft6" path="res://studio.png" id="2"]
 [ext_resource type="FontFile" uid="uid://3088fs7yhrwi" path="res://Other/comic sans.ttf" id="3"]
 [ext_resource type="AudioStream" uid="uid://vj67x70o4wk2" path="res://Audio/intro.wav" id="4"]
@@ -135,8 +135,8 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n2u6o"]
 _data = {
-"RESET": SubResource("Animation_5oqi4"),
-"main": SubResource("Animation_cpg1w")
+&"RESET": SubResource("Animation_5oqi4"),
+&"main": SubResource("Animation_cpg1w")
 }
 
 [node name="Intro" type="Control"]

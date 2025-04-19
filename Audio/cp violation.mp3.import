@@ -12,4 +12,8 @@ dest_files=["res://.godot/imported/cp violation.mp3-f95ac39eddd7240bdd0e958ace60
 
 [params]
 
-dummy_value_ignore_me=0
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

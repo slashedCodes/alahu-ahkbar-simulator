@@ -1,6 +1,6 @@
 extends StaticBody3D
 
-func interact(player):
+func interact(_player):
 	GameManager.movement(false)
 	$"amongus card swipe".visible = true
 	if not GameManager.is_running_on_mobile(): Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

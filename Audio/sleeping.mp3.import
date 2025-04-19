@@ -12,4 +12,8 @@ dest_files=["res://.godot/imported/sleeping.mp3-a7d76235d46d6e8bdf215693a68397d4
 
 [params]
 
-dummy_value_ignore_me=0
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

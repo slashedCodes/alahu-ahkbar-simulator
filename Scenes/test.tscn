@@ -1,12 +1,12 @@
 [gd_scene load_steps=31 format=3 uid="uid://ciigkbencgq36"]
 
 [ext_resource type="Texture2D" uid="uid://de7khbgr7vn6r" path="res://Textures/Grass.webp" id="1_gc6dg"]
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_mt24l"]
-[ext_resource type="Script" path="res://Scripts/ui_handler.gd" id="2_b6xnf"]
+[ext_resource type="Script" uid="uid://bmtn1x85p6i63" path="res://Scripts/Player.gd" id="1_mt24l"]
+[ext_resource type="Script" uid="uid://bi11j8yvisf2u" path="res://Scripts/ui_handler.gd" id="2_b6xnf"]
 [ext_resource type="PackedScene" uid="uid://di1fvicjwhp2a" path="res://Scenes/pause_screen.tscn" id="3_tri13"]
 [ext_resource type="Texture2D" uid="uid://db1igregnmakb" path="res://Textures/Controls/MLG Hitmarker.png" id="4_3myid"]
 [ext_resource type="PackedScene" uid="uid://cjrl3cgbr8py5" path="res://Scenes/death_screen.tscn" id="5_mqxy8"]
-[ext_resource type="Script" path="res://Scripts/Inventory.gd" id="6_wq5kj"]
+[ext_resource type="Script" uid="uid://qc7f0meblvt3" path="res://Scripts/Inventory.gd" id="6_wq5kj"]
 [ext_resource type="FontFile" uid="uid://3088fs7yhrwi" path="res://Other/comic sans.ttf" id="7_wgxfe"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="8_ry0pn"]
 [ext_resource type="Texture2D" uid="uid://cunjv0lj0krd1" path="res://Textures/Controls/jump.png" id="9_gjc6h"]
@@ -120,9 +120,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_77tm5"]
 _data = {
-"RESET": SubResource("Animation_xl8ia"),
-"hand_fire": SubResource("Animation_0ho83"),
-"hand_reload": SubResource("Animation_jxwi7")
+&"RESET": SubResource("Animation_xl8ia"),
+&"hand_fire": SubResource("Animation_0ho83"),
+&"hand_reload": SubResource("Animation_jxwi7")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ganws"]
@@ -286,7 +286,7 @@ action = "pause"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/Player"]
 libraries = {
-"": SubResource("AnimationLibrary_77tm5")
+&"": SubResource("AnimationLibrary_77tm5")
 }
 
 [node name="Gun Shoot" type="AudioStreamPlayer" parent="SubViewportContainer/SubViewport/Player"]

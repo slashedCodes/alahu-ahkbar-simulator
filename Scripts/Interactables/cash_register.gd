@@ -1,24 +1,25 @@
 extends StaticBody3D
 
 @onready var cashier = $"../../guy"
+@onready var player_neck = $"../../Player/Neck"
+@onready var hand = player_neck.get_node("Hand")
 
 func _physics_process(_delta):
 	await get_tree().create_timer(0.1).timeout #so that i dont explode my pc
-	var player_cam = $"../../Player/Neck/Camera3D"
-	var hand = player_cam.get_node("Hand")
 	
-	var mesh
-	if mesh.has_child(0):
-		mesh = hand.get_child(0)
-	if mesh and mesh.has_meta("id") and mesh.get_meta("id") == "chips":
-		set_meta("interactable", true)
-		set_meta("text", "buy chips")
+	if hand and hand.get_child_count() == 1:
+		var mesh = hand.get_child(0)
+		if mesh and mesh.has_meta("id") and mesh.get_meta("id") == "chips":
+			set_meta("interactable", true)
+			set_meta("text", "buy chips")
+		else:
+			set_meta("interactable", false)
+			set_meta("text", "")
 	else:
 		set_meta("interactable", false)
 		set_meta("text", "")
 
 func interact(player_cam):
-	var hand = player_cam.get_node("Hand")
 	var mesh = hand.get_child(0)
 	if mesh and mesh.has_meta("id") and mesh.get_meta("id") == "chips":
 		var inventory = player_cam.get_node("inventory")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://bl4udp2dj2ckq"]
 
-[ext_resource type="Script" path="res://Scripts/amongus card swipe.gd" id="1"]
+[ext_resource type="Script" uid="uid://diiuvjxqt72t8" path="res://Scripts/amongus card swipe.gd" id="1"]
 [ext_resource type="FontFile" uid="uid://3088fs7yhrwi" path="res://Other/comic sans.ttf" id="2"]
 [ext_resource type="Texture2D" uid="uid://bqwabj01ydqy6" path="res://Textures/card swipe.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://cj0jig84rshek" path="res://Textures/id.png" id="4"]
@@ -42,6 +42,7 @@ font_color = Color(0.512575, 0.672345, 0, 1)
 size = Vector2(801.684, 476)
 
 [node name="amongus card swipe" type="Node2D"]
+process_mode = 1
 z_index = 100
 script = ExtResource("1")
 
@@ -124,7 +125,7 @@ texture = ExtResource("4")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5")
-volume_db = -9.541000366210938
+volume_db = -9.541
 
 [connection signal="body_entered" from="card swipe/detector" to="." method="_on_detector_body_entered"]
 [connection signal="body_exited" from="card swipe/detector" to="." method="_on_detector_body_exited"]

@@ -1,6 +1,6 @@
 extends Camera3D
 
-@onready var hand := $Hand
+@onready var hand := $"../Hand"
 @onready var objectives := $objectives
 @onready var interaction := $interaction
 @onready var inventory := $inventory
@@ -23,7 +23,7 @@ func _ready():
 			question.visible = true
 			get_tree().paused = true
 
-func _process(delta):
+func _process(_delta):
 	if hand.get_child_count() > 0 and hand.get_child(0).is_in_group("gun"):
 		ammo.visible = true
 	else:

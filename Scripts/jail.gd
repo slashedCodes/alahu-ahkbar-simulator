@@ -17,4 +17,5 @@ func _on_timer_timeout():
 
 func _on_video_stream_player_finished():
 	$Control.visible = false
+	$scream.play()
 	GameManager.die()
