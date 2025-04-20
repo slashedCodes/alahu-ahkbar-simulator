@@ -25,7 +25,6 @@
 [ext_resource type="AudioStream" uid="uid://vg1p1sp7i5sy" path="res://Audio/sfx/footstep 3.wav" id="23_8flut"]
 [ext_resource type="AudioStream" uid="uid://lguad0fwoc73" path="res://Audio/sfx/footstep 4.wav" id="24_u7x0b"]
 
-
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_bn3cl"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mf8yx"]

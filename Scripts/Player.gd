@@ -19,6 +19,7 @@ var movement = true
 var reloading = false
 var shooting = false
 var ammo = 5
+@onready var bullethole = preload("res://Scenes/bullethole.tscn")
 
 @onready var mobile_controls = camera.get_node("mobile controls")
 
@@ -59,6 +60,16 @@ func fire():
 					var target = raycast.get_collider()
 					if target.is_in_group("killable"):
 						target.die(camera.global_basis.z)
+					
+					if not GameManager.low_detail:
+						var hole = bullethole.instantiate()
+						target.add_child(hole)
+						hole.global_position = raycast.get_collision_point()
+						#hole.rotation = hole.rotation_degrees * raycast.get_collision_normal()
+						hole.look_at(hole.global_transform.origin + raycast.get_collision_normal(), Vector3.UP)
+						if raycast.get_collision_normal() != Vector3.UP and raycast.get_collision_normal() != Vector3.DOWN:
+							hole.rotate_object_local(Vector3(1, 0, 0), 90)
+						
 			shooting = true
 
 func die(message = "you die"):
@@ -118,6 +129,8 @@ func _physics_process(delta):
 	
 	headbob_time += delta * velocity.length() * float(is_on_floor()) 
 	camera.transform.origin = headbob(headbob_time)
+	
+	$Neck/Hand.rotation = $Neck/Camera3D.rotation
 	
 	if not footstep_landed and is_on_floor():
 		footstep_audio.play()

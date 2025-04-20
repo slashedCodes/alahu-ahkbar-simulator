@@ -94,7 +94,6 @@
 [ext_resource type="PackedScene" uid="uid://ijfntxr822tg" path="res://Scenes/Player.tscn" id="90"]
 [ext_resource type="Script" uid="uid://demqfjlxmhk4t" path="res://Scripts/Interactables/die.gd" id="91"]
 
-
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wrpr2"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

@@ -12,7 +12,7 @@ func interact(camera: Camera3D):
 	GameManager.movement(false)
 	
 	await anim_player.animation_finished # wait for the anim to be finished
-	if not GameManager.graphics_quality: camera.compositor.compositor_effects.get(0).enabled = true
+	if not GameManager.low_detail: camera.compositor.compositor_effects.get(0).enabled = true
 	Engine.max_fps = 20
 	
 	var phone = $"../../apartment/furniture/phone"

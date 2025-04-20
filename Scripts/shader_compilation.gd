@@ -8,7 +8,7 @@ func _ready():
 	
 	if get_tree().root.has_node("Main Menu"): queue_free()
 	%shader.text = "shader: datamosh.glsl"
-	if not GameManager.graphics_quality: %Camera3D.compositor.compositor_effects.get(0).enabled = true
+	if not GameManager.low_detail: %Camera3D.compositor.compositor_effects.get(0).enabled = true
 	await get_tree().create_timer(1).timeout
 	%shader.text = "shader: datamosh.glsl 50%"
 	rotate = true

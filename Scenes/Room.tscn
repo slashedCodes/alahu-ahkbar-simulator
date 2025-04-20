@@ -96,7 +96,6 @@
 [ext_resource type="Texture2D" uid="uid://baryuu1i51klf" path="res://Textures/eyelid.png" id="93_mttmp"]
 [ext_resource type="Script" uid="uid://xufrykgbas3q" path="res://Scripts/eye_opening.gd" id="94_6hgvc"]
 
-
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cb5tl"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

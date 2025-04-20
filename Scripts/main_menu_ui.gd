@@ -20,12 +20,13 @@ func _on_new_game_pressed():
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
-	if GameManager.get_user_value("settings", "graphics_mode"): 
-		$settings/graphics.button_pressed = GameManager.get_user_value("settings", "graphics_mode")
-		GameManager.set_quality(GameManager.get_user_value("settings", "graphics_mode"))
+	if GameManager.get_user_value("settings", "low_detail"): 
+		$settings/graphics.button_pressed = GameManager.get_user_value("settings", "low_detail")
+		GameManager.set_low_detail(GameManager.get_user_value("settings", "low_detail"))
 	else: 
-		GameManager.set_quality(true)
-		$settings/graphics.button_pressed = true
+		GameManager.set_low_detail(false)
+		GameManager.set_user_value("settings", "low_detail", false)
+		$settings/graphics.button_pressed = false
 	
 	# reminder that the actual fullscreen shit is handeled in intro.gd
 	if GameManager.get_user_value("settings", "fullscreen"):
@@ -42,7 +43,8 @@ func _ready():
 	$settings/volume.value = db_to_linear(AudioServer.get_bus_volume_db(master_bus))
 	if GameManager.is_running_on_mobile():
 		$settings/graphics.hide()
-		GameManager.set_quality(false)
+		GameManager.set_user_value("settings", "low_detail", true)
+		GameManager.set_low_detail(true)
 
 func _on_settings_pressed() -> void:
 	$menu.hide()
@@ -65,5 +67,5 @@ func _on_fullscreen_toggled(toggled_on: bool) -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 func _on_graphics_toggled(toggled_on: bool) -> void:
-	GameManager.set_quality(toggled_on)
-	GameManager.set_user_value("settings", "graphics_mode", toggled_on)
+	GameManager.set_low_detail(toggled_on)
+	GameManager.set_user_value("settings", "low_detail", toggled_on)

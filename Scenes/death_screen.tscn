@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://d0nribcfyvv0r" path="res://Scripts/death_screen.gd" id="1"]
 [ext_resource type="FontFile" uid="uid://3088fs7yhrwi" path="res://Misc/comic sans.ttf" id="2"]
 
-
 [sub_resource type="LabelSettings" id="LabelSettings_0r3ax"]
 font = ExtResource("2")
 font_size = 32

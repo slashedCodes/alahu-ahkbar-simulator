@@ -3,9 +3,19 @@ extends Node
 @onready var root = get_tree().current_scene
 @onready var player = null
 @onready var objectives = null
-var graphics_quality = true # true = high, false = low
+var low_detail = false
 
 func _ready():
+	var fullscreen = GameManager.get_user_value("settings", "fullscreen")
+	if fullscreen:
+		if fullscreen == true: DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		if fullscreen == false: DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		GameManager.set_user_value("settings", "fullscreen", true)
+	
+	#set_low_detail(get_user_value("settings", "low_detail"))
+	
 	refresh_vars()
 
 func die(message = "you die"):
@@ -28,8 +38,7 @@ func get_last_scene():
 		var save_game = FileAccess.open("user://savegame.save", FileAccess.READ)
 		return save_game.get_line()
 	else:
-		save_scene("res://Scenes/Room.tscn")
-		return "res://Scenes/Room.tscn" # New game scene
+		return null
 
 func refresh_vars():
 	root = get_tree().current_scene
@@ -85,8 +94,8 @@ func is_running_on_mobile():
 		#return true
 		return false
 
-func set_quality(value):
-	graphics_quality = value
+func set_low_detail(value):
+	low_detail = value
 
 func set_user_value(section, value_name, value):
 	var conf = ConfigFile.new()
@@ -97,6 +106,5 @@ func set_user_value(section, value_name, value):
 func get_user_value(section, value_name):
 	var conf = ConfigFile.new()
 	conf.load("user://settings.cfg")
-	var value = conf.get_value(section, value_name)
-	if value: return value
-	else: return null
+	if not conf.has_section_key(section, value_name): return null
+	return conf.get_value(section, value_name)

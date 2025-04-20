@@ -3,9 +3,14 @@ extends Node3D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var last_scene = GameManager.get_last_scene()
-	var scene_load = load(last_scene)
+	var scene_load
+	if last_scene == null:
+		$"Main Menu UI/menu/play".disabled = true
+		scene_load = load("res://Scenes/Room.tscn")
+	else:
+		scene_load = load(last_scene)
+
 	var scene_instance = null
-	
 	if scene_load:
 		scene_instance = scene_load.instantiate()
 	else:
