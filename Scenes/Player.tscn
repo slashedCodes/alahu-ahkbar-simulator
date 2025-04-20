@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://di1fvicjwhp2a" path="res://Scenes/pause_screen.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://cjrl3cgbr8py5" path="res://Scenes/death_screen.tscn" id="5"]
 [ext_resource type="Script" uid="uid://qc7f0meblvt3" path="res://Scripts/Inventory.gd" id="6"]
-[ext_resource type="FontFile" uid="uid://3088fs7yhrwi" path="res://Other/comic sans.ttf" id="7"]
+[ext_resource type="FontFile" uid="uid://3088fs7yhrwi" path="res://Misc/comic sans.ttf" id="7"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="8"]
 [ext_resource type="Texture2D" uid="uid://cunjv0lj0krd1" path="res://Textures/Controls/jump.png" id="9"]
 [ext_resource type="Texture2D" uid="uid://clgt4oy12723p" path="res://Textures/Controls/jump_pressed.png" id="10"]
@@ -24,6 +24,7 @@
 [ext_resource type="AudioStream" uid="uid://pjunjs66vfso" path="res://Audio/sfx/footstep 2.wav" id="22_70hv0"]
 [ext_resource type="AudioStream" uid="uid://vg1p1sp7i5sy" path="res://Audio/sfx/footstep 3.wav" id="23_8flut"]
 [ext_resource type="AudioStream" uid="uid://lguad0fwoc73" path="res://Audio/sfx/footstep 4.wav" id="24_u7x0b"]
+
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_bn3cl"]
 

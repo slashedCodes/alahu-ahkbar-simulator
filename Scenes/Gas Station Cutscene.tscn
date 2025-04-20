@@ -58,10 +58,11 @@
 [ext_resource type="Texture2D" uid="uid://tmm5tqddpl1p" path="res://Models/retro_car_with_interior_-_psx_asset_free_1.png" id="56"]
 [ext_resource type="AudioStream" uid="uid://bchkdwcg2ilsj" path="res://Audio/music/action music nr. 1.wav" id="57_mpcic"]
 [ext_resource type="Script" uid="uid://svig2icv0gwh" path="res://Scripts/cutscene_1.gd" id="58"]
-[ext_resource type="FontFile" uid="uid://3088fs7yhrwi" path="res://Other/comic sans.ttf" id="59"]
+[ext_resource type="FontFile" uid="uid://3088fs7yhrwi" path="res://Misc/comic sans.ttf" id="59"]
 [ext_resource type="PackedScene" uid="uid://di1fvicjwhp2a" path="res://Scenes/pause_screen.tscn" id="60"]
 [ext_resource type="Texture2D" uid="uid://ch7lay8kmpcp3" path="res://Textures/Controls/pause.png" id="61"]
 [ext_resource type="Texture2D" uid="uid://ch3irnvh44bvu" path="res://Textures/Controls/pause_pressed.png" id="62"]
+
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2oywq"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

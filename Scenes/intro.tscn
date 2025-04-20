@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bgtsy7aenaogj"]
+[gd_scene load_steps=12 format=3 uid="uid://dphr38hr2lhh5"]
 
 [ext_resource type="Script" uid="uid://ppio6ib01ppx" path="res://Scripts/intro.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://ctrqywx50hft6" path="res://studio.png" id="2"]
-[ext_resource type="FontFile" uid="uid://3088fs7yhrwi" path="res://Other/comic sans.ttf" id="3"]
+[ext_resource type="PackedScene" uid="uid://g4e2cyrofo76" path="res://Scenes/transition_screen.tscn" id="2_hwjxs"]
+[ext_resource type="FontFile" uid="uid://3088fs7yhrwi" path="res://Misc/comic sans.ttf" id="3"]
 [ext_resource type="AudioStream" uid="uid://vj67x70o4wk2" path="res://Audio/music/intro.wav" id="4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g54ya"]
@@ -147,6 +148,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1")
+
+[node name="TransitionScreen" parent="." instance=ExtResource("2_hwjxs")]
 
 [node name="black" type="Panel" parent="."]
 layout_mode = 1

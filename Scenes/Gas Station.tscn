@@ -60,7 +60,7 @@
 [ext_resource type="AudioStream" uid="uid://b7hnn1o4miqki" path="res://Audio/sfx/hl2-stalker-scream.mp3" id="58"]
 [ext_resource type="Texture2D" uid="uid://cto1albwvtup8" path="res://Models/ps1__psx_style_-_desert_eagle_-_lowpoly_0.png" id="59"]
 [ext_resource type="Script" uid="uid://crafedveq0n4s" path="res://Scripts/Interactables/gun_gas_station.gd" id="60"]
-[ext_resource type="Shader" uid="uid://cscvr3086tglu" path="res://Other/weapon_shader.tres" id="61"]
+[ext_resource type="Shader" uid="uid://cscvr3086tglu" path="res://Misc/weapon_shader.tres" id="61"]
 [ext_resource type="Texture2D" uid="uid://cvphgnvmag1ax" path="res://Models/p/gas_station_props_21.jpg" id="62"]
 [ext_resource type="Script" uid="uid://u0jytlgbeymm" path="res://Scripts/Interactables/cash_register.gd" id="63"]
 [ext_resource type="AudioStream" uid="uid://ci15b1mh5yr6y" path="res://Audio/voice lines/gas station dude line 1.mp3" id="64"]
@@ -71,9 +71,10 @@
 [ext_resource type="Script" uid="uid://dtil00u7emjo8" path="res://Scripts/Interactables/take_money.gd" id="69"]
 [ext_resource type="AudioStream" uid="uid://cwcurgl0yxk5m" path="res://Audio/sfx/money.mp3" id="70"]
 [ext_resource type="Script" uid="uid://jga7s7ueuysy" path="res://Scripts/Interactables/gas_station_car_door.gd" id="71"]
-[ext_resource type="FontFile" uid="uid://3088fs7yhrwi" path="res://Other/comic sans.ttf" id="72"]
+[ext_resource type="FontFile" uid="uid://3088fs7yhrwi" path="res://Misc/comic sans.ttf" id="72"]
 [ext_resource type="Script" uid="uid://bgca8mga8swcw" path="res://Scripts/Misc/cop_timer.gd" id="73"]
 [ext_resource type="AudioStream" uid="uid://c6fmu3qrob8wm" path="res://Audio/music/action music nr 2.wav" id="74_5mjsk"]
+
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i6i6y"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

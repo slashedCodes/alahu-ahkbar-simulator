@@ -3,6 +3,7 @@ extends Node
 @onready var root = get_tree().current_scene
 @onready var player = null
 @onready var objectives = null
+var graphics_quality = true # true = high, false = low
 
 func _ready():
 	refresh_vars()
@@ -83,3 +84,19 @@ func is_running_on_mobile():
 	else:
 		#return true
 		return false
+
+func set_quality(value):
+	graphics_quality = value
+
+func set_user_value(section, value_name, value):
+	var conf = ConfigFile.new()
+	conf.load("user://settings.cfg")
+	conf.set_value(section, value_name, value)
+	conf.save("user://settings.cfg")
+
+func get_user_value(section, value_name):
+	var conf = ConfigFile.new()
+	conf.load("user://settings.cfg")
+	var value = conf.get_value(section, value_name)
+	if value: return value
+	else: return null

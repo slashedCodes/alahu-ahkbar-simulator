@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://db1igregnmakb" path="res://Textures/Controls/MLG Hitmarker.png" id="5_4qp5x"]
 [ext_resource type="PackedScene" uid="uid://cjrl3cgbr8py5" path="res://Scenes/death_screen.tscn" id="6_iuc46"]
 [ext_resource type="Script" uid="uid://qc7f0meblvt3" path="res://Scripts/Inventory.gd" id="7_hh6xx"]
-[ext_resource type="FontFile" uid="uid://3088fs7yhrwi" path="res://Other/comic sans.ttf" id="8"]
+[ext_resource type="FontFile" uid="uid://3088fs7yhrwi" path="res://Misc/comic sans.ttf" id="8"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="9_xa1e4"]
 [ext_resource type="Texture2D" uid="uid://cunjv0lj0krd1" path="res://Textures/Controls/jump.png" id="10_yonvq"]
 [ext_resource type="Texture2D" uid="uid://clgt4oy12723p" path="res://Textures/Controls/jump_pressed.png" id="11_qauj8"]
@@ -4072,7 +4072,6 @@ vertical = true
 
 [node name="Death Screen" parent="Player/Neck/Camera3D" instance=ExtResource("6_iuc46")]
 visible = false
-anchors_preset = 15
 
 [node name="interaction" type="Label" parent="Player/Neck/Camera3D"]
 offset_left = 130.0

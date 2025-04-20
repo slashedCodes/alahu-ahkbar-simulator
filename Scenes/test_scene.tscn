@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cfed8felowioj" path="res://Scenes/Weapons/gun_pickup.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://dmqsm134ou56f" path="res://Scenes/guy.tscn" id="5"]
 [ext_resource type="Texture2D" uid="uid://cvphgnvmag1ax" path="res://Models/p/gas_station_props_21.jpg" id="6"]
-[ext_resource type="Shader" uid="uid://cscvr3086tglu" path="res://Other/weapon_shader.tres" id="7"]
+[ext_resource type="Shader" uid="uid://cscvr3086tglu" path="res://Misc/weapon_shader.tres" id="7"]
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_brp6v"]
 albedo_texture = ExtResource("1")

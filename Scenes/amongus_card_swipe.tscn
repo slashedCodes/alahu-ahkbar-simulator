@@ -1,10 +1,11 @@
 [gd_scene load_steps=14 format=3 uid="uid://bl4udp2dj2ckq"]
 
 [ext_resource type="Script" uid="uid://diiuvjxqt72t8" path="res://Scripts/amongus card swipe.gd" id="1"]
-[ext_resource type="FontFile" uid="uid://3088fs7yhrwi" path="res://Other/comic sans.ttf" id="2"]
+[ext_resource type="FontFile" uid="uid://3088fs7yhrwi" path="res://Misc/comic sans.ttf" id="2"]
 [ext_resource type="Texture2D" uid="uid://bqwabj01ydqy6" path="res://Textures/card swipe.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://cj0jig84rshek" path="res://Textures/id.png" id="4"]
 [ext_resource type="AudioStream" uid="uid://nere750gwbkv" path="res://Audio/sfx/card wrong.mp3" id="5"]
+
 
 [sub_resource type="LabelSettings" id="LabelSettings_gtfhr"]
 font = ExtResource("2")

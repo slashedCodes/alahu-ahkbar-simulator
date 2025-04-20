@@ -29,7 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://c70ehlpb2ahqt" path="res://Models/p/5677713404.png" id="25"]
 [ext_resource type="Texture2D" uid="uid://cto1albwvtup8" path="res://Models/ps1__psx_style_-_desert_eagle_-_lowpoly_0.png" id="26"]
 [ext_resource type="Script" uid="uid://cxxftin50xbul" path="res://Scripts/Interactables/gun_apartment.gd" id="27"]
-[ext_resource type="Shader" uid="uid://cscvr3086tglu" path="res://Other/weapon_shader.tres" id="28"]
+[ext_resource type="Shader" uid="uid://cscvr3086tglu" path="res://Misc/weapon_shader.tres" id="28"]
 [ext_resource type="PackedScene" uid="uid://dcer7q10qbt6j" path="res://Models/p/psx_building.glb" id="29"]
 [ext_resource type="PackedScene" uid="uid://d3w0rxxkxdp0y" path="res://Models/p/psx_apartment.glb" id="30"]
 [ext_resource type="Texture2D" uid="uid://fmy3tvspxwc5" path="res://Models/p/road_basic_maker_0.jpg" id="31"]
@@ -95,6 +95,7 @@
 [ext_resource type="Script" uid="uid://demqfjlxmhk4t" path="res://Scripts/Interactables/die.gd" id="91"]
 [ext_resource type="Texture2D" uid="uid://baryuu1i51klf" path="res://Textures/eyelid.png" id="93_mttmp"]
 [ext_resource type="Script" uid="uid://xufrykgbas3q" path="res://Scripts/eye_opening.gd" id="94_6hgvc"]
+
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cb5tl"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

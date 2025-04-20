@@ -1,7 +1,8 @@
 [gd_scene load_steps=39 format=4 uid="uid://cfed8felowioj"]
 
 [ext_resource type="Texture2D" uid="uid://cto1albwvtup8" path="res://Models/ps1__psx_style_-_desert_eagle_-_lowpoly_0.png" id="1"]
-[ext_resource type="Shader" uid="uid://cscvr3086tglu" path="res://Other/weapon_shader.tres" id="2"]
+[ext_resource type="Shader" uid="uid://cscvr3086tglu" path="res://Misc/weapon_shader.tres" id="2"]
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_secwa"]
 resource_name = "Material"

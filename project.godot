@@ -14,9 +14,8 @@ config/name="alahu ahkbar simulator"
 run/main_scene="res://Scenes/intro.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
-boot_splash/show_image=false
-boot_splash/fullsize=false
 boot_splash/use_filter=false
+boot_splash/image="uid://cs4bl80xlbtqn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -34,11 +33,6 @@ window/stretch/mode="viewport"
 [dotnet]
 
 project/assembly_name="911 operator"
-
-[editor]
-
-version_control/plugin_name="GitPlugin"
-version_control/autoload_on_startup=true
 
 [filesystem]
 
