@@ -1,10 +1,12 @@
-[gd_scene load_steps=39 format=4 uid="uid://cfed8felowioj"]
+[gd_scene load_steps=47 format=4 uid="uid://cfed8felowioj"]
 
 [ext_resource type="Texture2D" uid="uid://cto1albwvtup8" path="res://Models/ps1__psx_style_-_desert_eagle_-_lowpoly_0.png" id="1"]
 [ext_resource type="Shader" uid="uid://cscvr3086tglu" path="res://Misc/weapon_shader.tres" id="2"]
+[ext_resource type="Script" uid="uid://cot2poghdg2ft" path="res://Scripts/Other/gun.gd" id="2_8ciwl"]
+[ext_resource type="AudioStream" uid="uid://kg31mjbadlq6" path="res://Audio/sfx/hitHurt.wav" id="4_mk1hr"]
+[ext_resource type="AudioStream" uid="uid://58wb0ewsdtyg" path="res://Audio/sfx/reload.wav" id="5_v4yub"]
 
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_secwa"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pev5e"]
 resource_name = "Material"
 cull_mode = 2
 albedo_texture = ExtResource("1")
@@ -34,7 +36,7 @@ _surfaces = [{
 "index_count": 132,
 "index_data": PackedByteArray("AAACAAEAAAADAAIABAAGAAUABAAHAAYACAAKAAkACAALAAoADAAOAA0ADAAPAA4AEAASABEAEAATABIAFAAWABUAFAAXABYAGAAaABkAGAAbABoAHAAeAB0AHAAfAB4AIAAiACEAIAAjACIAJAAmACUAJAAnACYAKAAqACkAKAArACoALAAuAC0ALAAvAC4AMAAyADEAMAAzADIANAA2ADUANAA3ADYAOAA6ADkAOAA7ADoAPAA+AD0APAA/AD4ARQBEAEMAQwBGAEUAQwBCAEYAQgBHAEYAQgBBAEcAQQBAAEcATgBNAEwATABPAE4ATABLAE8ASwBIAE8ASwBKAEgASgBJAEgA"),
 "lods": [0.087295, PackedByteArray("WQBSAFAAWQBTAFIAUAArACoAUQAqAD4AWgBRAD4AFwA+ABYAFABaABYAFAAWABUABABUAAUABABXAFQAWwAyAFQAVwBbAFUAVwBWAFsAVgA7AFsAWAASAFYAWAATABIAGAAaABkAGAAbABoAJAAmACUAJAAnACYALAAuAC0ALAAvAC4ANAA2ADUANAA3ADYARABGAEUARABBAEYATgBNAEwATABPAE4ATABLAE8ASwBIAE8ASwBKAEgASgBJAEgA")],
-"material": SubResource("StandardMaterial3D_secwa"),
+"material": SubResource("StandardMaterial3D_pev5e"),
 "name": "Material",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -66,7 +68,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 168,
 "index_data": PackedByteArray("AAACAAEAAAADAAIABAAGAAUABAAHAAYACAAKAAkACAALAAoADAAOAA0ADAAPAA4AEAASABEAEAATABIAFAAWABUAFAAXABYAGAAaABkAGAAbABoAHAAeAB0AHAAfAB4AIAAiACEAIAAjACIAJAAmACUAJAAnACYAKAAqACkAKAArACoAAAAsAAMAAAAtACwALgAwAC8ALgAxADAACAAyAAsACAAzADIADAA1ADQADAANADUANgA4ADcANgA5ADgAOgA8ADsAOgA9ADwAPgBAAD8APgBBAEAAQgBEAEMAQgBFAEQARgAiAEcARgAhACIASAAmACcASABJACYASgAqAEsASgApACoATABQAE8ATwBOAEwATgBNAEwAVABTAFIAUgBRAFQAUQBVAFQAVgBaAFkAWQBYAFYAWABXAFYAXgBdAFwAXABbAF4AWwBfAF4A"),
-"material": SubResource("StandardMaterial3D_secwa"),
+"material": SubResource("StandardMaterial3D_pev5e"),
 "name": "Material",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -100,7 +102,7 @@ _surfaces = [{
 "index_count": 1218,
 "index_data": PackedByteArray("AAACAAEAAwAFAAQABgAIAAcACQALAAoADAAOAA0ADwARABAAEgAUABMAFQAXABYAGAAaABkAGAAbABoAHAAeAB0AHAAfAB4AIAAiACEAIAAjACIAJAAmACUAJAAnACYAKAAqACkAKAArACoALAAuAC0ALAAvAC4AMAAyADEAMAAzADIANAA2ADUANAA3ADYAOAA6ADkAOAA7ADoAPAA+AD0APAA/AD4AQABCAEEAQABDAEIARABGAEUARABHAEYASABKAEkASABLAEoATABOAE0ATABPAE4AUABSAFEAUABTAFIAVABWAFUAVABXAFYAWABaAFkAWABbAFoAXABeAF0AXABfAF4AYABiAGEAYABjAGIAZABmAGUAZABnAGYAaABqAGkAaABrAGoAbABuAG0AbABvAG4AcAByAHEAcABzAHIAdAB2AHUAdAB3AHYAeAB6AHkAeAB7AHoAfAB+AH0AfAB/AH4AgACCAIEAgACDAIIAHgCFAIQAHgAfAIUAhgCIAIcAhgCJAIgAigCMAIsAigCNAIwAjgCQAI8AjgCRAJAAkgCUAJMAkgCVAJQAlgCYAJcAlgCZAJgAmgCcAJsAmgCdAJwAngCgAJ8AngChAKAAogCkAKMAogClAKQApgCoAKcApgCpAKgAqgCsAKsAqgCtAKwArgCwAK8ArgCxALAAQACzALIAQABBALMAtAC2ALUAtAC3ALYAuAC6ALkAuAC7ALoAvAC+AL0AvAC/AL4AwADCAMEAwADDAMIAxADGAMUAxADHAMYAyADKAMkAyADLAMoAzADOAM0AzADPAM4A0ADSANEA0ADTANIA1ADWANUA1ADXANYA2ADaANkA2ADbANoA3ADeAN0A3ADfAN4A4ADiAOEA4ADjAOIA5ADmAOUA5ADnAOYA6ADqAOkA6ADrAOoA7ADuAO0A7ADvAO4A8ADyAPEA8ADzAPIA9AD2APUA9AD3APYA+AD6APkA+AD7APoA/AD+AP0A/AD/AP4AAAECAQEBAAEDAQIBBAEGAQUBBAEHAQYBCAEKAQkBCAELAQoBDAEOAQ0BDAEPAQ4BEAESAREBEAETARIBFAEWARUBFAEXARYBGAEaARkBGAEbARoBHAEeAR0BHAEfAR4BIAEiASEBIAEjASIBJAEmASUBJAEnASYBKAEqASkBKAErASoBLAEuAS0BLAEvAS4BMAEyATEBMAEzATIBNAE2ATUBNAE3ATYBOAE6ATkBOAE7AToBPAE+AT0BPAE/AT4BQAFCAUEBQAFDAUIBRAFGAUUBRAFHAUYBSAFKAUkBSAFLAUoBTAFOAU0BTAFPAU4BUAFSAVEBUAFTAVIBVAFWAVUBVAFXAVYBWAHmAOcAWAFZAeYAWgFbAFgAWgFbAVsAXAFeAV0BXAFfAV4BYAFiAWEBYAFjAWIBZAFmAWUBZAFnAWYBaAFqAWkBaAFrAWoBbAFuAW0BbAFvAW4BcAFyAXEBcAFzAXIBdAF2AXUBdAF3AXYBGAB4ARsAGAB5AXgBegF8AXsBegF9AXwBfgGAAX8BfgGBAYABggEmAIMBggElACYAKACFAYQBKAApAIUBhgEuAIcBhgEtAC4AiAGKAYkBiAGLAYoBNACMATcANACNAYwBjgGQAY8BjgGRAZABPACSAT8APACTAZIBQACUAUMAQACVAZQBlgGYAZcBlgGZAZgBmgGcAZsBmgGdAZwBTACeAU8ATACfAZ4BoAGiAaEBoAGjAaIBpAGmAaUBpAGnAaYBqAFaAKkBqAFZAFoAqgGsAasBqgGtAawBrgGwAa8BrgGxAbABsgG0AbMBsgG1AbQBtgG4AbcBtgG5AbgBugG8AbsBugG9AbwBcAC/Ab4BcABxAL8BwAF2AMEBwAF1AHYAwgF6AMMBwgF5AHoAxAF+AMUBxAF9AH4AxgHIAccBxgHJAcgBfAHKAXsBfAHLAcoBzAHOAc0BzAHPAc4B0AGMAI0A0AHRAYwAjgDTAdIBjgCPANMB1AGUAJUA1AHVAZQA1gHYAdcB1gHZAdgB2gHcAdsB2gHdAdwB3gGgAKEA3gHfAaAA4AGkAKUA4AHhAaQA4gHkAeMB4gHlAeQB5gGsAK0A5gHnAawA6AHqAekB6AHrAeoB7AHuAe0B7AHvAe4B8AHyAfEB8AHzAfIB9AH2AfUB9AH3AfYB+AH6AfkB+AH7AfoB/AHCAMMA/AH9AcIA/gHGAMcA/gH/AcYAAALKAMsAAAIBAsoAzAADAgICzADNAAMCBAIGAgUCBAIHAgYCCAIKAgkCCAILAgoCDAIOAg0CDAIPAg4CEAISAhECEAITAhICFAIWAhUCFAIXAhYC5AAYAucA5AAZAhgCGgIcAhsCGgIdAhwCHgIgAh8CHgIhAiACIgIkAiMCIgIlAiQCJgIoAicCJgIpAigCKgIsAisCKgItAiwCLgIwAi8CLgIxAjACMgI0AjMCMgI1AjQCNgI4AjcCNgI5AjgCOgI8AjsCOgI9AjwCPgJAAj8CPgJBAkACQgJEAkMCQgJFAkQCRgJIAkcCRgJJAkgCSgJMAksCSgJNAkwCTgJQAk8CTgJRAlACUgJUAlMCUgJVAlQCVgJYAlcCVgJZAlgCWgJcAlsCWgJdAlwCXgJgAl8CXgJhAmACYgJkAmMCYgJlAmQCZgJoAmcCZgJpAmgCagJsAmsCagJtAmwCbgKoAW8CbgJwAqgBcQJzAnICcQJ0AnMCdQJ3AnYCdQJ4AncCeQJ7AnoCeQJ8AnsCfQJ/An4CfQKAAn8CgQKDAoICgQKEAoMCWAEYAoUCWAHnABgCbwKpAYYCbwKoAakBhwKJAogChwKKAokCiwKNAowCiwKOAo0CjwKRApACjwKSApECkwKVApQCkwKWApUClwKZApgClwKaApkCmwKdApwCmwKeAp0CnwKhAqACnwKiAqECowKlAqQCpAKmAqMCpgKnAqMCpgKoAqcCqQKrAqoCqgKsAqkCrAKtAqkCrgKwAq8CrwKxAq4CsQKyAq4CswK1ArQCtAK2ArMCtgK3ArMCuAK6ArkCuQK7ArgCuwK8ArgCvQK/Ar4CvgLAAr0CwALBAr0CwQLCAr0CwwLFAsQCxALGAsMCxgLHAsMCxwLIAsMCyQLLAsoCygLMAskCygLNAswCzgLPAhkCGQLkAM4C5ADQAs4C0QLTAtIC0gLUAtEC1ALVAtEC1gLYAtcC1wLZAtYC1wLaAtkC2wLdAtwC3ALeAtsC3gLfAtsC3gLgAt8C"),
 "lods": [0.228543, PackedByteArray("AADiAuECuADhAuICuAC7AOECAwAFAAQAHAEFAAMAHAEDAB0BBAD6AAMABAD7APoABgAIAAcAKQELAAoAKQHjAisBKQErASoBDADlAuQC9AHkAuUC9AHlAvUBDwARABAATgIPABAATgJRAg8AEQAPACwCEQAsAisCEgAUABMAXQIXABYAXQJbAuYCXQJcAlsCGQAbABoAGQB4ARsAGQB5AXgB0AF5ARkA0AEZAIoA1AHQAYoA1AGKAJUAkgCVAIoAIwAfAOcC9AIjAOcCXAD0Al0A5wIfAIUAhQCIAOcChQCbAIgAhQCaAJsAmgCcAJsAmgCdAJwAUgCdAJoAUgCxAJ0A5wInASMB5wIjASIB6AIiASEBUABSAFEAUABTAFIAJAAnACYAggEkACYAggEmAIMBKgAkAIIBKgCCAYUBKAAqAIUBKAArACoAKACFAYQBLAAuAC0ALAAvAC4AhgEtAC4AhgEuAIcBMAAyADEAMAAzADIANQA3ADYANQCMATcANQCNAYwBNQC/AY0BNQBxAL8BNQByAHEAOAA6ADkAOAA7ADoAPQA/AD4APQCSAT8APQCTAZIBQQCTAT0AQQCVAZMBQQDuAZUBQQCyAO4BQQCzALIARABGAEUARABHAEYASABKAEkASABLAEoATADqAk0ATACeAeoCTACfAZ4B6gKeAaYB6gKmAVcA6gJXAFYAWABaAFkAqAFZAFoAWABbAFoAqAFaAKkB9gJbAFgAAgOoAakB9gJYADoBAgNsAqgBOgFCAWwCAwNsAgIDlwIDAwIDXAH2AjoBbAH2AlwBOgFsAlkBWQFsAgMDXAE6AVkBWQEDAwQDWQFjAVwB6wLpAvUCYABiAGEAZABiAGAAZABnAGIAaABqAGkAtgFqAGgAtgG5AWoAtgFoAO4CtgHuAsABwAHuAncAwAF3AMEBwQF3AH4AdwB/AH4AwQF+AMUB7AJuAG0AlgDsApcAlgDtAuwC7ALtAm4AbgDtAvECbgDxAqgAbgCoAPACeAB6AHkAeAB7AHoAwgF5AHoAwgF6AMMBngChAJ8A3gGfAKEA3gH7Ap8A+wKrAJ8A+wLnAasA7wKkAKMA/AKkAO8C/ALhAaQA7wL/AvwC7wLzAv8C/gL/AvMC/gLzAsEA/AH+AsEA/AHBAMMAwADDAMEA8gLKAMkA/QLKAPIC/QIBAsoA0ADSANEA0ADVANIA1ADVANAA1ADXANUA1wDrANUA6wDqANUA6wDXAPEA8ADrAPEA8ADzAOsA4ADiAOEA4ADjAOIA4QDiAAIB4QACAQEB7ADeAO0A7AATAt4A7AAhAhMCswLeABMCEwK2ArMCtgK3ArMCEwLUArYC1ALVArYC9AD2APUA9AD3APYA/AD+AP0A/AD/AP4ABQMGAQsBCAELAQYBBQMHAQYBuwK8AgcBBQO7AgcBBQMLATgCOgI4AgsBBQM4AjcCBQM3AtYC1gLYAgUDDAEOAQ0BDAEPAQ4BEAETARIBFAEQARIBFAESARUBRgIVARIBRgISAUICQgISAUMCGAEaARkBGAEbARoBRAFGAUUBRAFHAUYBRAF3AkcBRAF4AncCSAFKAUkBSAFLAUoBeQJJAUoBeQJKAXoCTAFOAU0BTAFPAU4BUAFSAVEBUAFTAVIBVAFWAVUBVAFXAVYBgQJVAVYBgQJWAYICfwH3AnsB+AIAA38BAQP3An8BqgGtAQED9wLNAXsBzQH3As4BzQHOAd0BzQHdAdoB2gHdAdwB2gHcAdsBogHaAdsBogHbAekBoAGiAaEBoAGjAaIB9wJTAlcC9wJUAlMC9wJVAlQCiAGKAYkBiAGLAYoBjgGQAY8BjgGRAZABlgGYAZcBlgGZAZgBmgGcAZsBmgGdAZwBrgGxAbABsgGuAbABsgGwAbMB+QLiAbsB4gHjAbsB4gHkAeMB4gHlAeQB+QK9AeIB1gHZAfkC1gH5AvoCBAIGAgsCBAIHAgYCCAIEAgsCCAILAgkCCQILAiUCJQILAhwCJQIcAiQCIgIlAiQCIgIkAiMCFAIWAhUCFAIXAhYCFwI0AhYCFwI1AjQCJgIoAicCJgIpAigCLgIwAi8CLgIxAjACPgJAAj8CPgJBAkACSgJMAksCSgJNAkwCfQJ/An4CfQKAAn8CowKlAqQCpAKlAsMCpAKmAqMCpgKnAqMCxgKkAsMCxQLGAsMCrQKrAqoCqgKsAq0CyQKrAq0CrQLMAskC")],
-"material": SubResource("StandardMaterial3D_secwa"),
+"material": SubResource("StandardMaterial3D_pev5e"),
 "name": "Material",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -132,7 +134,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 60,
 "index_data": PackedByteArray("AAACAAEAAAADAAIABAAGAAUABAAHAAYACAAKAAkACAALAAoADAAOAA0ADAAPAA4AEAASABEAEAATABIAFAAWABUAFAAXABYAGAAaABkAGAAbABoAHAAeAB0AHAAfAB4AIAAiACEAIAAjACIAJAAmACUAJAAnACYA"),
-"material": SubResource("StandardMaterial3D_secwa"),
+"material": SubResource("StandardMaterial3D_pev5e"),
 "name": "Material",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -166,7 +168,7 @@ _surfaces = [{
 "index_count": 84,
 "index_data": PackedByteArray("AAACAAEAAAADAAIABAAGAAUABAAHAAYACAAKAAkACAALAAoADAAOAA0ADAAPAA4AEAASABEAEAATABIAFAAWABUAFAAXABYAGAAaABkAGAAbABoAHAAeAB0AHAAfAB4AIAAiACEAIAAjACIAJAAmACUAJAAnACYAKAAqACkAKAArACoALAAuAC0ALAAvAC4AMAAyADEAMAAzADIANAA2ADUANAA3ADYA"),
 "lods": [0.0864927, PackedByteArray("AAACAAEAAAAaAAIAAAAbABoAPAAGAAUAPQA4AAYAPAAqADkAKAArACoACAAKAAkACAALAAoACAA2AAsAOgAOAA0AOgA7AA4AOgAuADsAOgAvAC4AFAAWABUAFAAXABYA")],
-"material": SubResource("StandardMaterial3D_secwa"),
+"material": SubResource("StandardMaterial3D_pev5e"),
 "name": "Material",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -198,7 +200,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 564,
 "index_data": PackedByteArray("AAACAAEAAwAFAAQABgAIAAcACQALAAoADAAOAA0ADwARABAAEgAUABMAFQAXABYAGAAaABkAGwAdABwAHgAgAB8AHgAhACAAIgAkACMAIgAlACQAJgAoACcAJgApACgAIQAqACAAIQArACoALAAuAC0ALAAvAC4AMAAyADEAMAAzADIANAA2ADUANAA3ADYAOAA6ADkAOAA7ADoAPAA+AD0APAA/AD4AQABCAEEAQABDAEIARABGAEUARABHAEYASABKAEkASABLAEoATABOAE0ATABPAE4AUABSAFEAUABTAFIAVABWAFUAVABXAFYAWABaAFkAWABbAFoAXABeAF0AXABfAF4AYABiAGEAYABjAGIAZABmAGUAZABnAGYAaABqAGkAaABrAGoAbABuAG0AbABvAG4AcABZAHEAcAByAFkAcwB1AHQAcwB2AHUAdwB5AHgAdwB6AHkAcgB8AHsAcgB9AHwAfgCAAH8AfgCBAIAAggBlAIMAggBkAGUAhACGAIUAhACHAIYAiABdAIkAiABcAF0AigCMAIsAigCNAIwAjgCQAI8AjgCRAJAAkgArACEAkgCTACsAlACWAJUAlACXAJYAmACaAJkAmACbAJoAnAB7AJ0AnAByAHsAngCgAJ8AngChAKAAogBZAKMAogBYAFkApABBAKUApABAAEEApgBVAFYApgCnAFUAqACqAKkAqACrAKoArACuAK0ArACvAK4AcgCjAFkAcgCcAKMAsACyALEAsACzALIAtAC2ALUAtAC3ALYAuAC6ALkAuAC7ALoAsQC9ALwAsQCyAL0AvgDAAL8AvgDBAMAAwgDEAMMAwgDFAMQAxgDIAMcAxgDJAMgAygDMAMsAygDNAMwAzgDQAM8AzgDRANAA0gDUANMA0gDVANQA1gDYANcA1gDZANgA2gDcANsA2gDdANwA3gDgAN8A3gDhAOAA4gDkAOMA4gDlAOQA5gDoAOcA5gDpAOgA6gDsAOsA6gDtAOwA7gDwAO8A7gDxAPAA8gD0APMA8gD1APQA9gD4APcA9gD5APgA+gD8APsA+gD9APwA/gAAAf8A/gABAQABAgHtAAMBAgEEAe0ABQEHAQYBBQEIAQcBCQELAQoBCQEMAQsBAwEOAQ0BAwEPAQ4BfgARARABfgB/ABEBEgH5APYAEgETAfkAFAEWARUBFAEXARYBGAHxAO4AGAEZAfEAGgEcARsBGgEdARwBHgEgAR8BHgEhASABIgG8ACMBIgGxALwAJAEmASUBJAEnASYBKAEqASkBKAErASoBnAAPAQMBnACdAA8BngAtASwBngCfAC0BogDtAOoAogCjAO0ApADVANIApAClANUALgHpAC8BLgHoAOkAMAEyATEBMAEzATIBNAE2ATUBNAE3ATYBAwGjAJwAAwHtAKMAkwCSADwBPAE7AZMAOwE6AZMAOgE5AZMAOQE4AZMAPgE9ASIBIgEjAT4BIwE/AT4BIwFAAT8BIwFBAUAB"),
-"material": SubResource("StandardMaterial3D_secwa"),
+"material": SubResource("StandardMaterial3D_pev5e"),
 "name": "Material",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -240,11 +242,12 @@ shader_parameter/roughness = 1.0
 shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
 shader_parameter/specular = 0.5
 shader_parameter/metallic = 0.0
+shader_parameter/normal_scale = 1.0
 shader_parameter/uv1_scale = Vector3(1, 1, 1)
 shader_parameter/uv1_offset = Vector3(0, 0, 0)
 shader_parameter/uv2_scale = Vector3(1, 1, 1)
 shader_parameter/uv2_offset = Vector3(0, 0, 0)
-shader_parameter/fov = 90.0
+shader_parameter/viewmodel_fov = 75.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6ktla"]
 _surfaces = [{
@@ -291,11 +294,12 @@ shader_parameter/roughness = 1.0
 shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
 shader_parameter/specular = 0.5
 shader_parameter/metallic = 0.0
+shader_parameter/normal_scale = 1.0
 shader_parameter/uv1_scale = Vector3(1, 1, 1)
 shader_parameter/uv1_offset = Vector3(0, 0, 0)
 shader_parameter/uv2_scale = Vector3(1, 1, 1)
 shader_parameter/uv2_offset = Vector3(0, 0, 0)
-shader_parameter/fov = 90.0
+shader_parameter/viewmodel_fov = 75.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_tnase"]
 _surfaces = [{
@@ -340,11 +344,12 @@ shader_parameter/roughness = 1.0
 shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
 shader_parameter/specular = 0.5
 shader_parameter/metallic = 0.0
+shader_parameter/normal_scale = 1.0
 shader_parameter/uv1_scale = Vector3(1, 1, 1)
 shader_parameter/uv1_offset = Vector3(0, 0, 0)
 shader_parameter/uv2_scale = Vector3(1, 1, 1)
 shader_parameter/uv2_offset = Vector3(0, 0, 0)
-shader_parameter/fov = 90.0
+shader_parameter/viewmodel_fov = 75.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_1whw4"]
 _surfaces = [{
@@ -391,11 +396,12 @@ shader_parameter/roughness = 1.0
 shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
 shader_parameter/specular = 0.5
 shader_parameter/metallic = 0.0
+shader_parameter/normal_scale = 1.0
 shader_parameter/uv1_scale = Vector3(1, 1, 1)
 shader_parameter/uv1_offset = Vector3(0, 0, 0)
 shader_parameter/uv2_scale = Vector3(1, 1, 1)
 shader_parameter/uv2_offset = Vector3(0, 0, 0)
-shader_parameter/fov = 90.0
+shader_parameter/viewmodel_fov = 75.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_601uw"]
 _surfaces = [{
@@ -440,11 +446,12 @@ shader_parameter/roughness = 1.0
 shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
 shader_parameter/specular = 0.5
 shader_parameter/metallic = 0.0
+shader_parameter/normal_scale = 1.0
 shader_parameter/uv1_scale = Vector3(1, 1, 1)
 shader_parameter/uv1_offset = Vector3(0, 0, 0)
 shader_parameter/uv2_scale = Vector3(1, 1, 1)
 shader_parameter/uv2_offset = Vector3(0, 0, 0)
-shader_parameter/fov = 90.0
+shader_parameter/viewmodel_fov = 75.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_55dix"]
 _surfaces = [{
@@ -491,11 +498,12 @@ shader_parameter/roughness = 1.0
 shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
 shader_parameter/specular = 0.5
 shader_parameter/metallic = 0.0
+shader_parameter/normal_scale = 1.0
 shader_parameter/uv1_scale = Vector3(1, 1, 1)
 shader_parameter/uv1_offset = Vector3(0, 0, 0)
 shader_parameter/uv2_scale = Vector3(1, 1, 1)
 shader_parameter/uv2_offset = Vector3(0, 0, 0)
-shader_parameter/fov = 90.0
+shader_parameter/viewmodel_fov = 75.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_85jqk"]
 _surfaces = [{
@@ -528,6 +536,101 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_85jqk")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ccbkm"]
+font_size = 15
+
+[sub_resource type="Animation" id="Animation_xl8ia"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("reload:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.421, -0.632, -1.177)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.785398, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0ho83"]
+resource_name = "hand_fire"
+length = 0.08
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.04, 0.08),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.421, -0.632, -1.177), Vector3(-0.421, -0.632, -1.34698), Vector3(-0.421, -0.632, -1.177)]
+}
+
+[sub_resource type="Animation" id="Animation_jxwi7"]
+resource_name = "hand_reload"
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("reload:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0), Vector3(-3.14159, 3.14159, 0), Vector3(-6.28319, 3.14159, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_77tm5"]
+_data = {
+&"RESET": SubResource("Animation_xl8ia"),
+&"hand_fire": SubResource("Animation_0ho83"),
+&"hand_reload": SubResource("Animation_jxwi7")
+}
 
 [node name="GunPickup" type="Node3D"]
 
@@ -612,6 +715,7 @@ render_target_update_mode = 0
 
 [node name="gun" type="Node3D" parent="gun/StaticBody3D/Item/SubViewportContainer/SubViewport" groups=["gun"]]
 transform = Transform3D(0.257387, 0, 0.257387, 0, 0.364, 0, -0.257387, 0, 0.257387, -0.421, -0.632, -1.177)
+script = ExtResource("2_8ciwl")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="gun/StaticBody3D/Item/SubViewportContainer/SubViewport/gun"]
 transform = Transform3D(1, -3.72529e-09, 0, 3.72529e-09, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -657,5 +761,26 @@ transform = Transform3D(1, 0, 0, -1.47102e-17, 0.00635318, 0.99998, 0, -0.99998,
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_iy8xp")
 skeleton = NodePath("")
+
+[node name="ammo" type="Label" parent="gun/StaticBody3D/Item/SubViewportContainer/SubViewport/gun"]
+offset_left = 300.0
+offset_top = 325.0
+offset_right = 447.0
+offset_bottom = 425.0
+text = "5/5 ammo"
+label_settings = SubResource("LabelSettings_ccbkm")
+horizontal_alignment = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="gun/StaticBody3D/Item/SubViewportContainer/SubViewport/gun"]
+libraries = {
+&"": SubResource("AnimationLibrary_77tm5")
+}
+
+[node name="Gun Shoot" type="AudioStreamPlayer" parent="gun/StaticBody3D/Item/SubViewportContainer/SubViewport/gun"]
+stream = ExtResource("4_mk1hr")
+volume_db = -8.915
+
+[node name="reload" type="AudioStreamPlayer" parent="gun/StaticBody3D/Item/SubViewportContainer/SubViewport/gun"]
+stream = ExtResource("5_v4yub")
 
 [node name="Camera3D" type="Camera3D" parent="gun/StaticBody3D/Item/SubViewportContainer/SubViewport"]

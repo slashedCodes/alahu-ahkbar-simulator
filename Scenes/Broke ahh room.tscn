@@ -1,4 +1,4 @@
-[gd_scene load_steps=490 format=4 uid="uid://bvckeuulik4ue"]
+[gd_scene load_steps=491 format=4 uid="uid://bvckeuulik4ue"]
 
 [ext_resource type="PackedScene" uid="uid://g4e2cyrofo76" path="res://Scenes/transition_screen.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://pounoaulac8g" path="res://Models/p/low_poly_prisoner_bed_psx.glb" id="2"]
@@ -5055,6 +5055,9 @@ shadow_mesh = SubResource("ArrayMesh_b8qs3")
 [sub_resource type="BoxShape3D" id="BoxShape3D_5u44r"]
 size = Vector3(19.1249, 11.8755, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_uwdvk"]
+size = Vector3(19.1249, 6.91999, 0.621338)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jgxe5"]
 albedo_texture = ExtResource("87")
 uv1_scale = Vector3(38.955, 38.955, 38.955)
@@ -6336,6 +6339,10 @@ skeleton = NodePath("")
 [node name="anti box clip colliderf" type="CollisionShape3D" parent="environment/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.10085, -1.57205, -8.35886)
 shape = SubResource("BoxShape3D_5u44r")
+
+[node name="anti box clip colliderf2" type="CollisionShape3D" parent="environment/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.10085, -4.04981, -3.67102)
+shape = SubResource("BoxShape3D_uwdvk")
 
 [node name="grass" type="MeshInstance3D" parent="environment"]
 transform = Transform3D(750.962, 0, 0, 0, 1, 0, 0, 0, 766.103, 0, -5.84125, 0)

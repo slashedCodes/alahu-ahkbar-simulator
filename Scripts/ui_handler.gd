@@ -4,7 +4,6 @@ extends Camera3D
 @onready var objectives := $objectives
 @onready var interaction := $interaction
 @onready var inventory := $inventory
-@onready var ammo := $ammo
 @onready var root := get_tree().current_scene
 
 func get_ray():
@@ -24,10 +23,10 @@ func _ready():
 			get_tree().paused = true
 
 func _process(_delta):
-	if hand.get_child_count() > 0 and hand.get_child(0).is_in_group("gun"):
-		ammo.visible = true
-	else:
-		ammo.visible = false
+	#if hand.get_child_count() > 0 and hand.get_child(0).is_in_group("gun"):
+	#	ammo.visible = true
+	#else:
+	#	ammo.visible = false
 	
 	var intersected = get_ray()
 	if intersected.has("collider") and intersected["collider"].has_meta("text"):

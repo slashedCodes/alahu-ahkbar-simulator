@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://ijfntxr822tg"]
+[gd_scene load_steps=26 format=3 uid="uid://ijfntxr822tg"]
 
 [ext_resource type="Script" uid="uid://bmtn1x85p6i63" path="res://Scripts/Player.gd" id="1"]
 [ext_resource type="Script" uid="uid://bi11j8yvisf2u" path="res://Scripts/ui_handler.gd" id="2"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://di1fvicjwhp2a" path="res://Scenes/pause_screen.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://cjrl3cgbr8py5" path="res://Scenes/death_screen.tscn" id="5"]
 [ext_resource type="Script" uid="uid://qc7f0meblvt3" path="res://Scripts/Inventory.gd" id="6"]
-[ext_resource type="FontFile" uid="uid://3088fs7yhrwi" path="res://Misc/comic sans.ttf" id="7"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="8"]
 [ext_resource type="Texture2D" uid="uid://cunjv0lj0krd1" path="res://Textures/Controls/jump.png" id="9"]
 [ext_resource type="Texture2D" uid="uid://clgt4oy12723p" path="res://Textures/Controls/jump_pressed.png" id="10"]
@@ -18,8 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://cbq4ix6tjmf3k" path="res://Textures/Controls/shoot_pressed.png" id="16"]
 [ext_resource type="Texture2D" uid="uid://ch7lay8kmpcp3" path="res://Textures/Controls/pause.png" id="17"]
 [ext_resource type="Texture2D" uid="uid://ch3irnvh44bvu" path="res://Textures/Controls/pause_pressed.png" id="18"]
-[ext_resource type="AudioStream" uid="uid://kg31mjbadlq6" path="res://Audio/sfx/hitHurt.wav" id="19"]
-[ext_resource type="AudioStream" uid="uid://58wb0ewsdtyg" path="res://Audio/sfx/reload.wav" id="20_puqj4"]
 [ext_resource type="AudioStream" uid="uid://bbr1enmvln5vj" path="res://Audio/sfx/footstep 1.wav" id="21_qidb7"]
 [ext_resource type="AudioStream" uid="uid://pjunjs66vfso" path="res://Audio/sfx/footstep 2.wav" id="22_70hv0"]
 [ext_resource type="AudioStream" uid="uid://vg1p1sp7i5sy" path="res://Audio/sfx/footstep 3.wav" id="23_8flut"]
@@ -30,103 +27,8 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mf8yx"]
 radius = 0.224981
 
-[sub_resource type="LabelSettings" id="LabelSettings_cqvmy"]
-font = ExtResource("7")
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_j4t3y"]
 radius = 256.0
-
-[sub_resource type="Animation" id="Animation_xl8ia"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Neck/Hand:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.92744, -0.647957, -1.13801)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Neck/Hand:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("reload:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_0ho83"]
-resource_name = "hand_fire"
-length = 0.08
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Neck/Hand:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.04, 0.08),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0.92744, -0.647957, -1.13801), Vector3(0.92744, -0.647957, -0.895956), Vector3(0.92744, -0.647957, -1.13801)]
-}
-
-[sub_resource type="Animation" id="Animation_jxwi7"]
-resource_name = "hand_reload"
-length = 0.4
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Neck/Hand:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.19, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(3.14159, 0, 0), Vector3(6.28319, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("reload:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_77tm5"]
-_data = {
-&"RESET": SubResource("Animation_xl8ia"),
-&"hand_fire": SubResource("Animation_0ho83"),
-&"hand_reload": SubResource("Animation_jxwi7")
-}
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_utwlt"]
 streams_count = 4
@@ -205,15 +107,6 @@ offset_bottom = 394.0
 alignment = 2
 script = ExtResource("6")
 
-[node name="ammo" type="Label" parent="Neck/Camera3D"]
-visible = false
-offset_left = 375.0
-offset_top = 330.0
-offset_right = 453.0
-offset_bottom = 353.0
-text = "5/5 ammo"
-label_settings = SubResource("LabelSettings_cqvmy")
-
 [node name="AudioListener3D" type="AudioListener3D" parent="Neck/Camera3D"]
 current = true
 
@@ -274,18 +167,6 @@ action = "pause"
 
 [node name="Hand" type="Node3D" parent="Neck"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.92744, -0.647957, -1.13801)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_77tm5")
-}
-
-[node name="Gun Shoot" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("19")
-volume_db = -8.915
-
-[node name="reload" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("20_puqj4")
 
 [node name="footstep" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.01009, 0)
