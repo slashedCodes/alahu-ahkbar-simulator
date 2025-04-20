@@ -28,17 +28,10 @@ func _ready():
 		GameManager.set_user_value("settings", "low_detail", false)
 		$settings/graphics.button_pressed = false
 	
-	# reminder that the actual fullscreen shit is handeled in intro.gd
 	if GameManager.get_user_value("settings", "fullscreen"):
 		$settings/fullscreen.button_pressed = GameManager.get_user_value("settings", "fullscreen")
 	else:
 		$settings/fullscreen.button_pressed = true
-	
-	if GameManager.get_user_value("settings", "volume"):
-		AudioServer.set_bus_volume_linear(master_bus, GameManager.get_user_value("settings", "volume"))
-		AudioServer.set_bus_volume_linear(reverb_bus, GameManager.get_user_value("settings", "volume"))
-	else:
-		GameManager.set_user_value("settings", "volume", db_to_linear(0.0))
 		
 	$settings/volume.value = db_to_linear(AudioServer.get_bus_volume_db(master_bus))
 	if GameManager.is_running_on_mobile():

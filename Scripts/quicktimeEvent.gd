@@ -60,3 +60,4 @@ func _process(_delta):
 func _on_touch_screen_button_pressed():
 	if timer.time_left > 0:
 		success_callback.call()
+		queue_free()

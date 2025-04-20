@@ -6,6 +6,8 @@ extends Node
 var low_detail = false
 
 func _ready():
+	var master_bus = AudioServer.get_bus_index("Master")
+	var reverb_bus = AudioServer.get_bus_index("Reverb")
 	var fullscreen = GameManager.get_user_value("settings", "fullscreen")
 	if fullscreen:
 		if fullscreen == true: DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
@@ -14,7 +16,11 @@ func _ready():
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 		GameManager.set_user_value("settings", "fullscreen", true)
 	
-	#set_low_detail(get_user_value("settings", "low_detail"))
+	if GameManager.get_user_value("settings", "volume"):
+		AudioServer.set_bus_volume_linear(master_bus, GameManager.get_user_value("settings", "volume"))
+		AudioServer.set_bus_volume_linear(reverb_bus, GameManager.get_user_value("settings", "volume"))
+	else:
+		GameManager.set_user_value("settings", "volume", db_to_linear(0.0))
 	
 	refresh_vars()
 

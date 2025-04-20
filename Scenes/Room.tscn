@@ -5728,6 +5728,10 @@ transform = Transform3D(750.962, 0, 0, 0, 1, 0, 0, 0, 766.103, 0, -5.84125, 0)
 mesh = SubResource("BoxMesh_ncqxe")
 skeleton = NodePath("../..")
 
+[node name="light" type="OmniLight3D" parent="environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13486, 3.35951, -0.371452)
+light_color = Color(1, 1, 0.376471, 1)
+
 [node name="questions" type="Node3D" parent="."]
 
 [node name="1" type="Panel" parent="questions"]

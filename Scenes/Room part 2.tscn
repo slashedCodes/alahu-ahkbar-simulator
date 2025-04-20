@@ -5121,6 +5121,10 @@ shape = SubResource("ConcavePolygonShape3D_p2e5t")
 transform = Transform3D(0.133917, 0, 0.398098, 0, 1, 0, -2.4669, 0, 0.133917, 0.438434, -0.11975, -3.81583)
 shape = SubResource("ConcavePolygonShape3D_u4jjn")
 
+[node name="light" type="OmniLight3D" parent="environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13486, 3.35951, -0.371452)
+light_color = Color(1, 1, 0.376471, 1)
+
 [node name="menu_camera" type="Camera3D" parent="."]
 transform = Transform3D(0.789727, -0.382147, 0.479891, 0, 0.782271, 0.622938, -0.613459, -0.491951, 0.61778, 4.19339, 4.44467, 3.11315)
 

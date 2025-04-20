@@ -365,6 +365,7 @@ compositor = SubResource("Compositor_ppxnh")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="title" type="Label" parent="CanvasLayer"]
+visible = false
 z_index = 5
 offset_left = 66.0
 offset_top = 41.0
@@ -378,6 +379,7 @@ vertical_alignment = 1
 
 [node name="shader" type="Label" parent="CanvasLayer"]
 unique_name_in_owner = true
+visible = false
 z_index = 5
 offset_left = 3.0
 offset_top = 362.0

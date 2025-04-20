@@ -274,7 +274,7 @@ func actually_i_dont_remember():
 	await show_dumb_dialog()
 
 func yes_i_plead_mental_insanity_sire():
-	# This function was empty in the original
+	await handle_dialog_sequence($audio/player/yes_i_plead_mental_insanity_sire, "true")
 	pass
 
 func hell_naw_jail():
@@ -282,5 +282,6 @@ func hell_naw_jail():
 	jail()
 
 func i_got_the_alice_heimer():
-	# This function was empty in the original
+	await handle_dialog_sequence($audio/player/i_got_the_alice_heimer, "true")
+	#mann what the fuck
 	pass

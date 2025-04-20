@@ -5,7 +5,10 @@ var rotate_gun = false
 
 func _ready():
 	if GameManager.get_user_value("settings", "shaders_compiled") == true: GameManager.goto_scene("res://Scenes/Room.tscn", true)
+	await get_tree().create_timer(1).timeout
 	
+	$CanvasLayer/title.show()
+	%shader.show()
 	if get_tree().root.has_node("Main Menu"): queue_free()
 	%shader.text = "shader: datamosh.glsl"
 	if not GameManager.low_detail: %Camera3D.compositor.compositor_effects.get(0).enabled = true
