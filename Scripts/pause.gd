@@ -1,5 +1,7 @@
 extends Panel
 
+var previous_mouse_mode
+
 func _ready():
 	get_tree().paused = false
 
@@ -9,12 +11,12 @@ func _input(event):
 		visible = false
 		get_tree().paused = false
 		
-		if not GameManager.is_running_on_mobile(): Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		if not GameManager.is_running_on_mobile(): Input.mouse_mode = previous_mouse_mode
 		if get_tree().current_scene.has_node("Player") and GameManager.is_running_on_mobile():
 			get_tree().current_scene.get_node("Player/Neck/Camera3D/mobile controls").visible = true
 
 func _on_resume_pressed():
-	if not GameManager.is_running_on_mobile(): Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	if not GameManager.is_running_on_mobile(): Input.mouse_mode = previous_mouse_mode
 	get_tree().paused = false
 	visible = false
 
@@ -22,6 +24,8 @@ func _on_resume_pressed():
 		get_tree().current_scene.get_node("Player/Neck/Camera3D/mobile controls").visible = true
 
 func pause():
+	#move_to_front()
+	previous_mouse_mode = Input.mouse_mode
 	if not GameManager.is_running_on_mobile(): Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	get_tree().paused = true
 	visible = true

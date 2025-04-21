@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://ds40kewukeqgr" path="res://Scripts/pause.gd" id="1"]
 [ext_resource type="FontFile" uid="uid://3088fs7yhrwi" path="res://Misc/comic sans.ttf" id="2"]
 
-
 [sub_resource type="LabelSettings" id="LabelSettings_efjgu"]
 font = ExtResource("2")
 font_size = 32
@@ -11,6 +10,7 @@ font_size = 32
 [node name="Pause Screen" type="Panel"]
 process_mode = 2
 visible = false
+top_level = true
 z_index = 100
 anchors_preset = 15
 anchor_right = 1.0
