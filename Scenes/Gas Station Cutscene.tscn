@@ -63,7 +63,6 @@
 [ext_resource type="Texture2D" uid="uid://ch7lay8kmpcp3" path="res://Textures/Controls/pause.png" id="61"]
 [ext_resource type="Texture2D" uid="uid://ch3irnvh44bvu" path="res://Textures/Controls/pause_pressed.png" id="62"]
 
-
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2oywq"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -6603,7 +6602,7 @@ skeleton = NodePath("")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_vtrut")
+&"": SubResource("AnimationLibrary_vtrut")
 }
 autoplay = "cutscene"
 

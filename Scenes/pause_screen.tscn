@@ -7,20 +7,19 @@
 font = ExtResource("2")
 font_size = 32
 
-[node name="Pause Screen" type="Panel"]
+[node name="Pause Screen" type="CanvasLayer"]
 process_mode = 2
 visible = false
-top_level = true
-z_index = 100
+script = ExtResource("1")
+
+[node name="Panel" type="Panel" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
+[node name="Label" type="Label" parent="Panel"]
 offset_left = 159.0
 offset_top = 22.0
 offset_right = 297.0
@@ -30,8 +29,7 @@ label_settings = SubResource("LabelSettings_efjgu")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="resume" type="Button" parent="."]
-layout_mode = 0
+[node name="resume" type="Button" parent="Panel"]
 offset_left = 152.0
 offset_top = 97.0
 offset_right = 305.0
@@ -40,8 +38,7 @@ theme_override_fonts/font = ExtResource("2")
 theme_override_font_sizes/font_size = 25
 text = "resume"
 
-[node name="reset" type="Button" parent="."]
-layout_mode = 0
+[node name="reset" type="Button" parent="Panel"]
 offset_left = 152.0
 offset_top = 145.0
 offset_right = 305.0
@@ -50,8 +47,7 @@ theme_override_fonts/font = ExtResource("2")
 theme_override_font_sizes/font_size = 25
 text = "reset"
 
-[node name="exit_to_menu" type="Button" parent="."]
-layout_mode = 0
+[node name="exit_to_menu" type="Button" parent="Panel"]
 offset_left = 152.0
 offset_top = 191.0
 offset_right = 305.0
@@ -60,8 +56,7 @@ theme_override_fonts/font = ExtResource("2")
 theme_override_font_sizes/font_size = 25
 text = "exit to menu"
 
-[node name="exit" type="Button" parent="."]
-layout_mode = 0
+[node name="exit" type="Button" parent="Panel"]
 offset_left = 152.0
 offset_top = 238.0
 offset_right = 305.0
@@ -70,7 +65,7 @@ theme_override_fonts/font = ExtResource("2")
 theme_override_font_sizes/font_size = 25
 text = "exit"
 
-[connection signal="pressed" from="resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="reset" to="." method="_on_reset_pressed"]
-[connection signal="pressed" from="exit_to_menu" to="." method="_on_exit_to_menu_pressed"]
-[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Panel/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Panel/reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="Panel/exit_to_menu" to="." method="_on_exit_to_menu_pressed"]
+[connection signal="pressed" from="Panel/exit" to="." method="_on_exit_pressed"]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcj0wefa7oubt"]
+
+[ext_resource type="Script" uid="uid://wny0pwfgghrq" path="res://Scripts/courthouse_cutscene.gd" id="1_6giqx"]
+[ext_resource type="VideoStream" uid="uid://cuugksgtt81ma" path="res://Misc/court.ogv" id="2_2ugld"]
+
+[node name="courthouse_cutscene" type="Node2D"]
+script = ExtResource("1_6giqx")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 450.0
+offset_bottom = 400.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+stream = ExtResource("2_2ugld")
+autoplay = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
