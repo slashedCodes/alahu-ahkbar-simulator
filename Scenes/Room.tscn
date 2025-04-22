@@ -4725,6 +4725,9 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [node name="TransitionScreen" parent="." instance=ExtResource("1")]
 visible = false
 
+[node name="Player" parent="." instance=ExtResource("90")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.99288, 1.27207, 1.62422)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 light_energy = 0.065
@@ -5072,7 +5075,7 @@ use_collision = true
 size = Vector3(7.15916, 0.906644, 0.0666018)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="apartment/box"]
-transform = Transform3D(0.999998, -0.00171109, -0.000675722, 0.00170713, 0.999982, -0.00582559, 0.000685677, 0.00582443, 0.999983, 0.781064, 3.75941, -0.462917)
+transform = Transform3D(0.999998, -0.00171109, -0.000675722, 0.00170713, 0.999982, -0.00582559, 0.000685677, 0.00582443, 0.999983, 0.779943, 3.8001, -0.462647)
 material_override = SubResource("StandardMaterial3D_mpnv4")
 use_collision = true
 size = Vector3(7.11523, 1.52278, 0.0666018)
@@ -6137,9 +6140,6 @@ text = "you are depressed"
 
 [node name="kill_yourself_music" type="AudioStreamPlayer" parent="questions/1"]
 stream = ExtResource("89")
-
-[node name="Player" parent="." instance=ExtResource("90")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.99288, 1.27207, 1.62422)
 
 [node name="Area3D" type="Area3D" parent="."]
 script = ExtResource("91")
