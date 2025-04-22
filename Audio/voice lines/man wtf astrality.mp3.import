@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bg8e8ayeng3nl"
+path="res://.godot/imported/man wtf astrality.mp3-e851e7fa40785bbf227d3ac0edf87771.mp3str"
+
+[deps]
+
+source_file="res://Audio/voice lines/man wtf astrality.mp3"
+dest_files=["res://.godot/imported/man wtf astrality.mp3-e851e7fa40785bbf227d3ac0edf87771.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

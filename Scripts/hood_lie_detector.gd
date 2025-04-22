@@ -275,7 +275,11 @@ func actually_i_dont_remember():
 
 func yes_i_plead_mental_insanity_sire():
 	await handle_dialog_sequence($audio/player/yes_i_plead_mental_insanity_sire, "true")
-	pass
+	dialog.set_text("man, what the fuck?")
+	$audio/cop/man_wtf.play()
+	await $audio/cop/man_wtf.finished
+	await get_tree().create_timer(1.0).timeout
+	GameManager.goto_scene("res://Scenes/thanks.tscn", false)
 
 func hell_naw_jail():
 	await handle_dialog_sequence($audio/player/hell_na, "true")
@@ -283,5 +287,8 @@ func hell_naw_jail():
 
 func i_got_the_alice_heimer():
 	await handle_dialog_sequence($audio/player/i_got_the_alice_heimer, "true")
-	#mann what the fuck
-	pass
+	dialog.set_text("man, what the fuck?")
+	$audio/cop/man_wtf.play()
+	await $audio/cop/man_wtf.finished
+	await get_tree().create_timer(1.0).timeout
+	GameManager.goto_scene("res://Scenes/thanks.tscn", false)

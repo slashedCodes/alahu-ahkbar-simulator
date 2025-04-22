@@ -343,7 +343,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.68446, 0.742951, -1.93066)
 visible = false
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 60.0
 
 [node name="Control" type="Control" parent="."]
 visible = false
