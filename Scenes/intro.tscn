@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dphr38hr2lhh5"]
+[gd_scene load_steps=13 format=3 uid="uid://dphr38hr2lhh5"]
 
 [ext_resource type="Script" uid="uid://ppio6ib01ppx" path="res://Scripts/intro.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://ctrqywx50hft6" path="res://studio.png" id="2"]
@@ -140,6 +140,9 @@ _data = {
 &"main": SubResource("Animation_cpg1w")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hwjxs"]
+bg_color = Color(0.568973, 0.568973, 0.568973, 1)
+
 [node name="Intro" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -238,4 +241,54 @@ volume_db = -80.0
 libraries = {
 &"": SubResource("AnimationLibrary_n2u6o")
 }
-autoplay = "main"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hwjxs")
+
+[node name="name" type="TextEdit" parent="CanvasLayer"]
+offset_left = 106.0
+offset_top = 136.0
+offset_right = 332.0
+offset_bottom = 180.0
+placeholder_text = "name"
+
+[node name="discord" type="TextEdit" parent="CanvasLayer"]
+offset_left = 107.0
+offset_top = 188.0
+offset_right = 333.0
+offset_bottom = 232.0
+placeholder_text = "discord username"
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 118.0
+offset_top = 253.0
+offset_right = 318.0
+offset_bottom = 287.0
+text = "submit"
+
+[node name="title" type="Label" parent="CanvasLayer"]
+offset_left = 95.0
+offset_top = 51.0
+offset_right = 346.0
+offset_bottom = 126.0
+text = "hello playtester.
+please input your information
+before beginning the experience"
+horizontal_alignment = 1
+
+[node name="plays" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "FREE TRIAL: 1/3 plays CONSUMED"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
